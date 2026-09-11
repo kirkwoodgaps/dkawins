@@ -1,0 +1,202 @@
+# Success Stories — RECONCILED DRAFT.
+#
+# The submitted draft carried 2 of the 6 testimonials on the live page. All 6 are
+# restored below, verbatim, and the two case-study bodies are restored to the
+# live wording (the draft's figures were correct but the prose was rewritten).
+#
+# Logos are referenced at their post-migration paths; none are downloaded yet.
+# The source URL for each is in the comment above it — see MIGRATION-NOTES.md § 2.
+
+# PRESERVED VERBATIM from the live <title>. The draft shortened it to
+# "Success Stories"; this page is indexed, so the title stands.
+title: "Government Contract Success Stories | Winning Government Contracts"
+path: /success-stories/
+
+# PRESERVED VERBATIM from the live <meta name="description">.
+metaDescription: >-
+  Hundreds of government contractors have utilized DKA's proposal writing
+  services to win government contracts. Find Opportunities to Contract with the
+  Federal Government.
+
+# SOURCED: live page intro, verbatim.
+#
+# TWO PROBLEMS, both pre-existing, both needing Nate's call:
+#
+# 1. "well in excess of $1 billion" here vs. "$1.7 Billion" on the homepage.
+#    Same claim, two numbers. Preserved as published. See MIGRATION-NOTES.md § 3.4.
+# 2. The second sentence promises "a partial list of agencies and locations" that
+#    does not appear anywhere on the page — the page goes straight into the case
+#    studies. See MIGRATION-NOTES.md § 4.2. Either supply the list or cut the
+#    sentence; do not ship the page with the promise dangling.
+intro: >-
+  DKA has helped its clients win hundreds of government contracts with a combined
+  value well in excess of $1 billion. The following is a partial list of agencies
+  and locations of these contracts.
+
+# CONFLICT — resolve before shipping. These are the homepage figures. Dropping a
+# "$1.7B+" tile directly beneath an intro that says "$1 billion" puts the
+# contradiction in § 3.4 on screen twice, inches apart. Either reconcile the two
+# numbers or drop this row from this page.
+stats:
+  - value: "1995"
+    label: Winning federal contracts for clients since
+  - value: "350+"
+    label: Contract awards won for clients
+  - value: "$1.7B+"
+    label: Combined value of client contract awards
+
+caseStudies:
+  # SOURCED: live page, verbatim. On the live site the first sentence is marked up
+  # as an <h2> and the rest as body copy, which is why it reads as a heading
+  # running into lowercase prose — see MIGRATION-NOTES.md § 4.6. Rejoined into one
+  # paragraph here; the `heading` field is an editorial addition for the rebuild,
+  # not live copy, and every figure in it is drawn from the body below.
+  - client: C&S Jones Group
+    # SOURCE: .../2020/07/CSJG-logo.png (use the original, not the -129x100 crop)
+    logo: /images/clients/cs-jones-group.png
+    heading: Four HUBZone contracts across four states
+    body: >-
+      In 2015 DKA reached out to C&S Jones Group to discuss the possibility of
+      working together in pursuit of 2 specific contracts which were set-aside
+      for HUBZone-certified contractors. At the time DKA did not have a
+      relationship with a HUBZone-certified company with the experience and
+      capabilities to win the contracts or successfully perform them. After
+      several discussions about the opportunities it was mutually agreed that C&S
+      Jones had everything it took to win and perform profitably.
+
+
+      And that we did. Together we won both contracts ($1.7M over 5 years in
+      Nevada and $3M over 5 years in Montana).
+
+
+      And then we did it again, winning 2 more contracts ($7.5M over 5 years in
+      Hawaii and $1.5M over 5 years in Oklahoma). C&S Jones Group is still
+      operating all 4 contracts and looking for the next opportunities to pursue
+      together.
+
+  # SOURCED: live page, verbatim. Same split-heading artifact, rejoined.
+  - client: E&S Diversified Services
+    # SOURCE: .../2020/07/esheader5.jpg (use the original, not the -701x100 crop)
+    logo: /images/clients/es-diversified.jpg
+    heading: DKA’s first client, still working together today
+    body: >-
+      E&S Diversified Services was DKA’s first ever client in 1995 and we’re
+      still working together today. To date we’ve assisted E&S in winning 26
+      federal government contracts in 9 states with a combined award amount in
+      excess of $92M. Nearly all of these contracts were for 5 years, and they’ve
+      allowed E&S to expand into new industries and new geographic regions.
+
+# All 6 live testimonials, verbatim. The draft carried only Argent World and
+# Greene Respiratory — the 2 that also appear on the homepage — and silently
+# dropped KAATSU, Ideum, Maxsent and McFarlane.
+#
+# Opening quotation marks are normalized. Four of these open with a closing curly
+# quote on the live site, a WordPress over-escaping artifact that renders visibly
+# today. See MIGRATION-NOTES.md § 4.3.
+testimonials:
+  # SOURCE: .../2017/10/kaatsu-logo.png
+  - client: KAATSU
+    author: John Doolittle
+    role: Global Chief Revenue Officer
+    logo: /images/clients/kaatsu.png
+    quote: >-
+      Gregg, I think we picked a good consulting company with DKA. The government
+      evaluator who’s reviewing our application just told us this during our
+      call: ‘This is the cleanest GSA Schedule submission I have seen in over a
+      year.’
+
+  # SOURCE: .../2017/10/Ideum.png
+  - client: Ideum
+    author: Jim Spadaccini
+    role: Founder & CEO
+    logo: /images/clients/ideum.png
+    quote: >-
+      DKA helped us navigate complex Government systems with virtual ease. Now
+      our products are being sold directly to Federal agencies.
+
+  # SOURCE: .../2017/10/547114_539122169459467_11946938_n.png — filename is
+  # meaningless; identified as Argent World from surrounding copy. Confirm on
+  # download. See MIGRATION-NOTES.md § 2.4.
+  - client: Argent World Services, LLC
+    author: Scott Geroux
+    logo: /images/clients/argent-world-services.png
+    # NOTE: "lets get it done" is missing its apostrophe on the live site. The
+    # draft silently corrected it to "let's". Left as published — it is inside a
+    # named person's quotation.
+    quote: >-
+      We met DKA while researching companies who can handle all of our US
+      Government contracting needs. I personally called several dozen “Proposal
+      Writer” type companies. After several weeks of researching our best options
+      with the companies out there who perform government proposal writing we
+      came across DKA. I flew down to meet with these folks and I can say I was
+      impressed with their operations. After retaining them for their services
+      and after a few short months of preparing our business to start winning
+      government contracts, our first contract was won. DKA’s “lets get it done”
+      attitude and endless hours of research and business development to help
+      align our company in the tight government sector has been beyond what I
+      could ever imagine. The knowledge, dedication and perseverance Terry and
+      his crew over at DKA has shown us is beyond exceptional. Now, 9 years later
+      with calculated planning and execution, we are going strong and have
+      recently won several contracts (some of which are 5 year). In closing, I
+      would like to thank Terry, Mike, Dustin and the DKA team as a whole for the
+      endless hours of phone call consultations and other business operation
+      support to help “school us” to ensure we perform our contracts with the
+      performance the government expects and demands. DKA’s loyal and undying
+      service to our company has been truly the key to our success. Thanks DKA.
+
+  # SOURCE: .../2017/10/Thumb.png — meaningless filename; identified as Greene
+  # Respiratory from surrounding copy. Confirm on download.
+  - client: Greene Respiratory Services
+    author: Steve Russell
+    role: CFO
+    logo: /images/clients/greene-respiratory.png
+    quote: >-
+      Greene Respiratory Services has been using DKA as our Federal Government
+      bidding partner since 2001 and we have truly enjoyed an excellent
+      partnership in the process. We feel that without DKA, our efforts to obtain
+      new federal government contracts would have been diminished greatly. The
+      results have been excellent.
+
+  # SOURCE: .../2017/10/maxsent.png
+  - client: Maxsent
+    author: Todd Pattison
+    role: President
+    logo: /images/clients/maxsent.png
+    quote: >-
+      I have known, worked with, and won federal government contracts with DKA
+      for 12 years. They have exceeded every expectation I have had when it has
+      come to their expertise of the contract/agency, timeliness, and quality of
+      the proposal. I would highly recommend them to anyone who desires to do
+      business with any government agency.
+
+  # SOURCE: .../2017/10/mcfarlane.png
+  - client: McFarlane Sheet Metal
+    author: Dave McFarlane
+    logo: /images/clients/mcfarlane.png
+    quote: >-
+      The professionalism, integrity and technical competency of DKA is
+      outstanding. They were able to obtain our certification in 3 months. They
+      continued to help walk our proposal through the entire submittal process.
+      They responded to continual change requests from the federal government and
+      completely exceeded our expectations by helping us even after we were
+      issued our GSA contract number. DKA did all this work, honored their
+      original estimated price, met all time lines and most importantly delivered
+      exactly what they had promised. I would highly recommend DKA to anyone
+      needing help in obtaining GSA certification. Their pricing is fair, their
+      service outstanding, and they deliver what they promise.
+
+cta:
+  # SOURCED: live page closing line, verbatim, plus its CONTACT US button.
+  # The draft's "Ready to Become Our Next Success Story?" heading and its
+  # "free, no-obligation consultation" body were assembled from other pages.
+  # The consultation offer is attested on the GSA/CMAS/TXMAS/MAS pages but not
+  # here, so it is left out rather than moved.
+  heading: Create your own success story with DKA.
+  body: ""
+  label: Contact Us
+  href: /contact-us/
+
+# UNRESOLVED: https://www.dkawins.com/wp-content/uploads/2020/07/2-min-1.jpg
+# appears on this page and the homepage with empty alt, no caption and no
+# adjacent copy. Cannot tell whether it is a client logo, a banner, or a leftover.
+# Not referenced above. Needs Nate's call — MIGRATION-NOTES.md § 2.4.

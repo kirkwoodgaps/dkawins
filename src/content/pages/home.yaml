@@ -1,0 +1,170 @@
+# Homepage — RECONCILED DRAFT.
+#
+# The submitted draft rewrote copy that src/content/pages/home.mdoc already holds
+# verbatim from the live site. Per CLAUDE.md ("Never invent or paraphrase marketing
+# copy... this is a real business with real numbers"), every string below is either
+# quoted from live dkawins.com or marked TODO. Source page noted above each block.
+#
+# Changes from the submitted draft are listed in MIGRATION-NOTES.md § 7.
+
+# PRESERVED VERBATIM from the live <title>. The draft changed "Services" to
+# "Experts"; CLAUDE.md forbids altering an indexed page's title unless told to.
+title: "Government Proposal Writing & GSA Schedule Services"
+path: /
+
+# PRESERVED VERBATIM from the live <meta name="description">.
+# The draft rewrote this to say "more than 350 ... worth over $1.7 billion".
+# The live tag says 300. See MIGRATION-NOTES.md § 3.4 — the site contradicts
+# itself (300 in meta, 350 in body, "hundreds" elsewhere). Nate picks the number;
+# until then the indexed text stands.
+metaDescription: >-
+  DKA has helped its clients win more than 300 government contracts to provide an
+  extremely wide variety of products and services, from custodial to IT, ambulance
+  trips to real estate appraisals, environmental services to mobile asphalt
+  plants, etc.
+
+hero:
+  # SOURCED: live H1. Rendered in all caps on the current site — that is Themify
+  # styling, not copy, so it is stored in sentence case and cased in CSS.
+  headline: Winning Government Contracts
+  # SOURCED: the line directly under the live H1.
+  # The draft's subhead ("break into and grow within the federal marketplace...")
+  # appears nowhere on the site. Dropped.
+  subhead: >-
+    Business development services focused on increasing each client’s public
+    sector success.
+  # SOURCED: the CTA button text used on /what-we-do/ and /who-we-are/.
+  # The live homepage has no hero CTA at all; this reuses the site's own button
+  # rather than the draft's invented "Talk With Our Team".
+  cta:
+    label: Contact Us
+    href: /contact-us/
+
+# SOURCED: all three figures from live homepage body copy — "Since 1995" and
+# "more than 350 wins with a combined value in excess of $1.7 Billion".
+# Labels are descriptive, not marketing claims.
+stats:
+  - value: "1995"
+    label: Winning federal contracts for clients since
+  - value: "350+"
+    label: Contract awards won for clients
+  - value: "$1.7B+"
+    label: Combined value of client contract awards
+
+services:
+  # SOURCED: live homepage section heading "WHAT WE DO".
+  heading: What We Do
+  # SOURCED: live homepage, verbatim. The draft dropped the middle sentence
+  # ("Since 1995, our clients have trusted us to identify, pursue, win and
+  # maintain contracts at the federal and state level") — restored.
+  intro: >-
+    Our goal for each of our clients is to grow and improve their business in the
+    government sector. Since 1995, our clients have trusted us to identify,
+    pursue, win and maintain contracts at the federal and state level. Every
+    company is different, so our team of knowledgeable experts is on hand to
+    tailor the right blend of our proposal writing and business development
+    services for each one.
+
+  # RESTRUCTURED. CLAUDE.md § Homepage structure calls for "the four GSA offerings
+  # plus proposal writing". The draft shipped four cards that collapsed CMAS and
+  # TXMAS into one and omitted MAS Consolidation entirely, leaving two indexed
+  # pages unlinked from the homepage. Five cards below, one per indexed service
+  # page. Every body is quoted from that page.
+  items:
+    # SOURCED: /government-proposal-writing-services/, "Proposal Development
+    # Services", verbatim.
+    - title: Government Proposal Writing
+      body: >-
+        Development of the written proposal response encompassing technical,
+        management, quality control, past performance, cost, and any other
+        requirements of the solicitation, utilizing our client’s input which is
+        specific to the way the client does business.
+      href: /government-proposal-writing-services/
+
+    # SOURCED: /what-we-do/, "GSA SCHEDULE SERVICES", verbatim.
+    - title: GSA Schedule Services
+      body: >-
+        DKA has extensive experience with the General Service Administration
+        (GSA) Federal Supply Service (FSS) Multiple Award Schedule (MAS), better
+        known as the GSA Schedule. We’ve helped hundreds of companies list their
+        products and services.
+      href: /gsa-schedule-services/
+
+    # SOURCED: /gsa-multiple-award-schedules-mas-consolidation/, verbatim.
+    # NOTE: that page is dated — it describes the consolidation as upcoming on
+    # October 1, 2019. Copy preserved, but the page needs a rewrite from Nate.
+    - title: GSA MAS Consolidation
+      body: >-
+        The GSA Schedule experts at DKA can help guide you through these new
+        developments, and make sure you’re properly positioned to receive
+        contract awards under the new Consolidated Schedule.
+      href: /gsa-multiple-award-schedules-mas-consolidation/
+
+    # SOURCED: /california-multiple-award-schedules-cmas/, verbatim.
+    # The draft's claim that CMAS and TXMAS are "two of the largest state markets
+    # in the country" is not on the site and is not sourced. Dropped.
+    - title: California Multiple Award Schedules (CMAS)
+      body: >-
+        The State of California establishes multiple award agreements–awards
+        given to two or more contractors for the same products and/or services at
+        the same or similar prices. The Schedule Contract experts at DKA can
+        assist with obtaining and maintaining your CMAS Schedule contract.
+      href: /california-multiple-award-schedules-cmas/
+
+    # SOURCED: /texas-multiple-award-schedule-program/, verbatim.
+    - title: Texas Multiple Award Schedule (TXMAS)
+      body: >-
+        The TXMAS Program adapts existing competitively awarded federal
+        government or any other governmental entity contracts to service the
+        procurement needs of state agencies and Texas SmartBuy members. The
+        Schedule Contract experts at DKA can assist with obtaining and
+        maintaining your TXMAS Schedule contract.
+      href: /texas-multiple-award-schedule-program/
+
+# The draft also had a "Post-Award Support" card. It is real and well-sourced
+# (/government-proposal-writing-services/ § Post-Award Support), but it pointed at
+# the same URL as the proposal-writing card and it is not one of the five services
+# CLAUDE.md lists for this row. Add it as a sixth card if you want it:
+#
+#   - title: Post-Award Support
+#     body: >-
+#       DKA’s full-coverage post-award support includes assistance with the
+#       preparation of plans and procedures required by the agency either prior to
+#       the contract start (Quality Control, Staffing, Management, Personnel and
+#       Subcontractor Recruitment, Vendor/Supplier Acquisition, Contract
+#       Phase-in/Transition Plans, etc.) or after, such as negotiation and
+#       preparation of contract modifications.
+#     href: /government-proposal-writing-services/
+
+whyDka:
+  # Not a section on the live site — this is a new editorial block. Each item is
+  # a restatement of an attested fact rather than a new claim.
+  heading: Why Companies Choose DKA
+  items:
+    # SOURCED: "Since 1995" (homepage) / "formed in August of 1995" (/who-we-are/).
+    - Winning federal contracts for clients since 1995
+    # SOURCED: homepage, "more than 350 wins with a combined value in excess of
+    # $1.7 Billion".
+    - More than 350 contract awards won, worth over $1.7 billion combined
+    # SOURCED: homepage § WHO WE ARE, industry list.
+    - Clients ranging from custodial services to IT, ambulance trips to real
+      estate appraisals, environmental services to mobile asphalt plants
+    # SOURCED: /who-we-are/ and CMAS/TXMAS/MAS pages, "more than 400 companies".
+    # This is the site's strongest GSA-specific number and the draft omitted it.
+    - More than 400 companies placed and maintained on Schedule contracts
+    # SOURCED: the four service tiers on
+    # /government-proposal-writing-services/ (Proposal Development, Post-Submittal,
+    # Post-Award, Research).
+    - Full-service support from proposal writing through post-award contract
+      management
+
+cta:
+  # SOURCED: the closing CTA shared by /what-we-do/ and /who-we-are/, verbatim.
+  # The draft's "Ready to Grow Your Government Business?" heading and its body
+  # paragraph are both invented. Replaced with the site's own CTA.
+  heading: Talk With Our Team
+  body: >-
+    Talk with a member of our team about how DKA can help your company grow in
+    the public sector.
+  label: Contact Us
+  href: /contact-us/

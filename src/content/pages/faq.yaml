@@ -1,0 +1,103 @@
+# FAQ page — PARTIAL DRAFT.
+#
+# Scaffolding (title/path/metaDescription/intro) is Nate's own copy, kept as written.
+#
+# Answers below are filled ONLY where the claim is attested in live dkawins.com
+# copy; each is quoted or closely assembled from the source page noted above it.
+# Questions whose answers could not be sourced are left as empty strings with a
+# TODO, per CLAUDE.md: never invent marketing copy for a real business.
+#
+# 3 answers sourced, 1 partial, 3 awaiting copy from Nate. See MIGRATION-NOTES.md.
+
+title: Frequently Asked Questions
+path: /faq/
+metaDescription: >-
+  Answers to common questions about DKA's government proposal writing and
+  GSA Schedule consulting services.
+intro: >-
+  Answers to common questions about working with DKA on government proposal
+  writing and GSA Schedule services.
+
+groups:
+  - heading: Working with DKA
+    items:
+      # SOURCED: /who-we-are/ ("The core of our services...") + /what-we-do/
+      # ("DKA has extensive experience with the General Service Administration...").
+      - q: What does DKA do?
+        a: >-
+          The core of our services remains in helping our clients respond to
+          government solicitations; nothing is as rewarding as helping our
+          clients grow their businesses through winning government contracts.
+          DKA has extensive experience with the General Service Administration
+          (GSA) Federal Supply Service (FSS) Multiple Award Schedule (MAS),
+          better known as the GSA Schedule, and has written hundreds of winning
+          government proposals for clients. From initial solicitation review to
+          contract startup, DKA is with you for the entire process.
+
+      # SOURCED: /who-we-are/ (founding date, broadened expertise) + / (350 wins,
+      # $1.7 Billion). NOTE: the homepage meta description says "more than 300"
+      # while its own body says "more than 350" — see MIGRATION-NOTES.md §3.4.
+      # This answer uses the body figure, matching the agreed hero stat row.
+      - q: How much experience does DKA have in government contracting?
+        a: >-
+          DeSutter, Kerr & Associates, Inc. was formed in August of 1995 with a
+          mission of helping small businesses win government contracts in basic
+          service and maintenance industries. Over the years DKA's expertise
+          broadened to cover virtually all aspects of the federal procurement
+          process. With more than 350 wins with a combined value in excess of
+          $1.7 Billion, DKA has the experience to increase your likelihood of
+          success on every project.
+
+      # PARTIAL. Industries half is SOURCED from / and /who-we-are/.
+      # The "agencies" half of the question is NOT answered: the live site never
+      # names civilian or defense agencies. State-level work IS supported
+      # (CMAS and TXMAS pages). Either supply the agency list or narrow the
+      # question to industries only.
+      - q: What industries and agencies does DKA typically work with?
+        a: >-
+          DKA has helped its clients win hundreds of government contracts to
+          provide an extremely wide variety of products and services, from
+          custodial to IT, ambulance trips to real estate appraisals,
+          environmental services to mobile asphalt plants, etc. We've also
+          helped our clients obtain HUBZone & 8(a) certifications and contract
+          vehicles, such as CMAS, TXMAS, and the GSA Schedule.
+
+      # TODO — NOT SOURCED. "Nationwide" appears nowhere on the live site.
+      # The strongest attested claim is on /success-stories/: one client won
+      # "26 federal government contracts in 9 states", with Nevada, Montana,
+      # Hawaii and Oklahoma named. That supports multi-state, not nationwide.
+      # Nate: confirm the real geographic footprint.
+      - q: Does DKA work with businesses across the country?
+        a: ""
+
+      # TODO — NOT SOURCED. The live site makes no pricing or fee statement of
+      # any kind. The only attested part of the draft answer was the "free,
+      # no-obligation consultation", which appears on the GSA/CMAS/TXMAS/MAS
+      # pages. Nate: this one needs to come from you — a published pricing
+      # representation shouldn't be drafted on the firm's behalf.
+      - q: How do your fees typically work?
+        a: ""
+
+      # SOURCED: /who-we-are/ and /what-we-do/ CTA ("Talk with a member of our
+      # team...") + /california-multiple-award-schedules-cmas/ ("Contact us for a
+      # free, no-obligation consultation with an experienced consultant.")
+      # + /contact-us/ (phone number).
+      - q: How do I get started?
+        a: >-
+          Talk with a member of our team about how DKA can help your company
+          grow in the public sector. Contact us for a free, no-obligation
+          consultation with an experienced consultant, or call us at
+          561-640-9171.
+
+  # NOTE: this group arrived truncated — the heredoc was cut off mid-answer at
+  # "We support proposals" and no further questions were specified. The single
+  # question below is preserved; send the rest of the group when ready.
+  - heading: Proposal writing
+    items:
+      # TODO — NOT SOURCED, and the draft answer was truncated mid-sentence.
+      # Grounded material for this answer does exist on
+      # /government-proposal-writing-services/ (Proposal Development Services,
+      # Post-Submittal Support, Post-Award Support, Research) if you want it
+      # assembled from that page rather than written fresh.
+      - q: What types of government contracts does DKA help win?
+        a: ""

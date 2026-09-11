@@ -55,3 +55,54 @@ These URLs are live and indexed. Paths must not change:
 - When migrating a page, extract the real copy from the live site. Never
   invent or paraphrase marketing copy, client names, contract figures, or
   testimonials — this is a real business with real numbers.
+
+## Design direction
+
+Reference sites: coleygsa.com for credibility structure, govdash.com for
+visual craft and restraint. The goal is a serious professional services firm
+that happens to be modern — not a startup, not a government agency.
+
+### Never use
+- Flags, eagles, Capitol domes, patriotic gradients
+- Stock photos of people in suits shaking hands
+- Clip-art icons (the current site's handshake/target/analysis icons are out)
+- Drop shadows on everything, glassmorphism, purple-to-blue gradients
+
+### Typography
+- Two families maximum. Headings get a distinctive face; body gets a readable
+  one at 17-18px minimum.
+- Fluid sizing with clamp(). Big jump between h1 and body — hierarchy should
+  be obvious at a glance.
+- Body line-height 1.6+, measure capped around 70ch.
+- Self-host fonts in public/fonts. No Google Fonts CDN.
+
+### Color
+- Mostly neutral: near-black text on off-white, not pure #000 on #fff.
+- One accent color, used sparingly for links and CTAs.
+- Define everything as CSS custom properties in src/styles/tokens.css.
+  No hard-coded hex values in components.
+
+### Layout
+- Content max-width ~1100px, prose sections narrower.
+- Generous vertical section padding. Whitespace is the main upgrade over the
+  old site.
+- A 4px or 8px spacing scale as tokens. No arbitrary margins.
+
+### Homepage structure
+1. Hero: headline, one-line positioning, primary CTA.
+2. Stat row immediately below the hero — 350+ contract wins, $1.7B+ in
+   contract value, operating since 1995. These are DKA's strongest assets and
+   are currently buried. They go above the fold.
+3. Services: the four GSA offerings plus proposal writing.
+4. Success stories: real client logos at consistent optical height, with the
+   named testimonials and contract figures.
+5. Contact CTA.
+
+### Client logos
+The existing logos are different dimensions and sit at mismatched heights.
+Normalize them to a consistent optical size in a grid. Do not stretch them.
+
+### Accessibility
+- WCAG AA contrast minimum.
+- Visible focus states. Don't remove outlines without replacing them.
+- Real semantic headings in order. The current site has h2/h3 used for styling.

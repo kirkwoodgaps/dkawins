@@ -1,0 +1,88 @@
+# Industries We Serve — RECONCILED DRAFT.
+#
+# NOTE: /industries-we-serve/ does not exist on the live site. It is a new page,
+# so no title or meta description is being preserved and nothing here is indexed
+# yet. Everything below still has to be true.
+#
+# The draft's industry list was flagged in its own comments as "generated, not
+# taken from the live site". That flag turns out to be too pessimistic: the live
+# /who-we-are/ page names six industries outright, and five of the draft's six
+# labels map onto them. The list below is rebuilt from that page and the homepage,
+# so it is now sourced rather than invented. Source noted on each item.
+
+title: Industries We Serve
+path: /industries-we-serve/
+# New page, no live tag to preserve. Written from attested copy only.
+metaDescription: >-
+  From custodial services to IT, ambulance trips to real estate appraisals, DKA
+  has helped clients across an extremely wide range of industries win government
+  contracts since 1995.
+
+# SOURCED: assembled from /who-we-are/ ("formed in August of 1995 ... helping
+# small businesses win government contracts in basic service and maintenance
+# industries. Over the years DKA's expertise broadened to cover virtually all
+# aspects of the federal procurement process") and the homepage industry list.
+intro: >-
+  DeSutter, Kerr & Associates was formed in 1995 with a mission of helping small
+  businesses win government contracts in basic service and maintenance
+  industries. Over the years DKA’s expertise broadened to cover virtually all
+  aspects of the federal procurement process. Our clients provide an extremely
+  wide variety of products and services, from custodial to IT, ambulance trips to
+  real estate appraisals, environmental services to mobile asphalt plants.
+
+industries:
+  heading: Industries We Support
+  # Every name below appears in live copy. The draft's generic sector labels have
+  # been replaced with, or narrowed to, the site's own wording — the specific and
+  # unusual examples are both more memorable and demonstrably true.
+  items:
+    # SOURCED: /who-we-are/ "Logistics Management to IT"; homepage "custodial to IT".
+    - name: IT & Technology Services
+    # SOURCED: /who-we-are/ "Professional Staffing".
+    - name: Professional Staffing & Administrative Services
+    # SOURCED: /who-we-are/ "Logistics Management".
+    - name: Logistics Management
+    # SOURCED: /who-we-are/ "various Medical Services"; homepage "ambulance trips".
+    - name: Medical Services & Medical Transport
+    # SOURCED: /who-we-are/ and homepage, "Environmental Services".
+    - name: Environmental Services
+    # SOURCED: /who-we-are/ opening ("basic service and maintenance industries");
+    # homepage "custodial".
+    - name: Custodial, Facilities & Maintenance Services
+    # SOURCED: /who-we-are/ and homepage, "Mobile Asphalt Plants".
+    - name: Mobile Asphalt Plants
+    # SOURCED: homepage, "real estate appraisals".
+    - name: Real Estate Appraisal Services
+
+# TODO — NOT SOURCED. The draft's closing paragraph claimed DKA tailors its
+# approach to "full and open competitions to small business set-asides" per
+# industry. Set-aside work is attested in general (the C&S Jones HUBZone case
+# study, and HUBZone / 8(a) certifications on the homepage), but the
+# per-industry compliance claim is not on the site in any form. Left empty rather
+# than written on the firm's behalf — grounded material exists on
+# /government-proposal-writing-services/ (Proposal Development, Post-Submittal,
+# Post-Award, Research) if you want it assembled from there instead.
+body: ""
+
+# ---------------------------------------------------------------------------
+# KEPT REMOVED (agreeing with the draft): a "Federal Agencies We Support" section
+# naming DoD, GSA, VA, DHS and HHS. Nothing on the live site names a single
+# civilian or defense customer agency. To an audience of federal contracting
+# professionals, naming agencies you have worked with is a claim that gets
+# checked. Restore only agencies Terry can confirm from actual award records.
+#
+# Related: the live /what-we-do/ page uses a US Navy seal as decoration for its
+# "Government Contracting Vehicles" block. Same problem in image form — it reads
+# as a Navy affiliation. Flagged in MIGRATION-NOTES.md § 2.4; do not carry it over.
+# ---------------------------------------------------------------------------
+
+cta:
+  # SOURCED: the closing CTA shared by /what-we-do/ and /who-we-are/, verbatim.
+  # The draft's "Wherever your business fits in the federal marketplace..." body
+  # was invented.
+  heading: Get Started
+  body: >-
+    Talk with a member of our team about how DKA can help your company grow in
+    the public sector.
+  label: Contact Us
+  href: /contact-us/
