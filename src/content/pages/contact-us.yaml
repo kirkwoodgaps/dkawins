@@ -1,0 +1,96 @@
+# Contact page. Replaces the .mdoc extraction, which becomes archive.
+# Was the thinnest page on the site at 54 words.
+#
+# THE FORM IS STILL NOT BUILT. The live page uses a HubSpot embed
+# (portal 6193097); CLAUDE.md specifies a Vercel function posting to Mailgun.
+# That decision is open — see MIGRATION-NOTES.md § 5.2. Everything here is the
+# copy around the form.
+#
+# Every contact detail below is verbatim from the live site.
+
+title: "DKA Government Proposal Writing & GSA Schedule Experts - Contact Us"
+path: /contact-us/
+heading: Contact Us
+
+# PRESERVED VERBATIM from the live <meta name="description">.
+metaDescription: >-
+  DKA provides professional proposal writing services. Let's talk about how we
+  can work together to reach your government business goals. Don't go another
+  day without realizing your company's potential.
+
+# SOURCED: live page sub-headline, verbatim.
+intro: >-
+  Let's talk about how we can work together to reach your government business
+  goals. Don't go another day without realizing your company's potential.
+
+sections:
+  - heading: How to Reach Us
+    body: >-
+      Phone: 561-640-9171. Email: info@dkahome.com.
+
+
+      DKA Main Office: 5713 Corporate Way, Suite 102, West Palm Beach, FL 33407.
+
+
+      Business hours are weekdays, 8:00am to 5:00pm Eastern.
+
+  # SOURCED: the "free, no-obligation consultation with an experienced
+  # consultant" offer on the GSA, CMAS, TXMAS and MAS pages, and "To determine
+  # if a Schedule contract is right for your company, call us."
+  - heading: What a First Conversation Looks Like
+    body: >-
+      The first conversation is a free, no-obligation consultation with an
+      experienced consultant. It costs you nothing and commits you to nothing.
+
+
+      We will want to understand what your company sells, who buys it today, and
+      what you are trying to reach in the public sector. From there we can tell
+      you whether a GSA Schedule makes sense for you, whether you would be better
+      served pursuing individual solicitations first, or whether a state vehicle
+      such as CMAS or TXMAS fits what you are trying to do. Sometimes the honest
+      answer is that the timing is not right, and we would rather say so than
+      sell you a contract you cannot use.
+
+  - heading: Who We Work With
+    body: >-
+      DKA works with companies of all sizes, from firms pursuing their first
+      federal contract to established contractors managing a portfolio of
+      awards. Our clients provide an extremely wide variety of products and
+      services, from custodial to IT, ambulance trips to real estate appraisals,
+      environmental services to mobile asphalt plants.
+
+
+      If you are not sure whether your company is a fit, that is exactly the kind
+      of question the first call is for.
+
+groups:
+  - heading: Before You Call
+    items:
+      - q: What should I have ready?
+        a: >-
+          Nothing formal. It helps if you can describe what your company sells,
+          roughly what your commercial sales look like, and whether you have done
+          any government work before. If you are already registered in SAM.gov or
+          hold a certification such as HUBZone or 8(a), mention it.
+      - q: Do you charge for the initial consultation?
+        a: >-
+          No. The initial consultation is free and carries no obligation.
+      - q: We already have a GSA Schedule. Can you still help?
+        a: >-
+          Yes. A good part of our work is with companies that already hold a
+          Schedule and need catalogs updated, modifications prepared, reporting
+          brought current, or help actually winning work through the contract
+          they hold.
+      - q: Do you only work with companies in Florida?
+        a: >-
+          No. Our office is in West Palm Beach, but our clients hold contracts
+          across many states. One client alone holds 26 federal contracts in 9
+          states.
+
+cta:
+  heading: Ready to Talk?
+  body: >-
+    Call 561-640-9171 or email info@dkahome.com to arrange a free,
+    no-obligation consultation with an experienced consultant.
+  label: Email Us
+  href: "mailto:info@dkahome.com"

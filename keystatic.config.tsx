@@ -118,7 +118,14 @@ export default config({
   ui: {
     brand: { name: 'DKA' },
     navigation: {
-      Pages: ['home', 'about', 'successStoriesPage', 'industriesWeServe', 'faq'],
+      Pages: [
+        'home',
+        'about',
+        'successStoriesPage',
+        'industriesWeServe',
+        'faq',
+        'contact',
+      ],
       Services: [
         'whatWeDo',
         'proposalWriting',
@@ -247,6 +254,7 @@ export default config({
           },
           { label: 'Why companies choose DKA' }
         ),
+        groups: faqGroups,
         cta: ctaBlock,
       },
     }),
@@ -292,6 +300,8 @@ export default config({
           { label: 'Industries' }
         ),
         body: fields.text({ label: 'Closing paragraph', multiline: true }),
+        sections: sectionsBlock,
+        groups: faqGroups,
         cta: ctaBlock,
       },
     }),
@@ -316,6 +326,7 @@ export default config({
         intro: fields.text({ label: 'Intro', multiline: true }),
         stats: statsBlock,
         sections: sectionsBlock,
+        groups: faqGroups,
         cta: ctaBlock,
       },
     }),
@@ -385,7 +396,9 @@ export default config({
       schema: {
         ...pageMeta,
         intro: fields.text({ label: 'Intro', multiline: true }),
+        stats: statsBlock,
         sections: sectionsBlock,
+        groups: faqGroups,
         cta: ctaBlock,
       },
     }),
@@ -393,6 +406,19 @@ export default config({
     cmas: singleton({
       label: 'California Schedules (CMAS)',
       path: 'src/content/pages/california-multiple-award-schedules-cmas',
+      format: { data: 'yaml' },
+      schema: {
+        ...pageMeta,
+        intro: fields.text({ label: 'Intro', multiline: true }),
+        sections: sectionsBlock,
+        groups: faqGroups,
+        cta: ctaBlock,
+      },
+    }),
+
+    contact: singleton({
+      label: 'Contact Us',
+      path: 'src/content/pages/contact-us',
       format: { data: 'yaml' },
       schema: {
         ...pageMeta,

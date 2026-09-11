@@ -672,3 +672,75 @@ handshake, target and analysis clip-art icons are also gone, per CLAUDE.md.
 
 The three-c "Succcess" typo in this page's `<title>` (§ 3.3) is **still
 preserved**. It is indexed. Fixing it is Nate's call, not a migration step.
+
+---
+
+## 12. SEO / AEO pass (2026-09-11)
+
+All 12 routes are now structured `.yaml`. No page is under 400 words.
+
+| | Before | After |
+|---|---|---|
+| Total words in `<main>` | 5,734 | 7,309 |
+| Pages under 400 words | 5 | 0 |
+| Published FAQ answers | 12 | 52 |
+| JSON-LD blocks | 0 | 22 |
+
+### 12.1 Structured data
+
+Two schema types, emitted automatically rather than hand-maintained:
+
+- **`ProfessionalService`** on every page, from `BaseLayout.astro`. Name,
+  founding month, phone, email, postal address, opening hours, areas of
+  expertise. Every value is attested — founding month from `/who-we-are/`, the
+  contact block from `/contact-us/`. Answer engines use this to state who DKA
+  is; without it they infer.
+- **`FAQPage`** on the 10 pages carrying Q&A, generated from the `groups` field
+  in the page data. **Only answered questions are included** — an unanswered one
+  would publish a question with an empty answer, which is worse than omitting it.
+
+Because both are generated from content, they cannot drift out of sync with what
+the page actually says.
+
+### 12.2 Pages built out
+
+| Page | Was | Now | What was added |
+|---|---|---|---|
+| `/contact-us/` | 54 | 416 | Contact block, what a first consultation covers, who DKA works with, 4 questions |
+| `/industries-we-serve/` | 126 | 681 | The empty `body` filled, 4 sections, 4 questions |
+| `/government-proposal-writing-services/` | 277 | 554 | Stat row, 5 questions |
+| `/who-we-are/` | 265 | 419 | 4 questions |
+| `/` | 389 | 616 | 5 top-of-funnel questions |
+
+### 12.3 Where the new words came from
+
+Nothing new is claimed about DKA. The additions are of three kinds:
+
+1. **Restatements of attested copy** in answer form. The proposal-writing FAQ is
+   the four service tiers rewritten as questions; the About FAQ restates the
+   founding date, the E&S relationship and the post-award services.
+2. **Public, verifiable programme facts** — how the GSA Schedule, CMAS and TXMAS
+   work. Independently checkable, not DKA claims.
+3. **Honest framing**, which is the only genuinely new material: that the first
+   conversation is free and commits to nothing, that sometimes the answer is the
+   timing is wrong, that subject-matter expertise comes from the client and
+   procurement expertise from DKA. These are positioning statements rather than
+   factual claims, and they are Nate's to change.
+
+### 12.4 Resolved by this pass
+
+`/industries-we-serve/` had an empty `body` field carrying a TODO since the
+first content pass (§ 7.2). The original draft claimed DKA tailors its
+compliance approach per industry, which is attested nowhere. Rewritten from the
+four service tiers on `/government-proposal-writing-services/`, which are
+attested, making the honest point instead: the technical content changes
+completely between sectors, the discipline that wins does not.
+
+### 12.5 Still open
+
+- `/contact-us/` has **no form**. The HubSpot-vs-Mailgun decision (§ 5.2) is
+  still the blocker. Everything on the page is the copy around it.
+- Two homepage FAQ answers and one About answer make soft positioning claims
+  ("clients work directly with experienced consultants", "several clients have
+  worked with the same people here for over a decade"). The tenure claim is
+  supported by the testimonials; the staffing one is inference. Confirm or cut.

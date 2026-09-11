@@ -73,6 +73,31 @@ sections:
       maintenance assistance like quarterly sales reporting and Industrial
       Funding Fee (IFF) payments.
 
+groups:
+  - heading: Frequently Asked Questions
+    items:
+      - q: How long has DKA been in business?
+        a: >-
+          DeSutter, Kerr & Associates, Inc. was formed in August 1995. Our first
+          client, E&S Diversified Services, is still a client today.
+      - q: How big is DKA?
+        a: >-
+          DKA is a specialist consultancy rather than a large firm, which is the
+          point. Clients work directly with experienced consultants rather than
+          being handed to junior staff. Several clients have worked with the same
+          people here for over a decade.
+      - q: What makes DKA different from other proposal writers?
+        a: >-
+          Two things clients name repeatedly. We stay involved after the award,
+          through contract modifications, required agency plans and ongoing
+          administrative support for the life of the contract. And we do the
+          research to work out whether an opportunity is worth pursuing before
+          you spend money chasing it.
+      - q: Where is DKA located?
+        a: >-
+          Our office is at 5713 Corporate Way, Suite 102, West Palm Beach,
+          Florida. Our clients hold contracts across many states.
+
 cta:
   heading: Ready to Win Your Next Government Contract?
   body: >-

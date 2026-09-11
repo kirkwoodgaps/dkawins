@@ -30,6 +30,47 @@ const canonical = new URL(path, 'https://www.dkawins.com/').href;
 // ---------------------------------------------------------------------------
 const NOINDEX = true;
 
+// Organization schema. Every value here is attested on the live site — the
+// founding month from /who-we-are/, the contact block from /contact-us/.
+// Answer engines read this to state who DKA is; without it they infer.
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': 'https://www.dkawins.com/#organization',
+  name: 'DeSutter, Kerr & Associates, Inc.',
+  alternateName: 'DKA',
+  description:
+    'Government proposal writing and GSA Schedule consulting for companies selling to federal, state and local government.',
+  url: 'https://www.dkawins.com/',
+  foundingDate: '1995-08',
+  telephone: '+1-561-640-9171',
+  email: 'info@dkahome.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '5713 Corporate Way, Suite 102',
+    addressLocality: 'West Palm Beach',
+    addressRegion: 'FL',
+    postalCode: '33407',
+    addressCountry: 'US',
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '08:00',
+    closes: '17:00',
+  },
+  areaServed: { '@type': 'Country', name: 'United States' },
+  knowsAbout: [
+    'GSA Multiple Award Schedule',
+    'Government proposal writing',
+    'California Multiple Award Schedule (CMAS)',
+    'Texas Multiple Award Schedule (TXMAS)',
+    'HUBZone certification',
+    '8(a) certification',
+    'Federal contract modifications',
+  ],
+};
+
 // Footer sitemap: each parent that has children gets its own column, and the
 // flat top-level items collect into one. Derived from the same nav source as
 // the header so the two cannot disagree.
@@ -69,6 +110,9 @@ const footerColumns = [
     {description && <meta property="og:description" content={description} />}
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(organization)} />
+    <slot name="structured-data" />
   </head>
 
   <body>

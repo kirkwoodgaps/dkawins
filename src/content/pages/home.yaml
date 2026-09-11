@@ -165,6 +165,44 @@ whyDka:
     - Full-service support from proposal writing through post-award contract
       management
 
+# Top-of-funnel questions. Every answer is drawn from attested copy elsewhere on
+# the site; nothing new is claimed here. Answer engines quote homepage FAQ blocks
+# heavily, which is why these are the broadest five questions rather than the
+# most detailed.
+groups:
+  - heading: Common Questions
+    items:
+      - q: What does DKA do?
+        a: >-
+          DKA helps businesses win and manage government contracts through expert
+          proposal writing, and helps companies get listed on and maintain the
+          GSA Multiple Award Schedule. Since 1995 our clients have trusted us to
+          identify, pursue, win and maintain contracts at the federal and state
+          level.
+      - q: Do I need a GSA Schedule to sell to the federal government?
+        a: >-
+          No. Plenty of federal work is won through open solicitations without
+          one, and DKA writes those proposals too. A Schedule is worth having
+          when you want agencies to buy from you repeatedly without running a new
+          competition each time.
+      - q: How experienced is DKA?
+        a: >-
+          DeSutter, Kerr & Associates was formed in August 1995. We have
+          contributed to more than 350 contract awards worth over $1.7 billion
+          combined, and secured more than 500 GSA Schedules for client companies.
+      - q: What does it cost to get started?
+        a: >-
+          The first conversation is a free, no-obligation consultation with an
+          experienced consultant. Fee structures for the work itself vary by
+          engagement and scope, and we discuss pricing transparently before any
+          work begins.
+      - q: We are new to government contracting. Is that a problem?
+        a: >-
+          No. Many clients come to DKA having never held a federal contract. The
+          first step is working out whether pursuing government business makes
+          sense for your company, and if so, which opportunities and contract
+          vehicles fit what you sell.
+
 cta:
   # SOURCED: the closing CTA shared by /what-we-do/ and /who-we-are/, verbatim.
   # The draft's "Ready to Grow Your Government Business?" heading and its body

@@ -27,6 +27,14 @@ intro: >-
   contracting offices, increasing your chances of winning each contract you
   pursue.
 
+stats:
+  - value: "1995"
+    label: Writing winning government proposals since
+  - value: "350+"
+    label: Contract awards won for clients
+  - value: "$1.7B+"
+    label: Combined value of client contract awards
+
 sections:
   - heading: Proposal Development Services
     body: >-
@@ -59,6 +67,45 @@ sections:
       (FOIA) research, solicitation analysis for specific requirements,
       researching available contracting resources at the federal, state, county,
       and local levels, and agency-specific monitoring.
+
+groups:
+  - heading: Frequently Asked Questions
+    items:
+      - q: Do you write the whole proposal, or just parts of it?
+        a: >-
+          We develop the written response covering technical, management, quality
+          control, past performance, cost and any other requirement of the
+          solicitation. Every proposal is outlined, collaborated upon, reviewed
+          from an evaluator's standpoint, revised and submitted in its optimal
+          form.
+      - q: How much of my team's time will this take?
+        a: >-
+          Less than writing it yourself, but not none. The content that wins is
+          specific to how your company does business, and that has to come from
+          you. Our job is to draw it out, structure it against the solicitation,
+          and write it so an evaluator can score it.
+      - q: What happens after we submit?
+        a: >-
+          Submission is not the end of the process. DKA provides full
+          post-submittal support, including clarification requests and deficiency
+          reports, best and final offer or final proposal revision preparation,
+          oral presentation preparation, and pre-award survey preparation.
+      - q: What if we win?
+        a: >-
+          Then the post-award work begins. We help prepare the plans and
+          procedures the agency requires, whether before contract start —
+          quality control, staffing, management, subcontractor recruitment,
+          phase-in and transition plans — or after, including contract
+          modifications and ongoing technical and administrative support for the
+          life of the contract.
+      - q: How do you decide which opportunities to pursue?
+        a: >-
+          With research, before the writing starts. That covers Freedom of
+          Information Act requests, solicitation analysis for specific
+          requirements, researching contracting resources at federal, state,
+          county and local levels, and agency-specific monitoring. Not every
+          opportunity is worth the bid, and knowing which to walk away from
+          protects your win rate.
 
 cta:
   heading: Ready to Win Your Next Government Contract?

@@ -54,15 +54,100 @@ industries:
     # SOURCED: homepage, "real estate appraisals".
     - name: Real Estate Appraisal Services
 
-# TODO — NOT SOURCED. The draft's closing paragraph claimed DKA tailors its
-# approach to "full and open competitions to small business set-asides" per
-# industry. Set-aside work is attested in general (the C&S Jones HUBZone case
-# study, and HUBZone / 8(a) certifications on the homepage), but the
-# per-industry compliance claim is not on the site in any form. Left empty rather
-# than written on the firm's behalf — grounded material exists on
-# /government-proposal-writing-services/ (Proposal Development, Post-Submittal,
-# Post-Award, Research) if you want it assembled from there instead.
-body: ""
+# RESOLVED 2026-09-11. The original draft claimed DKA tailors its compliance
+# approach per industry, which is not attested anywhere. Rewritten from the four
+# service tiers on /government-proposal-writing-services/, which ARE attested,
+# and which make the honest point: the work is the same shape in every sector.
+body: >-
+  Across every one of these sectors the work takes the same shape. Read the
+  solicitation properly. Understand what makes this particular company uniquely
+  qualified. Answer what the evaluator was actually asked to score. The technical
+  content changes completely between a custodial contract and an IT services
+  award; the discipline that wins them does not.
+
+sections:
+  - heading: How DKA Works, Whatever Your Industry
+    body: >-
+      Our services break into four areas that apply regardless of sector.
+      Research determines whether an opportunity is worth pursuing at all,
+      covering Freedom of Information Act requests, solicitation analysis and
+      agency-specific monitoring. Proposal development produces the written
+      response across technical, management, quality control, past performance
+      and cost. Post-submittal support handles what comes after the deadline,
+      including clarification requests, deficiency reports, best and final
+      offers, and oral presentation preparation. Post-award support covers the
+      plans and procedures an agency requires, contract modifications, and
+      ongoing technical and administrative assistance for the life of the
+      contract.
+
+
+      What changes between industries is the subject matter expertise we draw out
+      of you. What does not change is knowing how a government evaluator reads a
+      proposal.
+
+  - heading: Certifications and Set-Asides
+    body: >-
+      A large share of federal work is set aside for companies holding a
+      socioeconomic certification. DKA has helped clients obtain HUBZone and 8(a)
+      certifications and then compete for the contracts those certifications open
+      up.
+
+
+      One example is on our success stories page: DKA approached C&S Jones Group
+      in 2015 about two HUBZone set-aside contracts, and together won both, in
+      Nevada and Montana, then two more in Hawaii and Oklahoma. All four are still
+      running.
+
+  - heading: Contract Vehicles by Market
+    body: >-
+      Which vehicle fits depends on who you want to sell to. The GSA Multiple
+      Award Schedule covers federal buyers government-wide. California's CMAS
+      program extends an active federal Schedule to state agencies, cities,
+      counties, school districts and special districts. TXMAS does the equivalent
+      in Texas for state agencies, public universities and Texas SmartBuy
+      members.
+
+
+      Many of our clients hold more than one, because each opens a different set
+      of buyers off work that has already been done once.
+
+  - heading: Don't See Your Industry Here?
+    body: >-
+      The list above is not exhaustive, and it is not meant to be a filter. DKA's
+      clients have sold everything from ambulance transport to real estate
+      appraisal services to mobile asphalt plants to the federal government. If
+      your company sells something a government agency buys, the question is not
+      whether your industry is on a list. It is whether there is a live
+      requirement and whether you are positioned to answer it.
+
+groups:
+  - heading: Frequently Asked Questions
+    items:
+      - q: Does DKA specialise in one industry?
+        a: >-
+          No, and deliberately so. DKA was formed in 1995 serving basic service
+          and maintenance industries, and its expertise broadened over the years
+          to cover virtually all aspects of the federal procurement process. The
+          subject matter expertise comes from you; the procurement expertise
+          comes from us.
+      - q: My industry is highly technical. Can you write about it?
+        a: >-
+          Yes. We develop the written response using input specific to the way
+          your company does business, rather than working from a template. You
+          supply the technical substance and we turn it into a response that
+          answers the solicitation and reads well to an evaluator.
+      - q: Which industries hold GSA Schedules?
+        a: >-
+          The consolidated Multiple Award Schedule spans Large Categories
+          covering IT, professional services, facilities, industrial products and
+          more. Most companies selling a commercial product or service to
+          government can find a Special Item Number that fits.
+      - q: Do you work with companies new to government contracting?
+        a: >-
+          Yes. Many clients come to DKA having never held a federal contract. The
+          first conversation is a free, no-obligation consultation to work out
+          whether pursuing government business makes sense for your company and,
+          if so, where to start."
 
 # ---------------------------------------------------------------------------
 # KEPT REMOVED (agreeing with the draft): a "Federal Agencies We Support" section

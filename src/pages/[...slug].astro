@@ -71,9 +71,35 @@ const description = kind === 'data' ? d.metaDescription : d.description;
 
 // Only rendered for the .mdoc fallback.
 const Content = kind === 'prose' ? (await render(entry)).Content : null;
+
+// FAQPage schema for any page carrying Q&A. Answer engines quote these
+// directly, so only answered questions go in — an empty <dd> would publish a
+// question with no answer.
+const answered = (d.groups ?? []).flatMap((g: any) =>
+  (g.items ?? []).filter((i: any) => i.a?.trim())
+);
+const faqSchema =
+  answered.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: answered.map((i: any) => ({
+          '@type': 'Question',
+          name: i.q,
+          acceptedAnswer: { '@type': 'Answer', text: i.a.trim() },
+        })),
+      }
+    : null;
 ---
 
 <BaseLayout title={title} description={description} path={d.path}>
+  {faqSchema && (
+    <script
+      slot="structured-data"
+      type="application/ld+json"
+      set:html={JSON.stringify(faqSchema)}
+    />
+  )}
   {
     kind === 'prose' ? (
       <article class="section prose-page">
