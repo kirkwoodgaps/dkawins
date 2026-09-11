@@ -536,3 +536,60 @@ and E&S studies are: named, with figures. That would take the collection from
 
 Also flagged: shape 3 cites "compliance matrix development", which is not an
 attested DKA service. Same flag as FAQ item 4 in § 8.
+
+---
+
+## 10. Four pages converted from `.mdoc` to structured `.yaml`
+
+Rewrites supplied 2026-09-11 for CMAS, TXMAS, Government Proposal Writing and
+About (`/who-we-are/`). All four are now `.yaml` pages, editable in Keystatic,
+and their `.mdoc` files drop to archive status under the § 7.4b rule.
+
+Eight of twelve routes are now structured. Four remain `.mdoc`: `/contact-us/`,
+`/gsa-schedule-services/`, `/what-we-do/`, and
+`/gsa-multiple-award-schedules-mas-consolidation/`.
+
+### 10.1 Edits made to the supplied copy
+
+| Page | Draft said | Changed to | Why |
+|---|---|---|---|
+| CMAS | "more than 500 **GSA and state** schedule contracts" | "more than 500 GSA Schedules" | "And state" folds CMAS and TXMAS into a count that does not include them. Third recurrence of the § 3.4 blur. |
+| TXMAS | "over 500 **GSA and state** schedule contract awards" | "more than 500 GSA Schedules" | Same. |
+| About | "500 GSA Schedule **contracts**" | "500+ GSA Schedules" (stat tile) | Same. |
+| About | "environmental services to **specialized equipment**" | "...to mobile asphalt plants" | Matches the live page, and the same edit made on `/success-stories/`. The odd specific example is more memorable than the category label and it is true. |
+
+### 10.2 Content restored that the rewrite dropped
+
+The About rewrite dropped the live page's paragraph on **ongoing GSA Schedule
+support** — GSA Advantage listing, catalog modifications, quarterly sales
+reporting, Industrial Funding Fee payments. That is the most concrete
+description of what DKA does for Schedule holders after award, it is attested,
+and it is the passage a prospect reads to decide whether DKA is real. Restored
+as its own section.
+
+### 10.3 Claims checked and allowed
+
+- **"One of the largest state markets in the country"** (CMAS and TXMAS). An
+  earlier pass removed this phrase from the homepage draft. Allowing it here:
+  California and Texas are the two largest state economies in the US, so it is a
+  verifiable fact about the state, not an unsupported claim about DKA. The
+  homepage version was removed because it was bundled as DKA marketing.
+- **Program facts** across both state pages — DGS administering CMAS, the Texas
+  Comptroller's Statewide Procurement Division and Texas SmartBuy for TXMAS,
+  eligibility resting on an existing competitively awarded contract — are all
+  accurate and independently verifiable, and the TXMAS description matches the
+  live page's own wording.
+- **Proposal Writing** is the best-sourced of the four: a light copy-edit of the
+  live page section for section, with nothing added. It also fixes § 4.6 for
+  that route, which carried two `<h1>`s and used a heading tag for the phone
+  number.
+- No FAQ answer on either state page commits to a timeline. The CMAS and TXMAS
+  answers say timelines vary, which is the right call and avoids the problem
+  flagged as item 7 in § 8.
+
+### 10.4 Still carried forward
+
+`/who-we-are/` still serves the **same `<title>` and `<meta name="description">`
+as the homepage** (§ 3.2), and that description still says "more than 300", the
+stale count (§ 3.4). Both preserved rather than edited, because fixing them is a
+decision about two pages at once, not a migration step. Worth doing.

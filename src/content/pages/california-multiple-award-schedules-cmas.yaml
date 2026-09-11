@@ -1,0 +1,99 @@
+# CMAS page. Replaces the .mdoc extraction for this route, which becomes archive.
+#
+# Nate's copy, 2026-09-11. One edit, flagged inline: the "500 GSA and state
+# schedule contracts" phrasing. See MIGRATION-NOTES.md § 10.
+
+# PRESERVED VERBATIM from the live <title>.
+title: "California Multiple Award Schedules (CMAS) - DeSutter, Kerr & Associates"
+path: /california-multiple-award-schedules-cmas/
+heading: California Multiple Award Schedule (CMAS) Program Services
+
+# This page has NO <meta name="description"> on the live site (§ 3.1), so there
+# is nothing to preserve. Written from the intro below.
+metaDescription: >-
+  DKA helps companies extend an existing federal GSA Schedule into a California
+  Multiple Award Schedule (CMAS) contract, and keeps it compliant after award.
+
+# EDIT: the draft read "more than 500 GSA and state schedule contracts". The
+# confirmed metric is 500+ GSA Schedules — "and state" silently folds CMAS and
+# TXMAS into a count that does not include them. This is the third time that
+# blur has come up; see § 3.4.
+intro: >-
+  The California Multiple Award Schedule (CMAS) program allows California state
+  and local government agencies to purchase products and services directly from
+  suppliers who already hold an active federal GSA Schedule contract. For
+  companies looking to expand their government business into one of the largest
+  state markets in the country, a CMAS contract is a natural next step. DKA's
+  schedule specialists, who have helped secure more than 500 GSA Schedules,
+  guide companies through every stage of the CMAS application and maintenance
+  process.
+
+sections:
+  - heading: What Is the CMAS Program?
+    body: >-
+      Administered by the California Department of General Services (DGS), CMAS
+      extends the pricing, terms, and product or service listings already
+      established under a supplier's federal GSA Schedule to California state and
+      local buyers. Because CMAS piggybacks on an existing federal award, the
+      application process is generally faster than pursuing a brand-new state
+      contract vehicle from scratch.
+
+  - heading: Who Can Benefit from a CMAS Contract?
+    body: >-
+      Any company that already holds an active GSA Multiple Award Schedule
+      contract and wants to sell to California state agencies, cities, counties,
+      school districts, or special districts is a candidate for CMAS. It is
+      especially valuable for IT, professional services, and equipment suppliers
+      who want a streamlined path into California's public sector procurement
+      market without duplicating the effort spent winning their federal schedule.
+
+  - heading: "CMAS vs. Federal GSA Schedules: Key Differences"
+    body: >-
+      While CMAS pricing and product listings must mirror your federal GSA
+      Schedule, the CMAS contract itself is issued and administered separately by
+      the State of California, has its own contract number, and is subject to
+      state-specific terms, renewal cycles, and reporting requirements.
+      Maintaining consistency between your federal and state schedules is
+      essential to remain compliant with both programs.
+
+  - heading: How DKA Helps You Secure and Maintain a CMAS Contract
+    body: >-
+      DKA prepares your CMAS application package, ensures your California pricing
+      and product listings correctly mirror your federal GSA Schedule, and
+      manages the submission process with the Department of General Services.
+      Once awarded, we help with contract renewals, price list updates, and any
+      modifications needed to keep your CMAS contract active and aligned with
+      your federal schedule.
+
+groups:
+  - heading: Frequently Asked Questions
+    items:
+      - q: Do I need a federal GSA Schedule before applying for CMAS?
+        a: >-
+          Yes. CMAS eligibility is based on holding an active GSA Multiple Award
+          Schedule contract. If you do not yet have a federal schedule, DKA can
+          help you pursue that first.
+      - q: How long does a CMAS contract last?
+        a: >-
+          CMAS contracts are typically issued for a set number of years and must
+          be renewed periodically. DKA tracks your renewal dates and handles the
+          paperwork so your contract never lapses.
+      - q: Can I sell to any California public agency with a CMAS contract?
+        a: >-
+          CMAS contracts can be used by California state agencies as well as many
+          local governments, school districts, and special districts, giving you
+          access to a broad range of public sector buyers.
+      - q: What happens if my federal GSA Schedule pricing changes?
+        a: >-
+          Any pricing or product changes to your federal schedule generally need
+          to be mirrored on your CMAS contract. DKA monitors both contracts to
+          keep them aligned and compliant.
+
+cta:
+  heading: Expand Into California's Public Sector with a CMAS Contract
+  body: >-
+    Let DKA handle the details of your CMAS application and ongoing maintenance
+    so you can focus on winning California business. Reach out today for a free
+    consultation.
+  label: Contact Us Today
+  href: /contact-us/

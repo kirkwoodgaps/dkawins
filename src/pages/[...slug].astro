@@ -136,6 +136,22 @@ const Content = kind === 'prose' ? (await render(entry)).Content : null;
           </section>
         )}
 
+        {/* Generic prose sections: heading plus one or more paragraphs.
+            Used by the service and about pages, which are narrative rather than
+            card- or list-shaped. */}
+        {d.sections && (
+          <section class="section">
+            <div class="wrap">
+              {d.sections.map((sec: any) => (
+                <div class="prose-section">
+                  <h2>{sec.heading}</h2>
+                  {paragraphs(sec.body).map((para: string) => <p>{para}</p>)}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {d.services && (
           <section class="section">
             <div class="wrap">
@@ -339,6 +355,19 @@ const Content = kind === 'prose' ? (await render(entry)).Content : null;
     font-size: var(--size-small);
     color: var(--color-text-muted);
     max-width: 28ch;
+  }
+
+  /* ---- Prose sections ---- */
+  .prose-section + .prose-section {
+    margin-block-start: var(--space-12);
+  }
+
+  .prose-section p {
+    max-width: var(--measure-prose);
+  }
+
+  .prose-section p + p {
+    margin-block-start: var(--space-4);
   }
 
   /* ---- Cards ---- */

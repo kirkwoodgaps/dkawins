@@ -1,0 +1,83 @@
+# About page. Replaces the .mdoc extraction for /who-we-are/, which becomes
+# archive. Nate's copy, 2026-09-11.
+#
+# The path stays /who-we-are/ — it is one of the ten indexed URLs and must not
+# change, even though the page now calls itself About.
+
+# PRESERVED VERBATIM from the live <title>.
+#
+# KNOWN SEO BUG, preserved deliberately: this is the exact same <title> and
+# <meta name="description"> the homepage serves. It looks like the WordPress
+# site-wide default leaking through rather than a choice. See § 3.2. Worth
+# fixing, but that is a decision, not a migration step — say the word.
+title: "Government Proposal Writing & GSA Schedule Services"
+path: /who-we-are/
+heading: About DeSutter, Kerr & Associates
+
+# PRESERVED VERBATIM from the live <meta name="description">. Note it still says
+# "more than 300", the stale count — same tag as the homepage, same § 3.4 issue.
+# Left alone here rather than edited in two places; fix both together.
+metaDescription: >-
+  DKA has helped its clients win more than 300 government contracts to provide an
+  extremely wide variety of products and services, from custodial to IT, ambulance
+  trips to real estate appraisals, environmental services to mobile asphalt
+  plants, etc.
+
+intro: >-
+  DeSutter, Kerr & Associates, Inc. (DKA) was formed in August 1995 with a
+  mission of helping small businesses win government contracts in basic service
+  and maintenance industries. Over the years, our expertise has broadened to
+  cover virtually all aspects of the federal procurement process.
+
+# All three confirmed by Nate. Wording normalised: the draft said "500 GSA
+# Schedule contracts", which blurs the two counts settled in § 3.4.
+stats:
+  - value: "1995"
+    label: Winning federal contracts for clients since
+  - value: "350+"
+    label: Contract awards won for clients
+  - value: "$1.7B+"
+    label: Combined value of client contract awards
+  - value: "500+"
+    label: GSA Schedules secured for client companies
+
+sections:
+  - heading: Our Mission
+    body: >-
+      The core of our services remains helping our clients respond to government
+      solicitations. Nothing is as rewarding as helping our clients grow their
+      businesses through winning government contracts and building lasting
+      federal customer relationships.
+
+  # EDIT: "specialized equipment" restored to "mobile asphalt plants", matching
+  # the live page and the same edit made on /success-stories/. The odd specific
+  # example is more memorable than the category label, and it is true.
+  - heading: Our Track Record
+    body: >-
+      DKA has helped its clients win hundreds of government contracts to provide
+      a wide variety of products and services, from logistics management to IT,
+      professional staffing to medical services, and environmental services to
+      mobile asphalt plants. We've also helped clients obtain HUBZone and 8(a)
+      certifications and contract vehicles such as CMAS, TXMAS, and the GSA
+      Schedule.
+
+  # RESTORED from the live page. The rewrite dropped this entirely. It is the
+  # most concrete description of what DKA actually does for Schedule holders
+  # after award, and it is attested. The FAQ covers similar ground, but this is
+  # the page a prospect reads to decide whether DKA is real.
+  - heading: Ongoing GSA Schedule Support
+    body: >-
+      With regard to the GSA Schedule, not only have we helped hundreds of
+      companies get on the Schedule, we've also helped them list their products
+      and services on GSA Advantage, modify their GSA catalogs, and provide other
+      maintenance assistance like quarterly sales reporting and Industrial
+      Funding Fee (IFF) payments.
+
+cta:
+  heading: Ready to Win Your Next Government Contract?
+  body: >-
+    Whether you're pursuing your first federal contract or looking to secure a
+    spot on the GSA Schedule, DKA's team is ready to help. Contact us today for a
+    free, no-obligation consultation.
+  label: Contact Us Today
+  href: /contact-us/

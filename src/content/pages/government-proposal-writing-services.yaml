@@ -1,0 +1,70 @@
+# Proposal Writing page. Replaces the .mdoc extraction, which becomes archive.
+#
+# This is the best-sourced of the four pages rewritten on 2026-09-11: it is a
+# light copy-edit of the live page's own wording, section for section. Nothing
+# was added and nothing was claimed that the site does not already claim.
+#
+# It also fixes MIGRATION-NOTES.md § 4.6 for this route: the live page carries
+# TWO <h1>s and uses a heading tag for the phone number. One h1 here.
+
+# PRESERVED VERBATIM from the live <title>.
+title: "Government Proposal Writing Services - DeSutter, Kerr & Associates"
+path: /government-proposal-writing-services/
+heading: Professional Government Proposal Writing Services
+
+# No <meta name="description"> on the live site (§ 3.1). Written from the intro,
+# which is itself the live page's own copy.
+metaDescription: >-
+  Since 1995, DKA has deciphered thousands of government solicitations and
+  developed hundreds of winning proposal responses for clients across numerous
+  industries.
+
+intro: >-
+  Since 1995, DKA has successfully deciphered thousands of government
+  solicitations across numerous industries and developed hundreds of winning
+  proposal responses. We understand what it takes to consistently prepare
+  proposals that meet and surpass the requirements and expectations of government
+  contracting offices, increasing your chances of winning each contract you
+  pursue.
+
+sections:
+  - heading: Proposal Development Services
+    body: >-
+      We develop the written proposal response covering technical, management,
+      quality control, past performance, cost, and any other requirements of the
+      solicitation, using input specific to how your company does business. Every
+      proposal is outlined, collaborated upon, reviewed from an evaluator's
+      standpoint, revised, and submitted in its optimal form.
+
+  - heading: Post-Submittal Support
+    body: >-
+      DKA offers full post-submittal phase support, including common contracting
+      office requirements such as Clarification Requests and Deficiency Reports
+      (CRs/DRs), Best and Final Offer (BAFO)/Final Proposal Revision (FPR), oral
+      presentation preparation assistance, and pre-award survey preparation.
+
+  - heading: Post-Award Support
+    body: >-
+      Our full-coverage post-award support includes assistance preparing plans
+      and procedures required by the agency, such as quality control, staffing,
+      management, personnel and subcontractor recruitment, vendor/supplier
+      acquisition, and contract phase-in/transition plans, along with negotiation
+      of contract modifications and ongoing technical and administrative support
+      throughout the life of the contract.
+
+  - heading: Research
+    body: >-
+      DKA routinely conducts thorough research on contracting opportunities to
+      determine how and whether to proceed, including Freedom of Information Act
+      (FOIA) research, solicitation analysis for specific requirements,
+      researching available contracting resources at the federal, state, county,
+      and local levels, and agency-specific monitoring.
+
+cta:
+  heading: Ready to Win Your Next Government Contract?
+  body: >-
+    Whether you're pursuing your first federal contract or looking to secure a
+    spot on the GSA Schedule, DKA's team is ready to help. Contact us today for a
+    free, no-obligation consultation.
+  label: Contact Us Today
+  href: /contact-us/

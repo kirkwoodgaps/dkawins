@@ -71,13 +71,55 @@ const statsBlock = fields.array(
   }
 );
 
+// Narrative sections: a heading and one or more paragraphs. Used by the
+// service and about pages, which are prose rather than cards or lists.
+const sectionsBlock = fields.array(
+  fields.object({
+    heading: fields.text({ label: 'Heading' }),
+    body: fields.text({
+      label: 'Body',
+      description: 'Separate paragraphs with a blank line.',
+      multiline: true,
+    }),
+  }),
+  {
+    label: 'Sections',
+    itemLabel: (props) => props.fields.heading.value || 'Section',
+  }
+);
+
+const faqGroups = fields.array(
+  fields.object({
+    heading: fields.text({ label: 'Group heading' }),
+    items: fields.array(
+      fields.object({
+        q: fields.text({ label: 'Question' }),
+        a: fields.text({
+          label: 'Answer',
+          description: 'Leave empty to hide this question from the page.',
+          multiline: true,
+        }),
+      }),
+      {
+        label: 'Questions',
+        itemLabel: (props) => props.fields.q.value || 'Question',
+      }
+    ),
+  }),
+  {
+    label: 'Question groups',
+    itemLabel: (props) => props.fields.heading.value || 'Group',
+  }
+);
+
 export default config({
   storage: { kind: 'local' },
 
   ui: {
     brand: { name: 'DKA' },
     navigation: {
-      Pages: ['home', 'successStoriesPage', 'industriesWeServe', 'faq'],
+      Pages: ['home', 'about', 'successStoriesPage', 'industriesWeServe', 'faq'],
+      Services: ['proposalWriting', 'cmas', 'txmas'],
       'Success Stories': ['successStories'],
     },
   },
@@ -254,29 +296,58 @@ export default config({
       schema: {
         ...pageMeta,
         intro: fields.text({ label: 'Intro', multiline: true }),
-        groups: fields.array(
-          fields.object({
-            heading: fields.text({ label: 'Group heading' }),
-            items: fields.array(
-              fields.object({
-                q: fields.text({ label: 'Question' }),
-                a: fields.text({
-                  label: 'Answer',
-                  description: 'Leave empty to hide this question from the page.',
-                  multiline: true,
-                }),
-              }),
-              {
-                label: 'Questions',
-                itemLabel: (props) => props.fields.q.value || 'Question',
-              }
-            ),
-          }),
-          {
-            label: 'Question groups',
-            itemLabel: (props) => props.fields.heading.value || 'Group',
-          }
-        ),
+        groups: faqGroups,
+      },
+    }),
+
+    about: singleton({
+      label: 'About (Who We Are)',
+      path: 'src/content/pages/who-we-are',
+      format: { data: 'yaml' },
+      schema: {
+        ...pageMeta,
+        intro: fields.text({ label: 'Intro', multiline: true }),
+        stats: statsBlock,
+        sections: sectionsBlock,
+        cta: ctaBlock,
+      },
+    }),
+
+    proposalWriting: singleton({
+      label: 'Government Proposal Writing',
+      path: 'src/content/pages/government-proposal-writing-services',
+      format: { data: 'yaml' },
+      schema: {
+        ...pageMeta,
+        intro: fields.text({ label: 'Intro', multiline: true }),
+        sections: sectionsBlock,
+        cta: ctaBlock,
+      },
+    }),
+
+    cmas: singleton({
+      label: 'California Schedules (CMAS)',
+      path: 'src/content/pages/california-multiple-award-schedules-cmas',
+      format: { data: 'yaml' },
+      schema: {
+        ...pageMeta,
+        intro: fields.text({ label: 'Intro', multiline: true }),
+        sections: sectionsBlock,
+        groups: faqGroups,
+        cta: ctaBlock,
+      },
+    }),
+
+    txmas: singleton({
+      label: 'Texas Schedules (TXMAS)',
+      path: 'src/content/pages/texas-multiple-award-schedule-program',
+      format: { data: 'yaml' },
+      schema: {
+        ...pageMeta,
+        intro: fields.text({ label: 'Intro', multiline: true }),
+        sections: sectionsBlock,
+        groups: faqGroups,
+        cta: ctaBlock,
       },
     }),
   },

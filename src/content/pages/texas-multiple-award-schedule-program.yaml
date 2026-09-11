@@ -1,0 +1,93 @@
+# TXMAS page. Replaces the .mdoc extraction for this route, which becomes archive.
+# Nate's copy, 2026-09-11. Same one edit as CMAS — see MIGRATION-NOTES.md § 10.
+
+# PRESERVED VERBATIM from the live <title>, caps and all.
+title: "TEXAS MULTIPLE AWARD SCHEDULE PROGRAM - DeSutter, Kerr & Associates"
+path: /texas-multiple-award-schedule-program/
+heading: Texas Multiple Award Schedule (TXMAS) Program Services
+
+# No <meta name="description"> on the live site (§ 3.1). Written fresh.
+metaDescription: >-
+  DKA helps companies adapt an existing GSA or state schedule into a Texas
+  Multiple Award Schedule (TXMAS) contract, and manages renewals after award.
+
+# EDIT: "over 500 GSA and state schedule contract awards" -> "more than 500 GSA
+# Schedules", the confirmed metric. See § 3.4.
+intro: >-
+  The Texas Multiple Award Schedule (TXMAS) program lets Texas state agencies,
+  universities, and local governments purchase goods and services from
+  contractors who already hold a federal GSA Schedule, another state's schedule,
+  or a comparable competitively awarded contract. For businesses that have
+  already invested in winning a federal or state schedule, TXMAS offers a fast,
+  cost-effective path into one of the largest state government markets in the
+  country. DKA's schedule specialists, who have supported more than 500 GSA
+  Schedules, help companies navigate the TXMAS application and renewal process
+  from start to finish.
+
+sections:
+  - heading: What Is the TXMAS Program?
+    body: >-
+      Administered by the Texas Comptroller of Public Accounts through the
+      Statewide Procurement Division, TXMAS adapts an existing, competitively
+      awarded government contract, such as a federal GSA Schedule, into a
+      Texas-specific contract vehicle. This allows Texas purchasing entities,
+      including agencies participating in the Texas SmartBuy program, to buy from
+      your company without running a brand-new competitive solicitation.
+
+  - heading: Who Qualifies for a TXMAS Contract?
+    body: >-
+      Companies that currently hold an active federal GSA Schedule, an eligible
+      state or local government contract, or another qualifying cooperative
+      purchasing agreement are generally eligible to apply for a corresponding
+      TXMAS contract. The Texas contract terms and pricing are typically based on
+      the underlying contract you already hold.
+
+  - heading: Benefits of Holding a TXMAS Contract
+    body: >-
+      A TXMAS contract gives you direct access to Texas state agencies and Texas
+      SmartBuy members without the time and expense of a separate competitive bid
+      process. It also strengthens your overall government contracting portfolio,
+      allowing you to market a proven, competitively awarded contract vehicle to
+      an entirely new set of public sector buyers across the state.
+
+  - heading: How DKA Helps You Navigate the TXMAS Process
+    body: >-
+      DKA reviews your existing federal or state schedule to confirm TXMAS
+      eligibility, prepares your application package for the Statewide
+      Procurement Division, and ensures your Texas pricing and terms are properly
+      aligned with your underlying contract. We also manage renewals and
+      modifications so your TXMAS contract stays active and compliant year after
+      year.
+
+groups:
+  - heading: Frequently Asked Questions
+    items:
+      - q: Do I need an existing GSA Schedule to apply for TXMAS?
+        a: >-
+          Typically yes. TXMAS contracts are generally based on an existing,
+          competitively awarded contract such as a federal GSA Schedule. If you
+          don't yet have one, DKA can help you pursue that first.
+      - q: Which Texas entities can purchase through TXMAS?
+        a: >-
+          Texas state agencies, public universities, and local governments that
+          participate in the Texas SmartBuy cooperative purchasing program can
+          generally purchase through an active TXMAS contract.
+      - q: How long does it take to get a TXMAS contract in place?
+        a: >-
+          Because TXMAS builds on a contract you already hold, the review process
+          is often quicker than a full competitive solicitation, though timelines
+          vary depending on the completeness of your application and current
+          processing volume.
+      - q: Does DKA help maintain my TXMAS contract after award?
+        a: >-
+          Yes. DKA provides ongoing support including renewals, pricing updates,
+          and modifications to keep your TXMAS contract current and aligned with
+          your underlying federal or state schedule.
+
+cta:
+  heading: Bring Your Federal Schedule Success to Texas
+  body: >-
+    DKA makes it easy to extend your existing schedule contract into the Texas
+    public sector market through TXMAS. Reach out today for a free consultation.
+  label: Contact Us Today
+  href: /contact-us/
