@@ -35,6 +35,26 @@ const pages = defineCollection({
     .passthrough(),
 });
 
+/**
+ * One entry per client. `kind` splits case studies from testimonials, per the
+ * content model in CLAUDE.md. Authored and edited through Keystatic.
+ */
+const successStories = defineCollection({
+  loader: glob({ pattern: '*.yaml', base: './src/content/success-stories' }),
+  schema: z.object({
+    client: z.string(),
+    kind: z.enum(['caseStudy', 'testimonial']),
+    order: z.number().default(99),
+    // Path string rather than image() — the logos are not downloaded yet and
+    // image() fails the build on a missing file. Swap once they land.
+    logo: z.string().optional(),
+    heading: z.string().optional(),
+    author: z.string().optional(),
+    role: z.string().optional(),
+    body: z.string(),
+  }),
+});
+
 const archive = defineCollection({
   loader: glob({ pattern: '*.mdoc', base: './src/content/pages' }),
   schema: z.object({
@@ -47,4 +67,4 @@ const archive = defineCollection({
   }),
 });
 
-export const collections = { pages, archive };
+export const collections = { pages, successStories, archive };
