@@ -15,6 +15,18 @@ interface Props {
 const { title, description, path } = Astro.props;
 const canonical = new URL(path, 'https://www.dkawins.com/').href;
 
+// The canonical URL is always the real domain — that is what it is for. The
+// og:image is not: it has to point at a file that actually exists on whatever
+// host is serving this page, or a link shared from a preview deployment
+// previews with a broken image. Vercel exposes its production domain at build
+// time, so this resolves to the vercel.app host today and to www.dkawins.com
+// the moment the custom domain is attached. No change needed at cutover.
+const deployOrigin =
+  process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : (Astro.site?.origin ?? 'https://www.dkawins.com');
+const ogImage = new URL('/og-image.png', deployOrigin).href;
+
 // ---------------------------------------------------------------------------
 // PRE-LAUNCH — REMOVE AT CUTOVER.
 //
@@ -96,7 +108,7 @@ const footerColumns = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <meta name="generator" content={Astro.generator} />
 
     {NOINDEX && <meta name="robots" content="noindex, nofollow" />}
@@ -110,6 +122,16 @@ const footerColumns = [
     {description && <meta property="og:description" content={description} />}
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DeSutter, Kerr & Associates" />
+    {/* Without this, a link pasted into email or Slack previews as a bare URL
+        with no image. 1200x630 is the size both Open Graph and Twitter expect. */}
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    {description && <meta name="twitter:description" content={description} />}
+    <meta name="twitter:image" content={ogImage} />
 
     <script type="application/ld+json" set:html={JSON.stringify(organization)} />
     <slot name="structured-data" />

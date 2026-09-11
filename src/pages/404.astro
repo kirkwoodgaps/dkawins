@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { primaryNav } from '../nav';
+---
+
+<BaseLayout
+  title="Page Not Found - DeSutter, Kerr & Associates"
+  description="The page you were looking for does not exist."
+  path="/404/"
+>
+  <section class="section">
+    <div class="wrap">
+      <p class="code">404</p>
+      <h1>We can't find that page</h1>
+      <p class="lede">
+        The link may be out of date, or the address may have a typo in it. Here
+        is everything on the site.
+      </p>
+
+      <nav aria-label="All pages">
+        <ul class="all-pages">
+          <li><a href="/">Home</a></li>
+          {
+            primaryNav.map((item) => (
+              <>
+                <li>
+                  <a href={item.href}>{item.label}</a>
+                </li>
+                {item.children?.map((child) => (
+                  <li class="all-pages__child">
+                    <a href={child.href}>{child.label}</a>
+                  </li>
+                ))}
+              </>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <p class="help">
+        Still stuck? Call <a href="tel:5616409171">561-640-9171</a> or email
+        <a href="mailto:info@dkahome.com">info@dkahome.com</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .section {
+    padding-block: var(--section-pad);
+  }
+
+  .code {
+    font-family: var(--font-display);
+    font-size: var(--size-stat);
+    line-height: 1;
+    color: var(--color-accent);
+    margin: 0 0 var(--space-4);
+  }
+
+  h1 {
+    font-size: var(--size-h1);
+    max-width: 18ch;
+  }
+
+  .lede {
+    font-size: var(--size-lede);
+    color: var(--color-text-muted);
+    margin-block: var(--space-6) var(--space-12);
+  }
+
+  .all-pages {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-3);
+    max-width: 60rem;
+  }
+
+  .all-pages__child a::before {
+    content: '— ';
+    color: var(--color-text-muted);
+  }
+
+  .help {
+    margin-block-start: var(--space-12);
+    color: var(--color-text-muted);
+  }
+</style>
