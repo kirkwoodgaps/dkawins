@@ -27,10 +27,16 @@
   --font-display: ui-serif, Georgia, 'Times New Roman', serif;
   --font-body: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
 
-  /* Fluid scale. Big jump from h1 to body so hierarchy reads at a glance. */
-  --size-h1: clamp(2.5rem, 1.6rem + 4.2vw, 4.5rem);
-  --size-h2: clamp(1.75rem, 1.3rem + 2vw, 2.5rem);
-  --size-h3: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+  /* Fluid scale. Big jump from h1 to body so hierarchy reads at a glance.
+     ONE scale, shared by the structured pages and the prose pages. Previously
+     h1 ran to 72px on a .yaml page but capped at 40px on a .mdoc page, so the
+     page title nearly doubled depending on which page you landed on. */
+  --size-h1: clamp(2.25rem, 1.8rem + 2.1vw, 3.25rem); /* 36 -> 52px */
+  --size-h2: clamp(1.5rem, 1.32rem + 0.9vw, 2rem); /* 24 -> 32px */
+  --size-h3: clamp(1.1875rem, 1.12rem + 0.33vw, 1.375rem); /* 19 -> 22px */
+  /* Intro/lede text. Sits between h3 and body, and is body-weight, so it reads
+     as an opening paragraph rather than a fourth heading level. */
+  --size-lede: clamp(1.1875rem, 1.1rem + 0.4vw, 1.375rem);
   --size-body: clamp(1.0625rem, 1.02rem + 0.2vw, 1.125rem); /* 17 -> 18px */
   --size-small: 0.9375rem;
   --size-stat: clamp(2.25rem, 1.6rem + 2.8vw, 3.5rem);

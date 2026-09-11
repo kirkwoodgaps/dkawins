@@ -42,6 +42,11 @@ const pageMeta = {
     description: 'The search-result snippet. Aim for 150-160 characters.',
     multiline: true,
   }),
+  heading: fields.text({
+    label: 'Visible heading',
+    description:
+      'The headline shown on the page. Leave empty to reuse the page title. Set it when the page title carries an SEO suffix you do not want on screen.',
+  }),
 };
 
 // The closing call to action, used at the bottom of every page.

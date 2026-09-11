@@ -12,6 +12,11 @@
 title: "Government Contract Success Stories | Winning Government Contracts"
 path: /success-stories/
 
+# The visible <h1>. Without this the page rendered its SEO <title> on screen,
+# pipe and all: "Government Contract Success Stories | Winning Government
+# Contracts". This is the live site's own h1.
+heading: DKA Success Stories
+
 # PRESERVED VERBATIM from the live <meta name="description">.
 metaDescription: >-
   Hundreds of government contractors have utilized DKA's proposal writing

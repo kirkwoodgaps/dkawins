@@ -103,7 +103,9 @@ const Content = kind === 'prose' ? (await render(entry)).Content : null;
         {!d.hero && (
           <section class="section section--tight">
             <div class="wrap">
-              <h1>{d.title}</h1>
+              {/* `title` is the SEO <title>, which on some pages carries a
+                  pipe-separated suffix. `heading` is the visible one. */}
+              <h1>{d.heading || d.title}</h1>
               {d.intro && <p class="lede">{d.intro}</p>}
             </div>
           </section>
@@ -284,7 +286,7 @@ const Content = kind === 'prose' ? (await render(entry)).Content : null;
   }
 
   .lede {
-    font-size: calc(var(--size-body) * 1.15);
+    font-size: var(--size-lede);
     color: var(--color-text-muted);
   }
 
@@ -485,16 +487,45 @@ const Content = kind === 'prose' ? (await render(entry)).Content : null;
   }
 
   /* ---- Prose fallback ---- */
+  /* The extracted WordPress markup uses heading levels for sizing rather than
+     structure (MIGRATION-NOTES.md § 4.6): h3 carries body copy, h5 carries the
+     page lede, and one page has two h1s. These rules map the old levels onto
+     the same three sizes the structured pages use, so a page title is the same
+     size on every page regardless of which source it came from. */
   .prose-page :global(h1) {
-    font-size: var(--size-h2);
+    font-size: var(--size-h1);
+    margin-block-end: var(--space-6);
   }
 
-  .prose-page :global(h2),
+  /* A second h1 on the page is a markup artifact, not a second page title.
+     Demote it visually; the tag itself stays as extracted. */
+  .prose-page :global(h1 ~ h1) {
+    font-size: var(--size-h2);
+    margin-block: var(--space-12) var(--space-4);
+  }
+
+  .prose-page :global(h2) {
+    font-size: var(--size-h2);
+    margin-block: var(--space-12) var(--space-4);
+  }
+
   .prose-page :global(h3),
-  .prose-page :global(h4),
-  .prose-page :global(h5) {
+  .prose-page :global(h4) {
     font-size: var(--size-h3);
     margin-block: var(--space-8) var(--space-3);
+  }
+
+  /* h5 is the old site's intro line, not a heading. Rendered as lede text it
+     stops competing with the real headings around it. */
+  .prose-page :global(h5) {
+    font-family: var(--font-body);
+    font-size: var(--size-lede);
+    font-weight: 400;
+    line-height: var(--leading-body);
+    letter-spacing: normal;
+    color: var(--color-text-muted);
+    max-width: var(--measure-prose);
+    margin-block: var(--space-4) var(--space-8);
   }
 
   .prose-page :global(p) {

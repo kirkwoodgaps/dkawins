@@ -30,6 +30,8 @@ const pages = defineCollection({
       title: z.string(),
       path: z.string().startsWith('/').endsWith('/').or(z.literal('/')),
       metaDescription: z.string().optional(),
+      // Visible <h1>, when it should differ from the SEO title.
+      heading: z.string().optional(),
       intro: z.string().optional(),
     })
     .passthrough(),
