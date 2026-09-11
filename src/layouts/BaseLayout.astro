@@ -1,5 +1,6 @@
 ---
 import '../styles/tokens.css';
+import { primaryNav, isCurrent } from '../nav';
 
 interface Props {
   title: string;
@@ -9,6 +10,24 @@ interface Props {
 
 const { title, description, path } = Astro.props;
 const canonical = new URL(path, 'https://www.dkawins.com/').href;
+
+// Footer sitemap: each parent that has children gets its own column, and the
+// flat top-level items collect into one. Derived from the same nav source as
+// the header so the two cannot disagree.
+const footerColumns = [
+  ...primaryNav
+    .filter((item) => item.children?.length)
+    .map((item) => ({
+      heading: item.label,
+      href: item.href,
+      links: item.children!,
+    })),
+  {
+    heading: 'Company',
+    href: null,
+    links: primaryNav.filter((item) => !item.children?.length),
+  },
+];
 ---
 
 <!doctype html>
@@ -37,12 +56,58 @@ const canonical = new URL(path, 'https://www.dkawins.com/').href;
     <header class="site-header">
       <div class="wrap site-header__inner">
         <a class="site-header__brand" href="/">DeSutter, Kerr &amp; Associates</a>
+
         <nav aria-label="Primary">
           <ul class="site-nav">
-            <li><a href="/what-we-do/">What We Do</a></li>
-            <li><a href="/who-we-are/">Who We Are</a></li>
-            <li><a href="/success-stories/">Success Stories</a></li>
-            <li><a href="/contact-us/">Contact</a></li>
+            {
+              primaryNav.map((item) =>
+                item.children?.length ? (
+                  <li>
+                    {/* <details> rather than a scripted menu: it opens on click
+                        and on Enter, and is reachable by keyboard with no JS.
+                        The script below only adds close-on-Escape and
+                        close-on-outside-click. */}
+                    <details class="menu">
+                      <summary
+                        class="menu__summary"
+                        data-current={isCurrent(item, path) ? '' : undefined}
+                      >
+                        {item.label}
+                      </summary>
+                      <ul class="menu__list">
+                        <li>
+                          <a
+                            href={item.href}
+                            aria-current={path === item.href ? 'page' : undefined}
+                          >
+                            {item.label} overview
+                          </a>
+                        </li>
+                        {item.children.map((child) => (
+                          <li>
+                            <a
+                              href={child.href}
+                              aria-current={path === child.href ? 'page' : undefined}
+                            >
+                              {child.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
+                  </li>
+                ) : (
+                  <li>
+                    <a
+                      href={item.href}
+                      aria-current={path === item.href ? 'page' : undefined}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                )
+              )
+            }
           </ul>
         </nav>
       </div>
@@ -54,17 +119,59 @@ const canonical = new URL(path, 'https://www.dkawins.com/').href;
 
     <footer class="site-footer">
       <div class="wrap">
-        <p class="site-footer__contact">
-          <a href="tel:5616409171">561-640-9171</a>
-          <span aria-hidden="true">·</span>
-          <a href="mailto:info@dkahome.com">info@dkahome.com</a>
-        </p>
-        <p class="site-footer__address">
-          5713 Corporate Way, Suite 102, West Palm Beach, FL 33407
-        </p>
-        <p class="site-footer__legal">&copy; DeSutter, Kerr &amp; Associates</p>
+        <nav class="site-footer__nav" aria-label="Footer">
+          {
+            footerColumns.map((col) => (
+              <div class="site-footer__col">
+                <p class="site-footer__heading">
+                  {col.href ? <a href={col.href}>{col.heading}</a> : col.heading}
+                </p>
+                <ul>
+                  {col.links.map((link) => (
+                    <li>
+                      <a href={link.href}>{link.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </nav>
+
+        <div class="site-footer__meta">
+          <p class="site-footer__contact">
+            <a href="tel:5616409171">561-640-9171</a>
+            <span aria-hidden="true">·</span>
+            <a href="mailto:info@dkahome.com">info@dkahome.com</a>
+          </p>
+          <p class="site-footer__address">
+            5713 Corporate Way, Suite 102, West Palm Beach, FL 33407
+          </p>
+          <p class="site-footer__legal">&copy; DeSutter, Kerr &amp; Associates</p>
+        </div>
       </div>
     </footer>
+
+    <script>
+      // Close an open nav dropdown on Escape or on a click outside it.
+      const menus = () =>
+        Array.from(document.querySelectorAll<HTMLDetailsElement>('details.menu'));
+
+      document.addEventListener('click', (event) => {
+        for (const menu of menus()) {
+          if (menu.open && !menu.contains(event.target as Node)) menu.open = false;
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape') return;
+        for (const menu of menus()) {
+          if (!menu.open) continue;
+          menu.open = false;
+          menu.querySelector('summary')?.focus();
+        }
+      });
+    </script>
   </body>
 </html>
 
@@ -130,6 +237,7 @@ const canonical = new URL(path, 'https://www.dkawins.com/').href;
     padding: var(--space-3) var(--space-4);
   }
 
+  /* ---- Header ---- */
   .site-header {
     border-bottom: var(--border);
     background: var(--color-surface);
@@ -154,13 +262,99 @@ const canonical = new URL(path, 'https://www.dkawins.com/').href;
   .site-nav {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-6);
+    align-items: center;
+    gap: var(--space-3) var(--space-6);
     margin: 0;
     padding: 0;
     list-style: none;
     font-size: var(--size-small);
   }
 
+  .site-nav a {
+    text-decoration: none;
+  }
+
+  .site-nav a:hover {
+    text-decoration: underline;
+  }
+
+  .site-nav a[aria-current='page'],
+  .menu__summary[data-current] {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  /* ---- Dropdown ---- */
+  .menu {
+    position: relative;
+  }
+
+  .menu__summary {
+    cursor: pointer;
+    color: var(--color-accent);
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .menu__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .menu__summary::after {
+    content: '';
+    width: 0.4em;
+    height: 0.4em;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: translateY(-0.15em) rotate(45deg);
+  }
+
+  .menu[open] .menu__summary::after {
+    transform: translateY(0.1em) rotate(225deg);
+  }
+
+  .menu__list {
+    position: absolute;
+    z-index: 20;
+    inset-inline-start: 0;
+    margin: var(--space-3) 0 0;
+    padding: var(--space-3);
+    min-width: 16rem;
+    list-style: none;
+    background: var(--color-surface);
+    border: var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px rgb(0 0 0 / 8%);
+  }
+
+  .menu__list li + li {
+    margin-block-start: var(--space-1);
+  }
+
+  .menu__list a {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius);
+  }
+
+  .menu__list a:hover {
+    background: var(--color-bg);
+    text-decoration: none;
+  }
+
+  /* On narrow screens the dropdown flows inline instead of overlaying, so it
+     can never run off the edge of the viewport. */
+  @media (max-width: 640px) {
+    .menu__list {
+      position: static;
+      min-width: 0;
+      box-shadow: none;
+    }
+  }
+
+  /* ---- Footer ---- */
   .site-footer {
     margin-top: var(--space-24);
     border-top: var(--border);
@@ -172,6 +366,34 @@ const canonical = new URL(path, 'https://www.dkawins.com/').href;
   .site-footer p {
     margin: 0 0 var(--space-2);
     max-width: none;
+  }
+
+  .site-footer__nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-8);
+    padding-block-end: var(--space-12);
+    margin-block-end: var(--space-8);
+    border-bottom: var(--border);
+  }
+
+  .site-footer__heading {
+    font-family: var(--font-display);
+    color: var(--color-text);
+    margin-block-end: var(--space-3);
+  }
+
+  .site-footer__heading a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .site-footer__nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-2);
   }
 
   .site-footer__contact {

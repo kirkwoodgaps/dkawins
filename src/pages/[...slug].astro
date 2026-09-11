@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { navHrefs, NAV_EXEMPT } from '../nav';
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages');
@@ -37,6 +38,20 @@ export async function getStaticPaths() {
       params: { slug: toSlug(entry.data.path) },
       props: { kind: 'prose' as const, entry },
     });
+  }
+
+  // Guard against the nav drifting out of sync with the routes again, which is
+  // how seven pages ended up unreachable from the menu. Build-time only.
+  const linked = navHrefs();
+  const orphans = [...routes.keys()].filter(
+    (p) => !linked.has(p) && !NAV_EXEMPT.has(p)
+  );
+  if (orphans.length) {
+    console.warn(
+      `[nav] ${orphans.length} route(s) are not linked from the site navigation:\n` +
+        orphans.map((p) => `      ${p}`).join('\n') +
+        `\n      Add them to src/nav.ts, or to NAV_EXEMPT if that is deliberate.`
+    );
   }
 
   return [...routes.values()];
