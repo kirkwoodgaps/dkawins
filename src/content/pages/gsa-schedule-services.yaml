@@ -1,0 +1,164 @@
+# GSA Schedule Services. Replaces the .mdoc extraction, which becomes archive.
+#
+# The live page is three bullet lines, two contact forms and a phone number —
+# the thinnest page on the site, on DKA's single strongest capability. Built out
+# 2026-09-11 to match the depth of the CMAS page.
+#
+# WHERE THE CONTENT COMES FROM, since none of it may be invented:
+#  - DKA claims: every one is attested. Sources noted per section.
+#  - Program description: public, independently verifiable GSA facts.
+#    Deliberately no figures that GSA changes periodically — no Industrial
+#    Funding Fee percentage, no minimum revenue or years-in-business threshold.
+#    See MIGRATION-NOTES.md § 11.3 for what to verify before launch.
+
+# PRESERVED VERBATIM from the live <title>.
+title: "GSA Schedule Services - DeSutter, Kerr & Associates"
+path: /gsa-schedule-services/
+# The live <h1> is "Contact Us To Obtain Your GSA Schedule Contract" — a call to
+# action used as the page heading, part of the § 4.6 heading problem. Replaced
+# with what the page is about. The <title> is untouched.
+heading: GSA Schedule Services
+
+# No <meta name="description"> on the live site (§ 3.1). Written fresh.
+metaDescription: >-
+  DKA has helped secure more than 500 GSA Schedules. We prepare the offer, guide
+  it through negotiation, and keep the contract compliant and competitive after
+  award.
+
+# SOURCED: /what-we-do/ ("extensive experience with the ... Multiple Award
+# Schedule ... helped hundreds of companies list their products and services")
+# and /gsa-schedule-services/ ("fast, easy and affordable"). 500+ confirmed by
+# Nate 2026-09-11.
+intro: >-
+  DKA has extensive experience with the General Services Administration (GSA)
+  Federal Supply Service Multiple Award Schedule, better known as the GSA
+  Schedule. We have helped secure more than 500 GSA Schedules, and we make
+  getting on the Schedule fast, easy and affordable — preparing the offer,
+  guiding it through negotiation, and then keeping the contract compliant and
+  competitive for as long as you hold it.
+
+stats:
+  - value: "1995"
+    label: Winning federal contracts for clients since
+  - value: "500+"
+    label: GSA Schedules secured for client companies
+  - value: "350+"
+    label: Contract awards won for clients
+
+sections:
+  # Program description. Public GSA facts.
+  - heading: What the GSA Schedule Is
+    body: >-
+      The GSA Multiple Award Schedule is a long-term, government-wide contract
+      that pre-qualifies your company to sell to federal agencies. Once you hold
+      one, buyers can purchase from you without running a new competitive
+      solicitation every time, through GSA Advantage, eBuy and direct award.
+
+
+      A Schedule contract runs for a five-year base period with three five-year
+      option periods, so a well-maintained contract can support two decades of
+      federal sales. Under Cooperative Purchasing and Disaster Purchasing
+      authorities, certain categories are also open to state and local buyers,
+      which is separate from the state schedule vehicles covered on our CMAS and
+      TXMAS pages.
+
+  - heading: Is Your Company a Candidate?
+    body: >-
+      The Schedule suits companies with commercial products or services, a
+      demonstrable track record, and the financial and operational capacity to
+      perform on federal contracts. GSA will want to see your commercial sales
+      history, your financial position, and evidence of past performance, and it
+      will expect the pricing you offer the government to be defensible against
+      what you charge your commercial customers.
+
+
+      It is not right for everyone. Some companies are better served pursuing
+      individual solicitations first and building past performance before taking
+      on a Schedule. That is a judgement call, and it is one we would rather make
+      with you honestly up front than sell you a contract you cannot use.
+
+  - heading: What Goes Into a Schedule Offer
+    body: >-
+      An offer is a full proposal, not a form. It covers your corporate and
+      financial information, the Special Item Numbers you are pursuing, technical
+      and past performance narratives, a commercial price list with supporting
+      pricing disclosures, and agreement to the Schedule's terms and conditions.
+      Your company also has to be registered and current in SAM.gov before an
+      offer can be evaluated.
+
+
+      Most offers that stall do so for avoidable reasons: incomplete pricing
+      support, SINs that do not match what the company actually sells, or
+      narratives that do not answer what the evaluator was asked to score.
+
+  # SOURCED: live /gsa-schedule-services/ — "Decades of GSA Schedule
+  # experience", "Hundreds of GSA Schedule contracts awarded", "Added value,
+  # including contract and proposal assistance, maintenance and more".
+  - heading: How DKA Gets You There
+    body: >-
+      We prepare the full offer, using input specific to how your company does
+      business rather than a template. We select and justify the SINs that fit
+      what you sell, assemble the pricing package and supporting disclosures,
+      write the technical and past performance sections, and carry the offer
+      through GSA's clarification and negotiation rounds to award.
+
+
+      Decades of GSA Schedule experience and hundreds of Schedule contracts
+      awarded mean we have seen what a contracting officer pushes back on, and we
+      address it before it becomes a round of corrections.
+
+  # SOURCED: /who-we-are/, verbatim on the specifics.
+  - heading: "After Award: Keeping the Contract Healthy"
+    body: >-
+      A Schedule contract is only worth what you do with it. Beyond the award, we
+      help clients list their products and services on GSA Advantage, modify
+      their GSA catalogs, and handle ongoing maintenance such as quarterly sales
+      reporting and Industrial Funding Fee payments.
+
+
+      We also prepare the modifications that keep a contract current — adding
+      SINs, adjusting prices, updating terms — and help you find and pursue the
+      task orders and solicitations your Schedule makes you eligible for. Holding
+      the contract is the start, not the finish.
+
+groups:
+  - heading: Frequently Asked Questions
+    items:
+      - q: How long does it take to get a GSA Schedule?
+        a: >-
+          Timelines depend on the SINs you pursue, GSA's current workload, and
+          above all on how complete your offer is when it goes in. A package that
+          answers everything the first time moves considerably faster than one
+          that comes back for repeated clarifications, which is the part we can
+          actually control on your behalf.
+      - q: Do I need a GSA Schedule to sell to the federal government?
+        a: >-
+          No. Plenty of federal work is won through open solicitations without a
+          Schedule, and DKA writes those proposals too. A Schedule is worth
+          having when you want agencies to be able to buy from you repeatedly
+          without a new competition each time.
+      - q: What does it cost to maintain a Schedule contract?
+        a: >-
+          Beyond the effort of reporting and modifications, GSA collects an
+          Industrial Funding Fee on your Schedule sales, which you remit along
+          with your sales reporting. DKA can manage that reporting on your
+          behalf.
+      - q: Can DKA help with a Schedule contract we already hold?
+        a: >-
+          Yes, and it is a common request. We take on contracts that have drifted
+          — outdated catalogs, SINs that no longer match the business, reporting
+          that has fallen behind — and bring them back into compliance.
+      - q: What if we also want to sell to state governments?
+        a: >-
+          An active federal Schedule is the basis for California's CMAS program
+          and for TXMAS in Texas. Both extend work you have already done into a
+          new set of buyers, and DKA handles both.
+
+cta:
+  heading: Find Out Whether a Schedule Is Right for Your Company
+  body: >-
+    How much business are you missing out on by not being on the GSA Schedule?
+    Contact us for a free, no-obligation consultation with an experienced GSA
+    Schedule consultant, or call us at 561-640-9171.
+  label: Contact Us Today
+  href: /contact-us/

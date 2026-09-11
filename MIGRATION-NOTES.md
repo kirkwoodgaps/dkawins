@@ -593,3 +593,82 @@ as its own section.
 as the homepage** (§ 3.2), and that description still says "more than 300", the
 stale count (§ 3.4). Both preserved rather than edited, because fixing them is a
 decision about two pages at once, not a migration step. Worth doing.
+
+---
+
+## 11. Three thin pages rebuilt (2026-09-11)
+
+`/gsa-multiple-award-schedules-mas-consolidation/`, `/gsa-schedule-services/`
+and `/what-we-do/` moved from `.mdoc` to structured `.yaml` and were built out
+to the depth of the CMAS page.
+
+**11 of 12 routes are now structured.** Only `/contact-us/` remains `.mdoc`, and
+it is blocked on the HubSpot-vs-Mailgun decision in § 5.2, not on content.
+
+### 11.1 MAS Consolidation — reframed, not just transcribed
+
+The supplied draft was built around helping companies *transition into* the
+consolidated MAS. That transition ran 2019-2020 and is finished. Roughly half
+the draft told existing Schedule holders they "must complete a mass modification
+to migrate" — six years after the deadline. To Schedule holders and contracting
+officers, that reads as a page nobody has looked at since 2020.
+
+Reframed from "we will help you transition" to "we know this structure". The
+October 2019 consolidation is now background; the page is about operating inside
+the structure it produced — category and SIN mapping, modifications, compliance
+drift, and new applicants who never had a legacy schedule at all. **Every fact
+in the draft was kept.** Only the tense and the call to action moved.
+
+The one FAQ that was already present-tense and correct ("Can DKA help if I'm
+just starting the GSA Schedule process today?") is unchanged.
+
+### 11.2 GSA Schedule Services — the worst thin-page offender
+
+The live page was three bullet lines, two copies of the same contact form, and a
+phone number, on DKA's single strongest capability. It now carries an intro, a
+stat row, five sections and five FAQ answers.
+
+The live `<h1>` was "Contact Us To Obtain Your GSA Schedule Contract" — a call
+to action used as the page heading, part of the § 4.6 problem. The visible
+heading is now "GSA Schedule Services". **The `<title>` is untouched.**
+
+Every DKA claim on the page is attested:
+
+| Claim | Source |
+|---|---|
+| "extensive experience with the ... Multiple Award Schedule" | `/what-we-do/` |
+| "fast, easy and affordable" | live `/gsa-schedule-services/` |
+| "Decades of GSA Schedule experience", "hundreds of Schedule contracts awarded" | live `/gsa-schedule-services/` |
+| GSA Advantage listing, catalog modification, quarterly sales reporting, IFF payments | `/who-we-are/`, near-verbatim |
+| more than 500 GSA Schedules | confirmed by Nate, § 3.4 |
+| free, no-obligation consultation; 561-640-9171 | live page |
+
+### 11.3 GSA program facts — verify before launch
+
+The depth on these pages comes from describing the GSA programme itself, which
+is public and independently verifiable rather than a DKA claim. **Figures GSA
+changes periodically were deliberately left out**: no Industrial Funding Fee
+percentage, no minimum revenue threshold, no years-in-business requirement.
+
+Worth a check against current GSA guidance before launch anyway:
+
+- Five-year base plus three five-year option periods (stated on `/gsa-schedule-services/`).
+- Cooperative Purchasing and Disaster Purchasing opening certain categories to
+  state and local buyers.
+- SAM.gov registration required before an offer is evaluated.
+- The 24 legacy schedules consolidated in October 2019, and IT Schedule 70 /
+  Professional Services / Facilities Maintenance as examples of them.
+
+### 11.4 What We Do — now an actual hub
+
+The live page describes three services and links to none of them. It now carries
+the same five service cards as the homepage, one per indexed service page, plus
+the three process sections preserved verbatim.
+
+**Not carried over, deliberately:** the live page decorates its "Government
+Contracting Vehicles" block with a US Navy seal (§ 2.4). Reusing a federal
+agency seal as an icon reads as an affiliation DKA has not claimed. The
+handshake, target and analysis clip-art icons are also gone, per CLAUDE.md.
+
+The three-c "Succcess" typo in this page's `<title>` (§ 3.3) is **still
+preserved**. It is indexed. Fixing it is Nate's call, not a migration step.

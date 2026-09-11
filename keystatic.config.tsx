@@ -119,7 +119,14 @@ export default config({
     brand: { name: 'DKA' },
     navigation: {
       Pages: ['home', 'about', 'successStoriesPage', 'industriesWeServe', 'faq'],
-      Services: ['proposalWriting', 'cmas', 'txmas'],
+      Services: [
+        'whatWeDo',
+        'proposalWriting',
+        'gsaScheduleServices',
+        'masConsolidation',
+        'cmas',
+        'txmas',
+      ],
       'Success Stories': ['successStories'],
     },
   },
@@ -309,6 +316,64 @@ export default config({
         intro: fields.text({ label: 'Intro', multiline: true }),
         stats: statsBlock,
         sections: sectionsBlock,
+        cta: ctaBlock,
+      },
+    }),
+
+    whatWeDo: singleton({
+      label: 'What We Do (services hub)',
+      path: 'src/content/pages/what-we-do',
+      format: { data: 'yaml' },
+      schema: {
+        ...pageMeta,
+        intro: fields.text({ label: 'Intro', multiline: true }),
+        stats: statsBlock,
+        services: fields.object(
+          {
+            heading: fields.text({ label: 'Heading' }),
+            intro: fields.text({ label: 'Intro', multiline: true }),
+            items: fields.array(
+              fields.object({
+                title: fields.text({ label: 'Service' }),
+                body: fields.text({ label: 'Description', multiline: true }),
+                href: fields.text({ label: 'Links to' }),
+              }),
+              {
+                label: 'Services',
+                itemLabel: (props) => props.fields.title.value || 'Service',
+              }
+            ),
+          },
+          { label: 'Services' }
+        ),
+        sections: sectionsBlock,
+        cta: ctaBlock,
+      },
+    }),
+
+    gsaScheduleServices: singleton({
+      label: 'GSA Schedule Services',
+      path: 'src/content/pages/gsa-schedule-services',
+      format: { data: 'yaml' },
+      schema: {
+        ...pageMeta,
+        intro: fields.text({ label: 'Intro', multiline: true }),
+        stats: statsBlock,
+        sections: sectionsBlock,
+        groups: faqGroups,
+        cta: ctaBlock,
+      },
+    }),
+
+    masConsolidation: singleton({
+      label: 'GSA MAS Consolidation',
+      path: 'src/content/pages/gsa-multiple-award-schedules-mas-consolidation',
+      format: { data: 'yaml' },
+      schema: {
+        ...pageMeta,
+        intro: fields.text({ label: 'Intro', multiline: true }),
+        sections: sectionsBlock,
+        groups: faqGroups,
         cta: ctaBlock,
       },
     }),

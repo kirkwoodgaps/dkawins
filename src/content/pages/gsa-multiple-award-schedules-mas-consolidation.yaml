@@ -1,0 +1,136 @@
+# MAS Consolidation page. Replaces the .mdoc extraction, which becomes archive.
+#
+# Nate's copy, 2026-09-11, REFRAMED. See MIGRATION-NOTES.md § 11.
+#
+# The supplied draft was built around helping companies transition into the
+# consolidated MAS. That transition ran 2019-2020 and is finished. Roughly half
+# the draft told existing Schedule holders they "must complete a mass
+# modification to migrate" — six years after the fact. To an audience of
+# Schedule holders and contracting officers, that reads as an abandoned page.
+#
+# Reframed from "we will help you transition" to "we know this structure". The
+# 2019 consolidation is now background; the page is about operating under the
+# structure it produced. Every fact in the draft was kept; only the tense and
+# the call to action moved.
+
+# PRESERVED VERBATIM from the live <title>.
+title: "GSA Multiple Award Schedules (MAS) Consolidation - DeSutter, Kerr & Associates"
+path: /gsa-multiple-award-schedules-mas-consolidation/
+heading: GSA Multiple Award Schedule (MAS) Consolidation
+
+# No <meta name="description"> on the live site (§ 3.1). Written fresh.
+metaDescription: >-
+  The consolidated GSA Multiple Award Schedule organises every offering into
+  Large Categories, Subcategories and SINs. DKA helps companies map their
+  products and services to the right ones and keep the contract compliant.
+
+# EDIT: "over 500 GSA Schedule contract awards" -> "more than 500 GSA Schedules",
+# the metric confirmed on 2026-09-11. See § 3.4.
+intro: >-
+  In October 2019 the U.S. General Services Administration merged 24 separate
+  Multiple Award Schedules into a single, consolidated Multiple Award Schedule
+  (MAS) program. That structure is now simply how the GSA Schedule works: one
+  master contract vehicle, organised around Large Categories, Subcategories and
+  Special Item Numbers. Getting your offerings mapped to the right ones
+  determines whether federal buyers find you at all. DKA's GSA Schedule
+  specialists, who have supported more than 500 GSA Schedules, help companies
+  position themselves correctly within that structure and stay compliant inside
+  it.
+
+sections:
+  - heading: What the Consolidated MAS Looks Like
+    body: >-
+      MAS Consolidation combined legacy schedules such as IT Schedule 70, the
+      Professional Services Schedule and the Facilities Maintenance Schedule into
+      one master contract vehicle organised around Large Categories and
+      Subcategories. Rather than holding several separate schedule contracts, an
+      awarded company operates under a single MAS contract that can include
+      multiple Special Item Numbers (SINs) spanning different Large Categories.
+
+
+      For your business, that means complementary products and services sit under
+      one contract number, the administrative burden of managing multiple
+      schedules is gone, and your offerings line up with the way agency buyers
+      actually search GSA eLibrary, GSA Advantage and eBuy.
+
+  - heading: Why Your Category and SIN Mapping Matters
+    body: >-
+      Where your offerings sit in the Large Category and Subcategory structure is
+      what determines whether a contracting officer searching for your capability
+      finds your company. A company mapped to the wrong Subcategory, or carrying
+      SINs that no longer reflect what it sells, loses visibility without ever
+      being told. Terms and conditions also differ across SINs, and a contract
+      whose pricing and terms have drifted out of alignment is a compliance
+      problem waiting for an audit.
+
+  - heading: Where Companies Get Into Trouble
+    body: >-
+      The most common problems DKA sees are offerings mapped to Subcategories
+      that no longer match what the company actually sells, commercial price
+      lists that were never reconciled across consolidated SINs, terms and
+      conditions inherited from a legacy schedule that conflict with current MAS
+      terms, and modification packages submitted incomplete and returned for
+      correction. None of these announce themselves. They surface during an
+      audit, or when a company notices it has stopped receiving task order
+      opportunities.
+
+  - heading: How DKA Supports Your MAS Contract
+    body: >-
+      DKA audits your existing Schedule contract, identifies the Large Categories
+      and Subcategories that best fit your products and services, and prepares
+      and submits the modifications required to correct or expand them. We
+      reconcile pricing and terms across your SINs, make sure your GSA eLibrary
+      and GSA Advantage listings accurately reflect your capabilities, and
+      provide ongoing maintenance — catalog updates, quarterly sales reporting
+      and Industrial Funding Fee payments — so the contract stays compliant and
+      competitive.
+
+  - heading: New to the GSA Schedule?
+    body: >-
+      If you do not hold a Schedule contract yet, there is no transition to worry
+      about. New applicants are awarded directly under the consolidated MAS
+      structure, which means the Large Category and Subcategory decisions get
+      made once, at the start, and made correctly. DKA guides companies through
+      selecting the right ones from the outset.
+
+groups:
+  - heading: Frequently Asked Questions
+    items:
+      - q: Which SINs and Large Categories should my company hold?
+        a: >-
+          That depends on what you sell and on who you want to find you. DKA
+          reviews your offerings against the current Large Category and
+          Subcategory structure and recommends the SINs that put you in front of
+          the right contracting officers, then prepares the modifications to add
+          or correct them.
+      - q: Can I add new SINs to an existing MAS contract?
+        a: >-
+          Yes. Adding a SIN is a contract modification, and it is the usual route
+          for a company expanding into a new line of business. DKA prepares and
+          submits the package on your behalf.
+      - q: Will my contract number change?
+        a: >-
+          No. Your existing MAS contract number stays the same. What can change
+          is your price list and terms, which may need reformatting to align with
+          the SIN structure. DKA reviews your pricing to keep it consistent and
+          compliant.
+      - q: How long does a modification take?
+        a: >-
+          Timelines vary by contracting officer workload and the completeness of
+          the submission, but a well-prepared modification package typically
+          moves through review faster than one that comes back for multiple
+          rounds of corrections.
+      - q: Can DKA help if I'm just starting the GSA Schedule process today?
+        a: >-
+          Absolutely. New applicants are awarded directly under the consolidated
+          MAS structure, and DKA can guide you through selecting the correct
+          Large Categories and Subcategories from the start.
+
+cta:
+  heading: Make Sure Your Schedule Works as Hard as It Should
+  body: >-
+    Whether your contract needs its categories corrected or you are pursuing a
+    GSA Schedule for the first time, DKA's Schedule specialists make the process
+    straightforward. Reach out today for a free consultation.
+  label: Contact Us Today
+  href: /contact-us/
