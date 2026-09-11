@@ -15,6 +15,21 @@ interface Props {
 const { title, description, path } = Astro.props;
 const canonical = new URL(path, 'https://www.dkawins.com/').href;
 
+// ---------------------------------------------------------------------------
+// PRE-LAUNCH — REMOVE AT CUTOVER.
+//
+// This site is a near-duplicate of the live, indexed www.dkawins.com. The
+// Vercel URL is publicly crawlable, so without this it competes with the real
+// site in search results for DKA's own copy.
+//
+// Deliberately a <meta> tag and NOT a robots.txt Disallow: a Disallow stops
+// crawling, which would stop Google ever seeing a noindex directive. The meta
+// tag is the one that actually de-indexes.
+//
+// To launch: set this to false. Tracked in MIGRATION-NOTES.md § 7.5.
+// ---------------------------------------------------------------------------
+const NOINDEX = true;
+
 // Footer sitemap: each parent that has children gets its own column, and the
 // flat top-level items collect into one. Derived from the same nav source as
 // the header so the two cannot disagree.
@@ -42,6 +57,8 @@ const footerColumns = [
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+
+    {NOINDEX && <meta name="robots" content="noindex, nofollow" />}
 
     <title>{title}</title>
     {/* Five pages have no live meta description (MIGRATION-NOTES.md § 3.1).

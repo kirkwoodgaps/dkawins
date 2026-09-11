@@ -418,6 +418,13 @@ if the original wording is ever needed.
 
 ### 7.5 Still open
 
+0. **THE SITE IS SERVED `noindex` AND MUST BE FLIPPED AT LAUNCH.** Every page
+   carries `<meta name="robots" content="noindex, nofollow">`, because the
+   Vercel URL is publicly crawlable and this content duplicates the live,
+   indexed www.dkawins.com. **To launch: set `NOINDEX = false` in
+   `src/layouts/BaseLayout.astro`.** Nothing else gates it. Forgetting this
+   means the relaunched site never ranks.
+
 1. ~~**300 vs. 350 vs. "hundreds" vs. 400**~~ — **RESOLVED**: 350+ contract
    awards won, 500+ GSA Schedules. Two metrics, not one. Applied across both the
    `.yaml` content and the shipping `.mdoc` pages. § 3.4.
