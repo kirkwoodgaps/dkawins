@@ -1,6 +1,10 @@
 ---
+import { Image } from 'astro:assets';
 import '../styles/tokens.css';
 import { primaryNav, isCurrent } from '../nav';
+// Site chrome lives in src/assets so astro:assets can optimise it. Content
+// images stay in public/images, where Keystatic references them by path.
+import logo from '../assets/dka-logo.png';
 
 interface Props {
   title: string;
@@ -55,46 +59,54 @@ const footerColumns = [
 
     <header class="site-header">
       <div class="wrap site-header__inner">
-        <a class="site-header__brand" href="/">DeSutter, Kerr &amp; Associates</a>
+        <a class="site-header__brand" href="/">
+          <Image
+            src={logo}
+            width={150}
+            densities={[1, 2]}
+            loading="eager"
+            alt="DeSutter, Kerr & Associates — celebrating 30 years, 1995 to 2025"
+          />
+        </a>
 
         <nav aria-label="Primary">
           <ul class="site-nav">
             {
               primaryNav.map((item) =>
                 item.children?.length ? (
-                  <li>
-                    {/* <details> rather than a scripted menu: it opens on click
-                        and on Enter, and is reachable by keyboard with no JS.
-                        The script below only adds close-on-Escape and
-                        close-on-outside-click. */}
-                    <details class="menu">
-                      <summary
-                        class="menu__summary"
-                        data-current={isCurrent(item, path) ? '' : undefined}
-                      >
-                        {item.label}
-                      </summary>
-                      <ul class="menu__list">
+                  <li class="menu">
+                    {/* Opens on hover, and for keyboard users via :focus-within
+                        as focus enters the trigger or any link in the panel.
+                        No script. The trigger stays a real link to the overview
+                        page, so a device without hover still reaches it in one
+                        tap rather than being stuck on a menu it must dismiss. */}
+                    <a
+                      class="menu__trigger"
+                      href={item.href}
+                      data-current={isCurrent(item, path) ? '' : undefined}
+                    >
+                      {item.label}
+                    </a>
+                    <ul class="menu__list">
+                      <li>
+                        <a
+                          href={item.href}
+                          aria-current={path === item.href ? 'page' : undefined}
+                        >
+                          {item.label} overview
+                        </a>
+                      </li>
+                      {item.children.map((child) => (
                         <li>
                           <a
-                            href={item.href}
-                            aria-current={path === item.href ? 'page' : undefined}
+                            href={child.href}
+                            aria-current={path === child.href ? 'page' : undefined}
                           >
-                            {item.label} overview
+                            {child.label}
                           </a>
                         </li>
-                        {item.children.map((child) => (
-                          <li>
-                            <a
-                              href={child.href}
-                              aria-current={path === child.href ? 'page' : undefined}
-                            >
-                              {child.label}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </details>
+                      ))}
+                    </ul>
                   </li>
                 ) : (
                   <li>
@@ -152,26 +164,6 @@ const footerColumns = [
       </div>
     </footer>
 
-    <script>
-      // Close an open nav dropdown on Escape or on a click outside it.
-      const menus = () =>
-        Array.from(document.querySelectorAll<HTMLDetailsElement>('details.menu'));
-
-      document.addEventListener('click', (event) => {
-        for (const menu of menus()) {
-          if (menu.open && !menu.contains(event.target as Node)) menu.open = false;
-        }
-      });
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key !== 'Escape') return;
-        for (const menu of menus()) {
-          if (!menu.open) continue;
-          menu.open = false;
-          menu.querySelector('summary')?.focus();
-        }
-      });
-    </script>
   </body>
 </html>
 
@@ -253,10 +245,15 @@ const footerColumns = [
   }
 
   .site-header__brand {
-    font-family: var(--font-display);
-    font-size: var(--size-h3);
-    color: var(--color-text);
-    text-decoration: none;
+    display: inline-flex;
+    /* The logo is the accessible name for the home link; the alt text carries
+       it. No text-decoration to strip because there is no text. */
+  }
+
+  .site-header__brand img {
+    display: block;
+    width: auto;
+    height: clamp(2.5rem, 6vw, 3.25rem);
   }
 
   .site-nav {
@@ -279,54 +276,93 @@ const footerColumns = [
   }
 
   .site-nav a[aria-current='page'],
-  .menu__summary[data-current] {
+  .menu__trigger[data-current] {
     color: var(--color-text);
     font-weight: 600;
   }
 
   /* ---- Dropdown ---- */
+  /* The <li> carries the vertical padding so the trigger and the panel form one
+     unbroken hover area, with no dead gap to cross on the way down. The
+     matching negative margin keeps the header exactly as tall as before. */
   .menu {
     position: relative;
+    padding-block: var(--space-3);
+    margin-block: calc(-1 * var(--space-3));
   }
 
-  .menu__summary {
-    cursor: pointer;
-    color: var(--color-accent);
-    list-style: none;
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-  }
-
-  .menu__summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .menu__summary::after {
+  .menu__trigger::after {
     content: '';
+    display: inline-block;
+    margin-inline-start: var(--space-2);
     width: 0.4em;
     height: 0.4em;
     border-right: 1.5px solid currentColor;
     border-bottom: 1.5px solid currentColor;
     transform: translateY(-0.15em) rotate(45deg);
-  }
-
-  .menu[open] .menu__summary::after {
-    transform: translateY(0.1em) rotate(225deg);
+    transition: transform 120ms ease;
   }
 
   .menu__list {
     position: absolute;
+    top: 100%;
+    /* Pulled left by its own padding so the panel's link text lines up with
+       the trigger text above it. */
+    inset-inline-start: calc(-1 * var(--space-3));
     z-index: 20;
-    inset-inline-start: 0;
-    margin: var(--space-3) 0 0;
+    min-width: 17rem;
+    margin: 0;
     padding: var(--space-3);
-    min-width: 16rem;
     list-style: none;
     background: var(--color-surface);
     border: var(--border);
     border-radius: var(--radius);
     box-shadow: 0 8px 24px rgb(0 0 0 / 8%);
+
+    /* Hidden without leaving the layout. The panel is out of flow in every
+       state, so opening it can never push the page down. */
+    opacity: 0;
+    visibility: hidden;
+    translate: 0 -4px;
+    transition:
+      opacity 120ms ease,
+      translate 120ms ease,
+      visibility 120ms;
+  }
+
+  .menu:focus-within > .menu__list {
+    opacity: 1;
+    visibility: visible;
+    translate: 0 0;
+  }
+
+  .menu:focus-within > .menu__trigger::after {
+    transform: translateY(0.1em) rotate(225deg);
+  }
+
+  /* Hover only where hovering is real. On a touch screen the tap follows the
+     link to the overview page instead of opening a panel to dismiss. */
+  @media (hover: hover) {
+    .menu:hover > .menu__list {
+      opacity: 1;
+      visibility: visible;
+      translate: 0 0;
+    }
+
+    .menu:hover > .menu__trigger::after {
+      transform: translateY(0.1em) rotate(225deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .menu__list,
+    .menu__trigger::after {
+      transition: none;
+    }
+
+    .menu__list {
+      translate: none;
+    }
   }
 
   .menu__list li + li {
@@ -342,16 +378,6 @@ const footerColumns = [
   .menu__list a:hover {
     background: var(--color-bg);
     text-decoration: none;
-  }
-
-  /* On narrow screens the dropdown flows inline instead of overlaying, so it
-     can never run off the edge of the viewport. */
-  @media (max-width: 640px) {
-    .menu__list {
-      position: static;
-      min-width: 0;
-      box-shadow: none;
-    }
   }
 
   /* ---- Footer ---- */
