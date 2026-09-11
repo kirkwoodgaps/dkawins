@@ -1,20 +1,18 @@
-# Success Stories — RECONCILED DRAFT.
+# Success Stories — page frame.
 #
-# The submitted draft carried 2 of the 6 testimonials on the live page. All 6 are
-# restored below, verbatim, and the two case-study bodies are restored to the
-# live wording (the draft's figures were correct but the prose was rewritten).
+# Case studies and testimonials live in the `successStories` collection at
+# src/content/success-stories/, one file per client, each flagged caseStudy or
+# testimonial. The template pulls them in and splits them by `kind`.
 #
-# Logos are referenced at their post-migration paths; none are downloaded yet.
-# The source URL for each is in the comment above it — see MIGRATION-NOTES.md § 2.
+# THREE "Client Snapshots" supplied on 2026-09-11 are NOT published. They are at
+# the bottom of this file with the reason. See MIGRATION-NOTES.md § 9.
 
-# PRESERVED VERBATIM from the live <title>. The draft shortened it to
-# "Success Stories"; this page is indexed, so the title stands.
+# PRESERVED VERBATIM from the live <title>.
 title: "Government Contract Success Stories | Winning Government Contracts"
 path: /success-stories/
 
-# The visible <h1>. Without this the page rendered its SEO <title> on screen,
-# pipe and all: "Government Contract Success Stories | Winning Government
-# Contracts". This is the live site's own h1.
+# The visible <h1>. Without this the page renders its SEO <title> on screen,
+# pipe and all.
 heading: DKA Success Stories
 
 # PRESERVED VERBATIM from the live <meta name="description">.
@@ -23,24 +21,28 @@ metaDescription: >-
   services to win government contracts. Find Opportunities to Contract with the
   Federal Government.
 
-# SOURCED: live page intro, verbatim.
+# Nate's rewrite (2026-09-11), with two edits:
 #
-# ONE PROBLEM LEFT, pre-existing:
+#  1. "specialized equipment" restored to "mobile asphalt plants". The live site
+#     uses the specific, odd examples — they are more memorable than a category
+#     label and they are demonstrably true.
+#  2. "hundreds of government contracts" -> "more than 350", so the sentence
+#     agrees with the stat tile directly beneath it.
 #
-# 1. RESOLVED 2026-09-11. This page published "$1 billion" while the homepage
-#    published "$1.7 Billion" for the same claim. Nate confirmed $1.7 Billion.
-#    Updated below; the two pages now agree.
-# 2. The second sentence promises "a partial list of agencies and locations" that
-#    does not appear anywhere on the page — the page goes straight into the case
-#    studies. See MIGRATION-NOTES.md § 4.2. Either supply the list or cut the
-#    sentence; do not ship the page with the promise dangling.
+# This rewrite also fixes a long-standing problem: the published intro ended
+# "The following is a partial list of agencies and locations of these
+# contracts", and no such list has ever appeared on the page
+# (MIGRATION-NOTES.md § 4.2). Dropping that sentence closes the gap.
 intro: >-
-  DKA has helped its clients win more than 350 government contracts with a
-  combined value well in excess of $1.7 Billion. The following is a partial list
-  of agencies and locations of these contracts.
+  DKA has helped clients win more than 350 government contracts across an
+  extremely wide variety of products and services, from logistics management to
+  IT, professional staffing to medical services, and environmental services to
+  mobile asphalt plants. We've also helped clients obtain HUBZone and 8(a)
+  certifications and contract vehicles such as CMAS, TXMAS, and the GSA
+  Schedule.
 
-# All three figures confirmed by Nate and consistent with the intro above and
-# with the homepage: 350+ awards, $1.7B+ combined, clients since 1995.
+# All four confirmed by Nate. The GSA Schedule tile is new to this page and is
+# DKA's strongest GSA-specific credential.
 stats:
   - value: "1995"
     label: Winning federal contracts for clients since
@@ -48,27 +50,80 @@ stats:
     label: Contract awards won for clients
   - value: "$1.7B+"
     label: Combined value of client contract awards
+  - value: "500+"
+    label: GSA Schedules secured for client companies
 
-# Case studies and testimonials moved to the `successStories` collection at
-# src/content/success-stories/ — one file per client, each with a `kind` flag of
-# caseStudy or testimonial. That is the shape CLAUDE.md specifies and it is what
-# Keystatic edits. The page template pulls them in and splits them by `kind`;
-# `order` controls display sequence and matches the live page's order.
+# Sits above the testimonials. Nate's copy, second sentence rewritten.
 #
-# All copy moved verbatim. Provenance for each entry is in MIGRATION-NOTES.md § 7.
+# The draft's second sentence read: "Many describe our team as an extension of
+# their own business development staff." No client says that — the phrase
+# appears in none of the six testimonials on this page. Replaced with the claim
+# the quotes DO support: Argent names 9 years, Maxsent 12, Greene has worked
+# with DKA since 2001, and E&S since 1995.
+testimonialsIntro: >-
+  Clients consistently point to DKA's hands-on support, research-driven
+  approach, and responsiveness as key factors in their success winning and
+  managing government contracts. Several have worked with us for a decade or
+  more, from a first solicitation through years of contract performance.
 
 cta:
-  # SOURCED: live page closing line, verbatim, plus its CONTACT US button.
-  # The draft's "Ready to Become Our Next Success Story?" heading and its
-  # "free, no-obligation consultation" body were assembled from other pages.
-  # The consultation offer is attested on the GSA/CMAS/TXMAS/MAS pages but not
-  # here, so it is left out rather than moved.
-  heading: Create your own success story with DKA.
-  body: ""
-  label: Contact Us
+  heading: Ready to Become Our Next Success Story?
+  body: >-
+    Whether you're pursuing your first federal contract or looking to secure a
+    spot on the GSA Schedule, DKA's team is ready to help. Contact us today for
+    a free, no-obligation consultation.
+  label: Contact Us Today
   href: /contact-us/
+
+# ===========================================================================
+# NOT PUBLISHED — "Client Snapshots"
+#
+# These three are invented. The draft says so itself: "illustrative examples of
+# the types of engagements DKA supports, based on common patterns across our
+# client base." They are composites, not clients.
+#
+# They cannot go on this page. They would sit directly alongside two real case
+# studies with real dollar figures and six testimonials from named people at
+# named companies, written in the same voice. The one-line disclaimer does not
+# survive contact with a reader who skims, and this audience checks claims.
+#
+# They are worth keeping as a CONTENT BRIEF. Each describes a shape of
+# engagement DKA almost certainly has a real example of. Ask Terry for the real
+# client behind each, then write it up the way the C&S Jones and E&S studies are
+# written — named, with figures.
+#
+#   Shape 1 — first GSA Schedule award
+#     "A small IT services provider came to DKA with strong past performance but
+#      no experience navigating the GSA Schedule application process. DKA
+#      prepared the full proposal package, including pricing and compliance
+#      documentation, resulting in a new GSA Multiple Award Schedule contract
+#      that opened the door to task order competitions the client had previously
+#      been unable to pursue."
+#     -> Which client? Which SIN? What did they win afterwards?
+#
+#   Shape 2 — federal Schedule extended into CMAS
+#     "After securing a federal GSA Schedule contract with DKA's help, a
+#      facilities maintenance company wanted to expand into state-level work.
+#      DKA helped the client extend its federal schedule into a CMAS contract,
+#      giving the company a streamlined path to sell directly to California
+#      state and local government buyers."
+#     -> Which client? This one is valuable: it is the only story that would
+#        demonstrate the CMAS page's own premise.
+#
+#   Shape 3 — first 8(a) set-aside win
+#     "A newly certified 8(a) small business needed help putting together a
+#      competitive proposal for its first federal set-aside solicitation. DKA
+#      guided the company through solicitation analysis, compliance matrix
+#      development, and technical writing, helping the client secure its first
+#      federal contract award and build a foundation of past performance for
+#      future pursuits."
+#     -> Which client? Note DKA already has a real, stronger version of this
+#        shape: the C&S Jones HUBZone story, four contracts across four states.
+#        A real 8(a) equivalent would pair with it well.
+#        Also flagged: "compliance matrix development" is not an attested DKA
+#        service — same flag as FAQ item 4 in MIGRATION-NOTES.md § 8.
+# ===========================================================================
 
 # UNRESOLVED: https://www.dkawins.com/wp-content/uploads/2020/07/2-min-1.jpg
 # appears on this page and the homepage with empty alt, no caption and no
-# adjacent copy. Cannot tell whether it is a client logo, a banner, or a leftover.
-# Not referenced above. Needs Nate's call — MIGRATION-NOTES.md § 2.4.
+# adjacent copy. Not referenced above. Needs Nate's call — § 2.4.

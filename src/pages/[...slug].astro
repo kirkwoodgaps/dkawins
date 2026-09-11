@@ -189,6 +189,7 @@ const Content = kind === 'prose' ? (await render(entry)).Content : null;
           <section class="section">
             <div class="wrap">
               <h2>What Our Clients Say</h2>
+              {d.testimonialsIntro && <p class="lede">{d.testimonialsIntro}</p>}
               <ul class="quotes">
                 {testimonials.map((t: any) => (
                   <li class="quote">

@@ -212,6 +212,12 @@ export default config({
         ...pageMeta,
         intro: fields.text({ label: 'Intro', multiline: true }),
         stats: statsBlock,
+        testimonialsIntro: fields.text({
+          label: 'Testimonials intro',
+          description:
+            'Sits above the client quotes. Keep it to what the quotes themselves support.',
+          multiline: true,
+        }),
         cta: ctaBlock,
       },
     }),

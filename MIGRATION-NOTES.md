@@ -482,3 +482,57 @@ Still open from § 7.5 and unchanged: `/faq/` question "Does DKA work with
 businesses across the country?" has no answer. "Nationwide" appears nowhere on
 the live site; the strongest attested claim is one client with 26 contracts
 across 9 states.
+
+---
+
+## 9. Success Stories rewrite — what was and was not taken
+
+A rewrite of `/success-stories/` was supplied on 2026-09-11. Most of it is an
+improvement and is live. One section is not published.
+
+### 9.1 Published
+
+- **New intro.** Two edits: "specialized equipment" restored to "mobile asphalt
+  plants" (the specific, odd examples are more memorable and demonstrably true),
+  and "hundreds of government contracts" changed to "more than 350" so the
+  sentence agrees with the stat tile beneath it.
+- **This rewrite closes § 4.2.** The published intro ended "The following is a
+  partial list of agencies and locations of these contracts," and no such list
+  has ever appeared on the page. The new intro drops that sentence. That
+  long-standing gap is now resolved.
+- **A fourth stat tile**, 500+ GSA Schedules. New to this page and DKA's
+  strongest GSA-specific credential.
+- **A testimonials intro**, with its second sentence rewritten. The draft said
+  "Many describe our team as an extension of their own business development
+  staff." No client says that; the phrase appears in none of the six
+  testimonials. Replaced with what the quotes do support — Argent names 9 years,
+  Maxsent 12, Greene has worked with DKA since 2001, E&S since 1995.
+
+### 9.2 Not published: the three "Client Snapshots"
+
+The draft labels them itself: "illustrative examples of the types of engagements
+DKA supports, **based on common patterns across our client base**." They are
+composites, not clients.
+
+They cannot go on this page. They would sit directly alongside two real case
+studies carrying real dollar figures and six testimonials from named people at
+named companies, written in the same voice and the same format. A one-line
+disclaimer does not survive a reader who skims, and federal contracting is an
+audience that checks claims. CLAUDE.md is explicit: never invent client names,
+figures or testimonials.
+
+**They are kept in `success-stories.yaml` as a content brief, not as copy.**
+Each describes a shape of engagement DKA very likely has a real example of:
+
+| Shape | What to ask Terry |
+|---|---|
+| First GSA Schedule award for a firm with past performance but no Schedule | Which client? Which SIN? What did they win afterwards? |
+| Federal Schedule extended into CMAS | Which client? This is the most valuable of the three — it is the only story that would demonstrate the CMAS page's own premise. |
+| First 8(a) set-aside win | Which client? Note DKA already has a stronger real version of this shape in the C&S Jones HUBZone story. A real 8(a) equivalent would pair with it. |
+
+Get the real client behind each and they can be written up the way the C&S Jones
+and E&S studies are: named, with figures. That would take the collection from
+8 entries to 11 and cost nothing in credibility.
+
+Also flagged: shape 3 cites "compliance matrix development", which is not an
+attested DKA service. Same flag as FAQ item 4 in § 8.
