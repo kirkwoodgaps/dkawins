@@ -180,8 +180,12 @@ const faqSchema =
               <dl class="stats">
                 {d.stats.map((s: any) => (
                   <div class="stat">
-                    <dt class="stat__value">{s.value}</dt>
-                    <dd class="stat__label">{s.label}</dd>
+                    {/* Label is the <dt> and figure the <dd>: the label reads
+                        as the term ("...for clients since") and the figure
+                        answers it. Also puts the small text above, where these
+                        labels are written to lead. */}
+                    <dt class="stat__label">{s.label}</dt>
+                    <dd class="stat__value">{s.value}</dd>
                   </div>
                 ))}
               </dl>
@@ -412,11 +416,24 @@ const faqSchema =
   }
 
   /* ---- Bands ----
-     Contrast comes from alternating surface VALUE, not from more hues. A band
-     paints a background, so it keeps its padding on both sides regardless of
-     what precedes it — same specificity as the rule above, declared later. */
-  .section.band {
+     Contrast comes from alternating surface VALUE, not from more hues.
+
+     A band paints a background, so it needs padding on BOTH sides regardless of
+     what precedes it. The second selector is not redundant: Astro scopes every
+     compound selector with its own attribute, so `.section + .section` above
+     resolves to two attribute selectors and outranks a single `.section.band`.
+     Matching its shape is what lets this win. Without it a band gets full
+     padding underneath and none on top. */
+  .section.band,
+  .section + .section.band {
     padding-block: var(--section-pad);
+  }
+
+  /* A stat row is a band of short lines, not a section of prose. Full section
+     padding leaves it floating in empty colour. */
+  .section.band.section--tight,
+  .section + .section.band.section--tight {
+    padding-block: var(--space-12);
   }
 
   .band--surface {
@@ -506,22 +523,34 @@ const faqSchema =
   .stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--space-12);
+    /* Tighter down the page than across it — wrapped rows should not open up
+       as much as neighbouring columns need to stay apart. */
+    gap: var(--space-8) var(--space-12);
     margin: 0;
   }
 
+  .stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Label first, so it sits above the figure it introduces. */
+  .stat__label {
+    margin: 0 0 var(--space-2);
+    font-size: var(--size-small);
+    line-height: 1.4;
+    color: var(--color-text-muted);
+    max-width: 26ch;
+    text-wrap: balance;
+  }
+
   .stat__value {
+    /* <dd> carries a browser default indent; the grid handles alignment. */
+    margin: 0;
     font-family: var(--font-display);
     font-size: var(--size-stat);
     line-height: 1;
     letter-spacing: var(--tracking-tight);
-  }
-
-  .stat__label {
-    margin: var(--space-3) 0 0;
-    font-size: var(--size-small);
-    color: var(--color-text-muted);
-    max-width: 28ch;
   }
 
   /* ---- Client logos ----
