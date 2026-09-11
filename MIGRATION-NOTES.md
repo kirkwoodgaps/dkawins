@@ -815,3 +815,57 @@ from a token.
 
 Band sequences were checked for adjacent repeats: none on any of the 12 routes.
 The FAQ page gained a closing CTA in the process, which it lacked.
+
+---
+
+## 14. Industries list rebuilt from DKA's own project pages (2026-09-11)
+
+### 14.1 A significant source we had not used
+
+`/current-government-project-list/` and `/completed-government-project-list/`
+publish **46 named government projects** between them — 13 current, 33
+completed. Neither page is among the ten indexed URLs, so neither was in the
+migration scope, and neither had been read until now.
+
+They are the best evidence on the site of what DKA actually works on. The
+industries list grew from 8 generic sector labels to **21 entries, every one
+traceable to a named project or to live copy.** The provenance for each is a
+comment above it in `industries-we-serve.yaml`.
+
+Examples of what the list is now built on:
+
+| Industry | Evidence |
+|---|---|
+| Construction & General Contracting | WPAFB 2020-2025 MACC; MACC at the National Institutes of Health; R6 GSA IDIQ MATOC; IMCOM MATOC |
+| Disaster Recovery & Debris Management | ACI Regional Contracts for Debris Management; $95M MATOC for Rapid Disaster Infrastructure; St. Croix and St. Thomas hurricane recovery |
+| Aviation & Aerospace Support | GOCO Alongside Aircraft Refueling; Contractor-Owned/Operated ISR Aircraft; Aerostat Production for Foreign Military Sales |
+| Munitions & Ordnance | Multiple Award Military Munitions Services (MAMMS III) |
+| IT, Cyber & Data | Technology Application Development and Sustainment; Cyber Operations-Based Rapid Analytics (COBRA); 8(a) STARS III GWAC |
+| Healthcare & Medical Staffing | DoD and VA Health Care Staffing Services |
+
+### 14.2 This changes the agency question in § 7.4 and § 8
+
+An earlier pass removed a "Federal Agencies We Support" section, and item 2 in
+§ 8 still holds back two FAQ answers, on the grounds that **nothing on the site
+named a single customer agency.** That was true of the ten indexed pages. It is
+not true of the site as a whole.
+
+These project pages name the Air Force, the National Institutes of Health, the
+Department of Transportation, the Navy through NAVSUP and the Naval Air Warfare
+Center, the Marine Corps, IMCOM, the Defense Health Agency, the VA, and the
+State Department's INL among others.
+
+**One important distinction before anyone uses this.** These pages describe
+opportunities DKA *sought contracting partners for*, in its own words: "DKA is
+currently seeking contractors to partner with several projects" and "DKA is no
+longer seeking contracting partners for the following projects." That supports
+"these are the kinds of work we pursue". It does **not** by itself support "we
+have won contracts with these agencies". Terry can say which of the 46 resulted
+in awards, and that answer would unlock the held FAQ items properly.
+
+### 14.3 Section order fixed
+
+The "Don't See Your Industry Here?" section opens "The list above is not
+exhaustive" and was rendering **above** the list. The template put prose
+`sections` before the `industries` pill list on every page; the pill list is a
+summary and belongs first. Reordered.

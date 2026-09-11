@@ -32,26 +32,73 @@ intro: >-
 
 industries:
   heading: Industries We Support
-  # Every name below appears in live copy. The draft's generic sector labels have
-  # been replaced with, or narrowed to, the site's own wording — the specific and
-  # unusual examples are both more memorable and demonstrably true.
+  # EVERY ITEM BELOW IS EVIDENCED. Sources are DKA's own published project
+  # lists at /current-government-project-list/ and
+  # /completed-government-project-list/ — 46 projects between them — plus the
+  # industry lists on / and /who-we-are/. The named project after each entry is
+  # the evidence, not a claim of award: those pages describe opportunities DKA
+  # sought contracting partners for. See MIGRATION-NOTES.md § 14.
   items:
-    # SOURCED: /who-we-are/ "Logistics Management to IT"; homepage "custodial to IT".
-    - name: IT & Technology Services
-    # SOURCED: /who-we-are/ "Professional Staffing".
-    - name: Professional Staffing & Administrative Services
-    # SOURCED: /who-we-are/ "Logistics Management".
-    - name: Logistics Management
-    # SOURCED: /who-we-are/ "various Medical Services"; homepage "ambulance trips".
-    - name: Medical Services & Medical Transport
-    # SOURCED: /who-we-are/ and homepage, "Environmental Services".
-    - name: Environmental Services
-    # SOURCED: /who-we-are/ opening ("basic service and maintenance industries");
-    # homepage "custodial".
-    - name: Custodial, Facilities & Maintenance Services
-    # SOURCED: /who-we-are/ and homepage, "Mobile Asphalt Plants".
+    # WPAFB 2020-2025 MACC; MACC for general construction at the National
+    # Institutes of Health; R6 GSA IDIQ MATOC for Construction Services; IMCOM
+    # MATOC; MACC Solicitation
+    - name: Construction & General Contracting
+    # Architect-Engineer Services for Design and Construction Support for Air
+    # Force Construction Program
+    - name: Architect-Engineer & Design Services
+    # Demolition IDIQ Fort McCoy WI
+    - name: Demolition
+    # Environmental Construction and Remediation Services; EMAC solicitation for
+    # Environmental Remediation Services. Also named on / and /who-we-are/.
+    - name: Environmental Services & Remediation
+    # ACI Regional Contracts for Debris Management Services; $95M MATOC for
+    # Rapid Disaster Infrastructure 8(a); General Contractor for Construction
+    # Services, St. Croix and St. Thomas hurricane recovery
+    - name: Disaster Recovery & Debris Management
+    # Base Operations and Support Services (BOS) at Homestead ARB
+    - name: Base Operations & Facilities Support
+    # Fort Drum shelf stocking, receiving/storage/holding area and custodial
+    # operations. "Custodial" is also named on the homepage.
+    - name: Custodial & Facilities Maintenance
+    # Operate and Manage USMC Consolidated Storage Program Worldwide; Fort Drum
+    # RSHA
+    - name: Warehousing & Storage Operations
+    # Joint Enterprise Contracted Logistics and Services Support (JE-CLaSS) II;
+    # NAVSUP Global Husbanding Services Provider. "Logistics Management" is
+    # named on /who-we-are/.
+    - name: Logistics & Supply Chain Management
+    # GOCO Alongside Aircraft Refueling Services; Contractor-Owned,
+    # Contractor-Operated Aircraft for ISR; Aerostat Production and Support
+    # Services for Foreign Military Sales
+    - name: Aviation & Aerospace Support Services
+    # Multiple Award Military Munitions Services (MAMMS III)
+    - name: Munitions & Ordnance Services
+    # DoD and VA Health Care Staffing Services; Greene Respiratory Services
+    # (client). "Various Medical Services" is named on /who-we-are/.
+    - name: Healthcare & Medical Staffing
+    # "Ambulance trips" is named on the homepage and /success-stories/.
+    - name: Medical & Patient Transport
+    # Equipment Procurement and Sustainment (EPaS); Medical Equipment ECAT
+    - name: Equipment Procurement & Sustainment
+    # Technology Application Development and Sustainment (TADS); Cyber
+    # Operations-Based Rapid Analytics (COBRA); 8(a) STARS III GWAC. "IT" is
+    # named on / and /who-we-are/.
+    - name: IT, Cyber & Data Services
+    # Contractor Support Services for the Naval Air Warfare Center Training
+    # Systems Division
+    - name: Training & Simulation Support
+    # Long Term Administrative Support Contract III; Non-Personal Administrative
+    # Support Services for USDOT; Administrative Support Services; Staff Support
+    # Services. "Professional Staffing" is named on /who-we-are/.
+    - name: Administrative & Program Support
+    # One Acquisition Solution for Integrated Services (OASIS) Small Business;
+    # OASIS Unrestricted On-Ramp for Pools 1, 3 & 4
+    - name: Professional & Management Consulting
+    # McFarlane Sheet Metal (client)
+    - name: Specialty Trades & Sheet Metal
+    # Named on / and /success-stories/: "mobile asphalt plants"
     - name: Mobile Asphalt Plants
-    # SOURCED: homepage, "real estate appraisals".
+    # Named on the homepage: "real estate appraisals"
     - name: Real Estate Appraisal Services
 
 # RESOLVED 2026-09-11. The original draft claimed DKA tailors its compliance

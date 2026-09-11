@@ -201,6 +201,19 @@ const faqSchema =
           </section>
         )}
 
+        {d.industries && (
+          <section class="section">
+            <div class="wrap">
+              <h2>{d.industries.heading}</h2>
+              <ul class="pill-list">
+                {d.industries.items?.map((item: any) => (
+                  <li class="pill">{item.name}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
+
         {/* Generic prose sections: heading plus one or more paragraphs.
             Used by the service and about pages, which are narrative rather than
             card- or list-shaped. */}
@@ -282,19 +295,6 @@ const faqSchema =
                   <a href={d.clientStories.linkHref}>{d.clientStories.linkLabel}</a>
                 </p>
               )}
-            </div>
-          </section>
-        )}
-
-        {d.industries && (
-          <section class="section">
-            <div class="wrap">
-              <h2>{d.industries.heading}</h2>
-              <ul class="pill-list">
-                {d.industries.items?.map((item: any) => (
-                  <li class="pill">{item.name}</li>
-                ))}
-              </ul>
             </div>
           </section>
         )}
