@@ -447,3 +447,38 @@ if the original wording is ever needed.
    the `.yaml` files are the structured content for the rebuilt templates. Decide
    which one Keystatic edits before building the schema, and keep the other as a
    reference or retire it.
+
+---
+
+## 8. FAQ content — what Terry needs to confirm
+
+18 draft answers were supplied on 2026-09-11. 12 are live on `/faq/`, 1 is still
+awaiting copy, and 7 are held in `src/content/pages/faq.yaml` as commented
+blocks because each asserts something the business does not currently say about
+itself. Full text and per-item flags are in that file.
+
+Each row below is a single question for Terry. A yes unlocks the answer as
+drafted; anything else needs his wording.
+
+| # | The claim | Why it is held |
+|---|---|---|
+| 1 | DKA supports **WOSB, EDWOSB and SDVOSB** set-asides | The site claims HUBZone and 8(a) only. These are three new certification types. |
+| 2 | DKA works **across civilian and defense agencies** | Nothing on the site names a customer agency. § 7.4 already removed a DoD/GSA/VA/DHS/HHS section for this reason. State work *is* attested via CMAS and TXMAS. |
+| 3 | DKA supports **IDIQ task orders and BPA calls** | Plausible, unsourced. |
+| 4 | DKA offers **graphic design** and **compliance matrix development** | Neither appears on the site. The rest of that answer matches the attested Proposal Development Services copy, so it may only need these two removed. |
+| 5 | DKA sells **review-only engagements** (color-team reviews, editing) | The site describes evaluator-standpoint review as a step *inside* full proposal development, not a separate product. |
+| 6 | DKA produces **capability statements and resumes** | Past performance write-ups are attested. These two are not. |
+| 7 | GSA Schedule award takes **roughly 6 to 12 months** | No timeline appears anywhere on the site. A published range is one prospects will hold DKA to, so it has to be Terry's number. |
+
+Two edits were made to answers that did go live:
+
+- "Nearly three decades" became "Since 1995". DKA was formed in August 1995, so
+  it is past three decades, and the 30-year logo already says so.
+- "Over 500 GSA Schedule **contracts**" became "more than 500 **GSA Schedules**",
+  matching the metric settled in § 3.4. The two are different counts and the
+  wording was blurring them.
+
+Still open from § 7.5 and unchanged: `/faq/` question "Does DKA work with
+businesses across the country?" has no answer. "Nationwide" appears nowhere on
+the live site; the strongest attested claim is one client with 26 contracts
+across 9 states.

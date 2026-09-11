@@ -1,13 +1,14 @@
-# FAQ page — PARTIAL DRAFT.
+# FAQ page.
 #
-# Scaffolding (title/path/metaDescription/intro) is Nate's own copy, kept as written.
+# 12 answers live, 7 held back, 1 still awaiting copy.
 #
-# Answers below are filled ONLY where the claim is attested in live dkawins.com
-# copy; each is quoted or closely assembled from the source page noted above it.
-# Questions whose answers could not be sourced are left as empty strings with a
-# TODO, per CLAUDE.md: never invent marketing copy for a real business.
+# Answers below are either Nate's own copy or assembled from live dkawins.com
+# copy, with the source noted above each. The seven held back are at the bottom
+# of this file, commented out, each with the specific claim that needs Terry's
+# confirmation. Per CLAUDE.md: never publish a claim this business has not made
+# about itself.
 #
-# 3 answers sourced, 1 partial, 3 awaiting copy from Nate. See MIGRATION-NOTES.md.
+# See MIGRATION-NOTES.md § 8.
 
 title: Frequently Asked Questions
 path: /faq/
@@ -21,39 +22,28 @@ intro: >-
 groups:
   - heading: Working with DKA
     items:
-      # SOURCED: /who-we-are/ ("The core of our services...") + /what-we-do/
-      # ("DKA has extensive experience with the General Service Administration...").
+      # Nate's copy. Consistent with /who-we-are/ and /what-we-do/.
       - q: What does DKA do?
         a: >-
-          The core of our services remains in helping our clients respond to
-          government solicitations; nothing is as rewarding as helping our
-          clients grow their businesses through winning government contracts.
-          DKA has extensive experience with the General Service Administration
-          (GSA) Federal Supply Service (FSS) Multiple Award Schedule (MAS),
-          better known as the GSA Schedule, and has written hundreds of winning
-          government proposals for clients. From initial solicitation review to
-          contract startup, DKA is with you for the entire process.
+          DKA helps businesses win and manage government contracts through
+          expert proposal writing, and helps companies get listed on and
+          maintain the GSA Multiple Award Schedule.
 
-      # SOURCED: /who-we-are/ (founding date, broadened expertise) + / (350
-      # wins, $1.7 Billion). Both figures confirmed by Nate on 2026-09-11:
-      # 350+ awards and $1.7 Billion combined. The "more than 300" in the
-      # homepage meta tag was the stale one. See MIGRATION-NOTES.md § 3.4.
+      # Nate's copy, one edit: the draft said "nearly three decades". DKA was
+      # formed in August 1995, so it is past three decades, and the 30-year logo
+      # says so. Re-anchored to the founding year, which is attested. Figures
+      # confirmed by Nate 2026-09-11.
       - q: How much experience does DKA have in government contracting?
         a: >-
-          DeSutter, Kerr & Associates, Inc. was formed in August of 1995 with a
-          mission of helping small businesses win government contracts in basic
-          service and maintenance industries. Over the years DKA's expertise
-          broadened to cover virtually all aspects of the federal procurement
-          process. With more than 350 wins with a combined value in excess of
-          $1.7 Billion, DKA has the experience to increase your likelihood of
-          success on every project.
+          Since 1995, DKA has helped clients navigate federal procurement,
+          contributing to more than 350 contract awards worth over $1.7 billion
+          combined.
 
-      # PARTIAL. Industries half is SOURCED from / and /who-we-are/.
-      # The "agencies" half of the question is NOT answered: the live site never
-      # names civilian or defense agencies. State-level work IS supported
-      # (CMAS and TXMAS pages). Either supply the agency list or narrow the
-      # question to industries only.
-      - q: What industries and agencies does DKA typically work with?
+      # SOURCED: homepage and /who-we-are/ industry lists.
+      # NOTE: the "agencies" half of this question is still unanswered. The live
+      # site never names a customer agency. Either supply the agency list or
+      # narrow the question to industries. See the held-back block below.
+      - q: What industries does DKA typically work with?
         a: >-
           DKA has helped its clients win hundreds of government contracts to
           provide an extremely wide variety of products and services, from
@@ -62,42 +52,162 @@ groups:
           helped our clients obtain HUBZone & 8(a) certifications and contract
           vehicles, such as CMAS, TXMAS, and the GSA Schedule.
 
-      # TODO — NOT SOURCED. "Nationwide" appears nowhere on the live site.
-      # The strongest attested claim is on /success-stories/: one client won
-      # "26 federal government contracts in 9 states", with Nevada, Montana,
-      # Hawaii and Oklahoma named. That supports multi-state, not nationwide.
+      # Nate's copy. Commits to no figure, which is the right call for a
+      # published pricing statement.
+      - q: How do your fees typically work?
+        a: >-
+          Fee structures vary by engagement and scope, and we discuss pricing
+          transparently during your free initial consultation so you know
+          exactly what to expect before any work begins.
+
+      # Nate's copy. The free, no-obligation consultation is attested on the
+      # GSA, CMAS, TXMAS and MAS pages.
+      - q: How do I get started?
+        a: >-
+          Contact our team for a free, no-obligation consultation to discuss
+          your company's goals and determine the best path forward.
+
+      # TODO — NOT SOURCED. "Nationwide" appears nowhere on the live site. The
+      # strongest attested claim is on /success-stories/: one client won "26
+      # federal government contracts in 9 states", with Nevada, Montana, Hawaii
+      # and Oklahoma named. That supports multi-state, not nationwide.
       # Nate: confirm the real geographic footprint.
       - q: Does DKA work with businesses across the country?
         a: ""
 
-      # TODO — NOT SOURCED. The live site makes no pricing or fee statement of
-      # any kind. The only attested part of the draft answer was the "free,
-      # no-obligation consultation", which appears on the GSA/CMAS/TXMAS/MAS
-      # pages. Nate: this one needs to come from you — a published pricing
-      # representation shouldn't be drafted on the firm's behalf.
-      - q: How do your fees typically work?
-        a: ""
-
-      # SOURCED: /who-we-are/ and /what-we-do/ CTA ("Talk with a member of our
-      # team...") + /california-multiple-award-schedules-cmas/ ("Contact us for a
-      # free, no-obligation consultation with an experienced consultant.")
-      # + /contact-us/ (phone number).
-      - q: How do I get started?
-        a: >-
-          Talk with a member of our team about how DKA can help your company
-          grow in the public sector. Contact us for a free, no-obligation
-          consultation with an experienced consultant, or call us at
-          561-640-9171.
-
-  # NOTE: this group arrived truncated — the heredoc was cut off mid-answer at
-  # "We support proposals" and no further questions were specified. The single
-  # question below is preserved; send the rest of the group when ready.
   - heading: Proposal writing
     items:
-      # TODO — NOT SOURCED, and the draft answer was truncated mid-sentence.
-      # Grounded material for this answer does exist on
-      # /government-proposal-writing-services/ (Proposal Development Services,
-      # Post-Submittal Support, Post-Award Support, Research) if you want it
-      # assembled from that page rather than written fresh.
-      - q: What types of government contracts does DKA help win?
-        a: ""
+      # Nate's copy. Makes no timeline commitment, which is why it is safe to
+      # publish as written.
+      - q: How long does it take to win a government contract?
+        a: >-
+          Timelines vary widely depending on the solicitation and agency, but
+          our team works to keep your proposal on schedule from the research
+          phase through submission and award.
+
+      # Nate's copy. Matches the Post-Award Support tier on
+      # /government-proposal-writing-services/ closely.
+      - q: Does DKA help with contract management after award?
+        a: >-
+          Yes. Our post-award support covers everything from contract
+          modifications to ongoing technical and administrative assistance
+          throughout the life of the contract.
+
+  - heading: GSA Schedule
+    items:
+      # Nate's copy. A description of the federal program, not a DKA claim, and
+      # independently verifiable.
+      - q: What is the GSA Schedule?
+        a: >-
+          The GSA Multiple Award Schedule is a long-term government-wide
+          contract that gives federal buyers a streamlined way to purchase
+          products and services from approved vendors like your company.
+
+      # Nate's copy. Program description rather than a DKA claim.
+      - q: Why does my business need a GSA Multiple Award Schedule contract?
+        a: >-
+          The GSA Schedule is a long-term, government-wide contract vehicle that
+          pre-qualifies your company to sell to federal agencies without
+          competing on every solicitation, which can significantly shorten the
+          federal sales cycle.
+
+      # Nate's copy, one edit: "over 500 GSA Schedule contracts" became "more
+      # than 500 GSA Schedules", matching the metric Nate confirmed on
+      # 2026-09-11. The industries named are attested on /who-we-are/.
+      - q: Which GSA Schedule categories or SINs can DKA help me pursue?
+        a: >-
+          We support clients across Special Item Numbers spanning IT services,
+          professional services, facilities, industrial products, and more, and
+          have helped clients secure more than 500 GSA Schedules to date.
+
+      # Nate's copy, and the best-sourced answer here: /who-we-are/ already
+      # names GSA Advantage listing, catalog modifications, quarterly sales
+      # reporting and Industrial Funding Fee payments almost word for word.
+      - q: What is involved in maintaining a GSA Schedule contract after award?
+        a: >-
+          Ongoing compliance includes annual sales reporting, Commercial Sales
+          Practices updates, catalog maintenance, and timely contract
+          modifications, all of which our team can manage on your behalf.
+
+      # Nate's copy. Catalog modifications are attested on /who-we-are/; the
+      # modification types named are standard GSA categories, not DKA claims.
+      - q: Do you help with GSA Schedule modifications and price adjustments?
+        a: >-
+          Yes. We prepare and submit administrative, economic price adjustment,
+          and additional SIN modifications to keep your contract current and
+          competitive.
+
+# ===========================================================================
+# HELD BACK — NEEDS TERRY'S CONFIRMATION BEFORE PUBLISHING
+#
+# Each of these reads well and may be entirely true. None of it is supported by
+# anything the business currently says about itself, and this audience checks.
+# Confirm the flagged claim, then move the block up into the groups above.
+# ===========================================================================
+#
+# --- 1. Claims certifications DKA has never mentioned -----------------------
+# FLAG: the live site claims HUBZone and 8(a) ONLY. WOSB, EDWOSB and SDVOSB are
+# three new certification types. Confirm DKA actually supports all three.
+#     - q: Does DKA work with small businesses and socioeconomic set-asides?
+#       a: >-
+#         Yes. We regularly support small businesses, 8(a), WOSB, EDWOSB,
+#         HUBZone, and SDVOSB firms in positioning for and winning set-aside
+#         contracts.
+#
+# --- 2 & 3. Name customer agency types -------------------------------------
+# FLAG: "civilian and defense agencies". Nothing on the live site names a single
+# customer agency, and an earlier pass already removed a DoD/GSA/VA/DHS/HHS
+# section for this exact reason. State work IS attested (CMAS, TXMAS).
+# Also unsourced in the first: IDIQ task orders and BPA calls.
+#     - q: What types of government contracts does DKA help win?
+#       a: >-
+#         We support proposals for full and open competitions, small business
+#         set-asides, IDIQ task orders, BPA calls, and GSA Schedule
+#         opportunities across civilian and defense agencies.
+#
+#     - q: What industries and agencies does DKA typically work with?
+#       a: >-
+#         Our clients span IT, professional services, logistics, healthcare,
+#         environmental, and facilities sectors, and we have supported
+#         engagements with civilian, defense, and state government agencies.
+#
+# --- 4. Offers a service line that is not on the site -----------------------
+# FLAG: "graphic design". Not offered anywhere on dkawins.com. Compliance matrix
+# development is also unsourced. The rest closely matches the attested Proposal
+# Development Services copy, so this one may just need the two items removed.
+#     - q: What does your proposal writing process include?
+#       a: >-
+#         Our process covers solicitation analysis, compliance matrix
+#         development, technical and management volume writing, pricing
+#         narrative support, graphic design, and a final compliance and quality
+#         review before submission.
+#
+# --- 5. Sells review as a standalone product -------------------------------
+# FLAG: the live site describes proposals being "reviewed from an evaluator's
+# standpoint" as a step INSIDE full proposal development. This answer sells
+# color-team reviews and editing as a separate service you can buy on its own.
+# Confirm DKA offers review-only engagements.
+#     - q: Do you offer proposal reviews, or only full proposal writing?
+#       a: >-
+#         Both. We offer end-to-end proposal development as well as color-team
+#         reviews, compliance checks, and editing support for proposals your
+#         team has already drafted.
+#
+# --- 6. Adds deliverables not on the site ----------------------------------
+# FLAG: past performance write-ups ARE attested. Capability statements and
+# resumes are not. Trim to past performance only, or confirm the other two.
+#     - q: Can DKA help with past performance write-ups and capability statements?
+#       a: >-
+#         Yes. We help clients develop compelling past performance narratives,
+#         capability statements, and resumes that highlight relevant experience
+#         to strengthen proposal evaluations.
+#
+# --- 7. Publishes a timeline commitment ------------------------------------
+# FLAG: "roughly 6 to 12 months". No timeline appears anywhere on the live site.
+# A published range is one prospects will hold DKA to. Needs to be Terry's
+# number, not a drafted estimate.
+#     - q: How long does it typically take to get on the GSA Schedule?
+#       a: >-
+#         Most GSA Schedule proposals take roughly 6 to 12 months to move
+#         through submission, negotiation, and award, though timelines vary
+#         based on the SIN, agency workload, and completeness of your package.
