@@ -436,6 +436,18 @@ const faqSchema =
     padding-block: var(--space-12);
   }
 
+  /* A band ends at a hard colour edge, so the section after it needs its top
+     padding back — `.section + .section` above zeroes it, which is right
+     between two sections on the same ground and wrong the moment one of them
+     paints a background. Without this the next heading sits flush against the
+     edge of the band.
+     `:not(.band)` matters: band-to-band needs no gap, because the colour change
+     does that work and both already carry their own padding. Without the guard
+     this would also override the tight stat-row padding above. */
+  .band + .section:not(.band) {
+    padding-block-start: var(--section-pad);
+  }
+
   .band--surface {
     background: var(--color-surface);
   }
