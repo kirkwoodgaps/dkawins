@@ -150,16 +150,28 @@ tag edited, on that instruction; only the number moved.
 The `.mdoc` files are left untouched — they are the record of what the live site
 says today, not the copy being shipped.
 
-Two things this still does **not** settle:
+**Both remaining figures resolved 2026-09-11.** Nate confirmed the combined
+value is **$1.7 Billion**, and that the "Over 400 Schedule Contracts" credential
+on the CMAS, TXMAS and MAS pages is the same GSA metric, now **over 500 GSA
+Schedules**.
 
-- **The dollar figure.** $1.7B (home) and $1 billion (`/success-stories/`) are
-  both still published and both unconfirmed. This is now the only unverified
-  number left in the content. Still needs Nate.
-- **What "Schedule Contracts" means on the CMAS and TXMAS pages.** Those pages
-  say "Over 400 Schedule Contracts Awarded" without specifying GSA. If that 400
-  is the same GSA figure now corrected to 500, it updates too. If it counts all
-  schedule types including CMAS and TXMAS, it is a third metric and needs its own
-  number. Left at 400 in the `.mdoc` record pending an answer.
+Applied as follows:
+
+- `/success-stories/` published "$1 billion" for the same claim the homepage
+  put at "$1.7 Billion". It now reads $1.7 Billion and the two pages agree.
+- The CMAS and TXMAS pages said "Over 400 Schedule Contracts Awarded" without
+  naming GSA. Since the figure *is* the GSA count, the wording is now explicit:
+  "Over 500 GSA Schedules Awarded". **Judgment call** — it makes a GSA
+  credential explicit on two state-schedule pages. Revert to generic wording if
+  that reads wrong in context.
+- `/who-we-are/` "more than 400 companies get on the Schedule" is now 500.
+
+**Every number in the content is now confirmed.**
+
+One consistency point deliberately left alone: `/who-we-are/` still says DKA has
+won "hundreds of government contracts" where the settled figure is 350+.
+"Hundreds" is not wrong at 350, and tightening it was not asked for. Flagging it
+in case you want the pages to use one phrasing.
 
 ---
 
@@ -386,16 +398,31 @@ The draft's removal of the "Federal Agencies We Support" section was correct and
 is upheld. Related: `/what-we-do/` uses a US Navy seal as decoration, which reads
 as a Navy affiliation for the same reason. Do not carry it over.
 
+### 7.4b When a `.mdoc` file may be edited
+
+The `.mdoc` files started as a pure extraction record. They are no longer only
+that: the catch-all route renders a `.mdoc` for any URL that has no `.yaml` yet,
+so eight of them are **shipping content** today. The rule now in force:
+
+| File | Has a `.yaml`? | Status |
+|---|---|---|
+| `home.mdoc`, `success-stories.mdoc` | yes | **Archive. Do not edit.** The `.yaml` wins the route. |
+| the other eight | no | **Shipping.** Corrections apply here until each gets a `.yaml`. |
+
+That is why the 2026-09-11 figure corrections touched `who-we-are.mdoc`, the
+CMAS, TXMAS and MAS pages, but not `success-stories.mdoc` — which still reads
+"$1 billion" and is correct to, as a record of what the old site published.
+
+The pristine extraction of all ten pages is preserved in git at commit `9fa29d9`
+if the original wording is ever needed.
+
 ### 7.5 Still open
 
 1. ~~**300 vs. 350 vs. "hundreds" vs. 400**~~ — **RESOLVED**: 350+ contract
-   awards won, 500+ GSA Schedules. Two metrics, not one. Applied across the
-   `.yaml` content. The CMAS/TXMAS "Schedule Contracts" wording is a possible
-   third metric — see § 3.4.
-2. **$1 billion vs. $1.7 billion** — `/success-stories/` and `/` disagree. With
-   the two counts settled, this is **the last unverified number in the content**.
-   A stat row on the success-stories page would print the contradiction twice on
-   one screen. The row is left in place with a comment; drop it or reconcile.
+   awards won, 500+ GSA Schedules. Two metrics, not one. Applied across both the
+   `.yaml` content and the shipping `.mdoc` pages. § 3.4.
+2. ~~**$1 billion vs. $1.7 billion**~~ — **RESOLVED**: $1.7 Billion. Applied to
+   `/success-stories/`, which now agrees with the homepage. § 3.4.
 3. **The "partial list of agencies and locations"** promised by the
    success-stories intro still does not exist. § 4.2.
 4. **`2-min-1.jpg`** is still unidentified and is referenced by nothing. § 2.4.

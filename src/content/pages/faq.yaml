@@ -35,10 +35,9 @@ groups:
           contract startup, DKA is with you for the entire process.
 
       # SOURCED: /who-we-are/ (founding date, broadened expertise) + / (350
-      # wins, $1.7 Billion). Nate confirmed 350+ as the award count on
-      # 2026-09-11; the "more than 300" in the homepage meta tag was the stale
-      # one. The dollar figure is still unconfirmed — see MIGRATION-NOTES.md
-      # § 3.4.
+      # wins, $1.7 Billion). Both figures confirmed by Nate on 2026-09-11:
+      # 350+ awards and $1.7 Billion combined. The "more than 300" in the
+      # homepage meta tag was the stale one. See MIGRATION-NOTES.md § 3.4.
       - q: How much experience does DKA have in government contracting?
         a: >-
           DeSutter, Kerr & Associates, Inc. was formed in August of 1995 with a

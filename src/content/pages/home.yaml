@@ -46,9 +46,8 @@ hero:
 # All three confirmed. "1995" and "350+" match live homepage body copy; Nate
 # confirmed 350+ as the award count on 2026-09-11.
 #
-# THE DOLLAR FIGURE IS STILL OPEN. "$1.7B+" is what the homepage publishes today,
-# but /success-stories/ says "well in excess of $1 billion" for the same claim.
-# Confirm the combined value before launch — it is the last unverified number.
+# All three confirmed by Nate on 2026-09-11. "$1.7B+" also now matches
+# /success-stories/, which previously published "$1 billion" for the same claim.
 stats:
   - value: "1995"
     label: Winning federal contracts for clients since

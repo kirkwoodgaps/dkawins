@@ -20,25 +20,22 @@ metaDescription: >-
 
 # SOURCED: live page intro, verbatim.
 #
-# TWO PROBLEMS, both pre-existing, both needing Nate's call:
+# ONE PROBLEM LEFT, pre-existing:
 #
-# 1. "well in excess of $1 billion" here vs. "$1.7 Billion" on the homepage.
-#    Same claim, two numbers, STILL UNRESOLVED. Nate confirmed the award count
-#    (350+) and the GSA Schedule count (500+) but did not speak to the dollar
-#    figure, so neither number has been touched. Confirm the combined value.
+# 1. RESOLVED 2026-09-11. This page published "$1 billion" while the homepage
+#    published "$1.7 Billion" for the same claim. Nate confirmed $1.7 Billion.
+#    Updated below; the two pages now agree.
 # 2. The second sentence promises "a partial list of agencies and locations" that
 #    does not appear anywhere on the page — the page goes straight into the case
 #    studies. See MIGRATION-NOTES.md § 4.2. Either supply the list or cut the
 #    sentence; do not ship the page with the promise dangling.
 intro: >-
   DKA has helped its clients win more than 350 government contracts with a
-  combined value well in excess of $1 billion. The following is a partial list of
-  agencies and locations of these contracts.
+  combined value well in excess of $1.7 Billion. The following is a partial list
+  of agencies and locations of these contracts.
 
-# CONFLICT — still live, still needs resolving before shipping. The award count
-# is settled at 350+, but the dollar figures never were: this tile says "$1.7B+"
-# while the intro three lines above says "$1 billion". That contradiction would
-# sit on screen twice, inches apart. Fix the dollar figure or drop this row.
+# All three figures confirmed by Nate and consistent with the intro above and
+# with the homepage: 350+ awards, $1.7B+ combined, clients since 1995.
 stats:
   - value: "1995"
     label: Winning federal contracts for clients since
