@@ -12,13 +12,16 @@
 title: "Government Proposal Writing & GSA Schedule Services"
 path: /
 
-# PRESERVED VERBATIM from the live <meta name="description">.
-# The draft rewrote this to say "more than 350 ... worth over $1.7 billion".
-# The live tag says 300. See MIGRATION-NOTES.md § 3.4 — the site contradicts
-# itself (300 in meta, 350 in body, "hundreds" elsewhere). Nate picks the number;
-# until then the indexed text stands.
+# CONFIRMED BY NATE (2026-09-11): 350+ is contract awards won; 500+ is GSA
+# Schedules, a separate metric handled in whyDka below. That settles
+# MIGRATION-NOTES.md § 3.4 — the body copy's "more than 350" was right all along
+# and the "more than 300" in this tag is stale.
+#
+# This is the one edit made to an indexed <meta> tag. CLAUDE.md says preserve it
+# "unless told otherwise" — this is that instruction. Only the number moved; the
+# rest of the sentence is the live wording, verbatim.
 metaDescription: >-
-  DKA has helped its clients win more than 300 government contracts to provide an
+  DKA has helped its clients win more than 350 government contracts to provide an
   extremely wide variety of products and services, from custodial to IT, ambulance
   trips to real estate appraisals, environmental services to mobile asphalt
   plants, etc.
@@ -40,9 +43,12 @@ hero:
     label: Contact Us
     href: /contact-us/
 
-# SOURCED: all three figures from live homepage body copy — "Since 1995" and
-# "more than 350 wins with a combined value in excess of $1.7 Billion".
-# Labels are descriptive, not marketing claims.
+# All three confirmed. "1995" and "350+" match live homepage body copy; Nate
+# confirmed 350+ as the award count on 2026-09-11.
+#
+# THE DOLLAR FIGURE IS STILL OPEN. "$1.7B+" is what the homepage publishes today,
+# but /success-stories/ says "well in excess of $1 billion" for the same claim.
+# Confirm the combined value before launch — it is the last unverified number.
 stats:
   - value: "1995"
     label: Winning federal contracts for clients since
@@ -143,15 +149,17 @@ whyDka:
   items:
     # SOURCED: "Since 1995" (homepage) / "formed in August of 1995" (/who-we-are/).
     - Winning federal contracts for clients since 1995
-    # SOURCED: homepage, "more than 350 wins with a combined value in excess of
-    # $1.7 Billion".
+    # SOURCED: homepage, "more than 350 wins"; count confirmed by Nate.
+    # Dollar figure still pending confirmation — see stats above.
     - More than 350 contract awards won, worth over $1.7 billion combined
     # SOURCED: homepage § WHO WE ARE, industry list.
     - Clients ranging from custodial services to IT, ambulance trips to real
       estate appraisals, environmental services to mobile asphalt plants
-    # SOURCED: /who-we-are/ and CMAS/TXMAS/MAS pages, "more than 400 companies".
-    # This is the site's strongest GSA-specific number and the draft omitted it.
-    - More than 400 companies placed and maintained on Schedule contracts
+    # CONFIRMED BY NATE (2026-09-11): 500+ GSA Schedules. Supersedes the "more
+    # than 400" published on /who-we-are/ and the CMAS/TXMAS/MAS pages.
+    # This is DKA's strongest GSA-specific number and the original draft omitted
+    # it entirely.
+    - More than 500 GSA Schedules awarded
     # SOURCED: the four service tiers on
     # /government-proposal-writing-services/ (Proposal Development, Post-Submittal,
     # Post-Award, Research).

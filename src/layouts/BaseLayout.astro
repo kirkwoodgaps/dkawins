@@ -1,0 +1,182 @@
+---
+import '../styles/tokens.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  path: string;
+}
+
+const { title, description, path } = Astro.props;
+const canonical = new URL(path, 'https://www.dkawins.com/').href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    {/* Five pages have no live meta description (MIGRATION-NOTES.md § 3.1).
+        Omit the tag entirely rather than emit an empty one. */}
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="site-header__brand" href="/">DeSutter, Kerr &amp; Associates</a>
+        <nav aria-label="Primary">
+          <ul class="site-nav">
+            <li><a href="/what-we-do/">What We Do</a></li>
+            <li><a href="/who-we-are/">Who We Are</a></li>
+            <li><a href="/success-stories/">Success Stories</a></li>
+            <li><a href="/contact-us/">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p class="site-footer__contact">
+          <a href="tel:5616409171">561-640-9171</a>
+          <span aria-hidden="true">·</span>
+          <a href="mailto:info@dkahome.com">info@dkahome.com</a>
+        </p>
+        <p class="site-footer__address">
+          5713 Corporate Way, Suite 102, West Palm Beach, FL 33407
+        </p>
+        <p class="site-footer__legal">&copy; DeSutter, Kerr &amp; Associates</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  :global(*, *::before, *::after) {
+    box-sizing: border-box;
+  }
+
+  :global(body) {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: var(--size-body);
+    line-height: var(--leading-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :global(h1, h2, h3, h4) {
+    font-family: var(--font-display);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  :global(p) {
+    max-width: var(--measure-prose);
+  }
+
+  :global(a) {
+    color: var(--color-accent);
+  }
+
+  :global(a:hover) {
+    color: var(--color-accent-hover);
+  }
+
+  /* Never remove an outline without replacing it. */
+  :global(:focus-visible) {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+    border-radius: var(--radius);
+  }
+
+  :global(.wrap) {
+    width: 100%;
+    max-width: var(--measure-page);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+  }
+
+  .skip-link:focus {
+    left: var(--space-4);
+    top: var(--space-4);
+    z-index: 10;
+    background: var(--color-surface);
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .site-header {
+    border-bottom: var(--border);
+    background: var(--color-surface);
+  }
+
+  .site-header__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4) var(--space-8);
+    align-items: center;
+    justify-content: space-between;
+    padding-block: var(--space-6);
+  }
+
+  .site-header__brand {
+    font-family: var(--font-display);
+    font-size: var(--size-h3);
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: var(--size-small);
+  }
+
+  .site-footer {
+    margin-top: var(--space-24);
+    border-top: var(--border);
+    padding-block: var(--space-12);
+    font-size: var(--size-small);
+    color: var(--color-text-muted);
+  }
+
+  .site-footer p {
+    margin: 0 0 var(--space-2);
+    max-width: none;
+  }
+
+  .site-footer__contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+</style>

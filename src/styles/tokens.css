@@ -1,0 +1,65 @@
+/**
+ * Design tokens. Every value used by a component should come from here —
+ * no hard-coded hex or arbitrary margins in component files.
+ */
+
+:root {
+  /* ---- Color -------------------------------------------------------- */
+  /* Near-black on off-white, not #000 on #fff. */
+  --color-bg: #fbfaf8;
+  --color-surface: #ffffff;
+  --color-text: #1a1a18;
+  --color-text-muted: #55524c;
+  --color-rule: #e2ded7;
+
+  /* One accent, used sparingly for links and CTAs.
+     #1c4f7c on --color-bg is 7.6:1 — passes AA for normal text. */
+  --color-accent: #1c4f7c;
+  --color-accent-hover: #143a5c;
+  --color-accent-contrast: #ffffff;
+
+  --color-focus: #b4541a;
+
+  /* ---- Type --------------------------------------------------------- */
+  /* TODO: self-host the display + text faces in public/fonts and swap them in
+     here. No Google Fonts CDN (CLAUDE.md). System stacks until the files land,
+     so nothing renders in a fallback we did not choose. */
+  --font-display: ui-serif, Georgia, 'Times New Roman', serif;
+  --font-body: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+
+  /* Fluid scale. Big jump from h1 to body so hierarchy reads at a glance. */
+  --size-h1: clamp(2.5rem, 1.6rem + 4.2vw, 4.5rem);
+  --size-h2: clamp(1.75rem, 1.3rem + 2vw, 2.5rem);
+  --size-h3: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+  --size-body: clamp(1.0625rem, 1.02rem + 0.2vw, 1.125rem); /* 17 -> 18px */
+  --size-small: 0.9375rem;
+  --size-stat: clamp(2.25rem, 1.6rem + 2.8vw, 3.5rem);
+
+  --leading-tight: 1.15;
+  --leading-body: 1.65;
+  --tracking-tight: -0.02em;
+
+  /* ---- Space -------------------------------------------------------- */
+  /* 4px base scale. */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Generous vertical section rhythm — whitespace is the main upgrade. */
+  --section-pad: clamp(var(--space-16), 10vw, var(--space-32));
+
+  /* ---- Layout ------------------------------------------------------- */
+  --measure-page: 1100px;
+  --measure-prose: 70ch;
+  --gutter: clamp(var(--space-4), 5vw, var(--space-8));
+
+  --radius: 2px;
+  --border: 1px solid var(--color-rule);
+}

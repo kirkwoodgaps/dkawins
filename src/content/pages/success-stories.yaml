@@ -23,20 +23,22 @@ metaDescription: >-
 # TWO PROBLEMS, both pre-existing, both needing Nate's call:
 #
 # 1. "well in excess of $1 billion" here vs. "$1.7 Billion" on the homepage.
-#    Same claim, two numbers. Preserved as published. See MIGRATION-NOTES.md § 3.4.
+#    Same claim, two numbers, STILL UNRESOLVED. Nate confirmed the award count
+#    (350+) and the GSA Schedule count (500+) but did not speak to the dollar
+#    figure, so neither number has been touched. Confirm the combined value.
 # 2. The second sentence promises "a partial list of agencies and locations" that
 #    does not appear anywhere on the page — the page goes straight into the case
 #    studies. See MIGRATION-NOTES.md § 4.2. Either supply the list or cut the
 #    sentence; do not ship the page with the promise dangling.
 intro: >-
-  DKA has helped its clients win hundreds of government contracts with a combined
-  value well in excess of $1 billion. The following is a partial list of agencies
-  and locations of these contracts.
+  DKA has helped its clients win more than 350 government contracts with a
+  combined value well in excess of $1 billion. The following is a partial list of
+  agencies and locations of these contracts.
 
-# CONFLICT — resolve before shipping. These are the homepage figures. Dropping a
-# "$1.7B+" tile directly beneath an intro that says "$1 billion" puts the
-# contradiction in § 3.4 on screen twice, inches apart. Either reconcile the two
-# numbers or drop this row from this page.
+# CONFLICT — still live, still needs resolving before shipping. The award count
+# is settled at 350+, but the dollar figures never were: this tile says "$1.7B+"
+# while the intro three lines above says "$1 billion". That contradiction would
+# sit on screen twice, inches apart. Fix the dollar figure or drop this row.
 stats:
   - value: "1995"
     label: Winning federal contracts for clients since

@@ -34,10 +34,11 @@ groups:
           government proposals for clients. From initial solicitation review to
           contract startup, DKA is with you for the entire process.
 
-      # SOURCED: /who-we-are/ (founding date, broadened expertise) + / (350 wins,
-      # $1.7 Billion). NOTE: the homepage meta description says "more than 300"
-      # while its own body says "more than 350" — see MIGRATION-NOTES.md §3.4.
-      # This answer uses the body figure, matching the agreed hero stat row.
+      # SOURCED: /who-we-are/ (founding date, broadened expertise) + / (350
+      # wins, $1.7 Billion). Nate confirmed 350+ as the award count on
+      # 2026-09-11; the "more than 300" in the homepage meta tag was the stale
+      # one. The dollar figure is still unconfirmed — see MIGRATION-NOTES.md
+      # § 3.4.
       - q: How much experience does DKA have in government contracting?
         a: >-
           DeSutter, Kerr & Associates, Inc. was formed in August of 1995 with a

@@ -133,8 +133,33 @@ The meta description says "**more than 300** government contracts". The body of
 the same page says "**more than 350** wins with a combined value in excess of
 $1.7 Billion", and the body's Who We Are section says "hundreds". The
 success-stories page says "hundreds ... with a combined value well in excess of
-**$1 billion**". All four preserved exactly as found; someone should decide which
-number is current.
+**$1 billion**". All four preserved exactly as found in the `.mdoc` extraction.
+
+**RESOLVED 2026-09-11.** Nate confirmed these are two separate metrics:
+
+| Metric | Correct figure | What the live site publishes |
+|---|---|---|
+| Contract awards won for clients | **350+** | 300 (home `<meta>`), 350 (home body), "hundreds" |
+| GSA Schedules awarded | **500+** | "more than 400" (`/who-we-are/`, CMAS, TXMAS, MAS) |
+
+So the homepage body copy was right all along and only the `<meta>` tag's "300"
+was stale. The `.yaml` rebuild content now reads *more than 350* for awards and
+*more than 500* for GSA Schedules. The homepage `<meta>` tag is the one indexed
+tag edited, on that instruction; only the number moved.
+
+The `.mdoc` files are left untouched — they are the record of what the live site
+says today, not the copy being shipped.
+
+Two things this still does **not** settle:
+
+- **The dollar figure.** $1.7B (home) and $1 billion (`/success-stories/`) are
+  both still published and both unconfirmed. This is now the only unverified
+  number left in the content. Still needs Nate.
+- **What "Schedule Contracts" means on the CMAS and TXMAS pages.** Those pages
+  say "Over 400 Schedule Contracts Awarded" without specifying GSA. If that 400
+  is the same GSA figure now corrected to 500, it updates too. If it counts all
+  schedule types including CMAS and TXMAS, it is a third metric and needs its own
+  number. Left at 400 in the `.mdoc` record pending an answer.
 
 ---
 
@@ -363,12 +388,14 @@ as a Navy affiliation for the same reason. Do not carry it over.
 
 ### 7.5 Still open
 
-1. **300 vs. 350 vs. "hundreds" vs. 400** — four contract/company counts that do
-   not agree. § 3.4.
-2. **$1 billion vs. $1.7 billion** — `/success-stories/` and `/` disagree. A stat
-   row on the success-stories page would print the contradiction twice on one
-   screen. The row is left in place with a comment; drop it or reconcile the
-   figures.
+1. ~~**300 vs. 350 vs. "hundreds" vs. 400**~~ — **RESOLVED**: 350+ contract
+   awards won, 500+ GSA Schedules. Two metrics, not one. Applied across the
+   `.yaml` content. The CMAS/TXMAS "Schedule Contracts" wording is a possible
+   third metric — see § 3.4.
+2. **$1 billion vs. $1.7 billion** — `/success-stories/` and `/` disagree. With
+   the two counts settled, this is **the last unverified number in the content**.
+   A stat row on the success-stories page would print the contradiction twice on
+   one screen. The row is left in place with a comment; drop it or reconcile.
 3. **The "partial list of agencies and locations"** promised by the
    success-stories intro still does not exist. § 4.2.
 4. **`2-min-1.jpg`** is still unidentified and is referenced by nothing. § 2.4.

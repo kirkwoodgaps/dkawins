@@ -1,0 +1,474 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages');
+  const archive = await getCollection('archive');
+
+  // `path` in frontmatter is the source of truth for the URL, not the filename.
+  // trailingSlash is 'always', so "/what-we-do/" -> slug "what-we-do" and
+  // "/" -> undefined (the index route).
+  const toSlug = (path: string) => path.replace(/^\/+|\/+$/g, '') || undefined;
+
+  const routes = new Map<string, any>();
+
+  // Structured .yaml pages win.
+  for (const entry of pages) {
+    routes.set(entry.data.path, {
+      params: { slug: toSlug(entry.data.path) },
+      props: { kind: 'data' as const, entry },
+    });
+  }
+
+  // .mdoc archive fills any route that has no .yaml yet, so the ten indexed
+  // URLs all resolve while the structured versions are still being written.
+  for (const entry of archive) {
+    if (routes.has(entry.data.path)) continue;
+    routes.set(entry.data.path, {
+      params: { slug: toSlug(entry.data.path) },
+      props: { kind: 'prose' as const, entry },
+    });
+  }
+
+  return [...routes.values()];
+}
+
+const { kind, entry } = Astro.props;
+const d: Record<string, any> = entry.data;
+
+const title = d.title;
+const description = kind === 'data' ? d.metaDescription : d.description;
+
+// Only rendered for the .mdoc fallback.
+const Content = kind === 'prose' ? (await render(entry)).Content : null;
+---
+
+<BaseLayout title={title} description={description} path={d.path}>
+  {
+    kind === 'prose' ? (
+      <article class="section prose-page">
+        <div class="wrap">
+          {/* Verbatim extraction. Heading levels are the old site's and are not
+              semantic — see MIGRATION-NOTES.md § 4.6. This route is a stopgap
+              until the page gets a structured .yaml. */}
+          <Content />
+        </div>
+      </article>
+    ) : (
+      <>
+        {d.hero && (
+          <section class="section hero">
+            <div class="wrap">
+              <h1>{d.hero.headline}</h1>
+              {d.hero.subhead && <p class="hero__subhead">{d.hero.subhead}</p>}
+              {d.hero.cta && (
+                <a class="button" href={d.hero.cta.href}>
+                  {d.hero.cta.label}
+                </a>
+              )}
+            </div>
+          </section>
+        )}
+
+        {!d.hero && (
+          <section class="section section--tight">
+            <div class="wrap">
+              <h1>{d.title}</h1>
+              {d.intro && <p class="lede">{d.intro}</p>}
+            </div>
+          </section>
+        )}
+
+        {/* Stat row sits immediately below the hero — these figures are DKA's
+            strongest assets and were buried on the old site. */}
+        {d.stats && (
+          <section class="section section--tight stats-band">
+            <div class="wrap">
+              <dl class="stats">
+                {d.stats.map((s: any) => (
+                  <div class="stat">
+                    <dt class="stat__value">{s.value}</dt>
+                    <dd class="stat__label">{s.label}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </section>
+        )}
+
+        {d.hero && d.intro && (
+          <section class="section">
+            <div class="wrap">
+              <p class="lede">{d.intro}</p>
+            </div>
+          </section>
+        )}
+
+        {d.services && (
+          <section class="section">
+            <div class="wrap">
+              <h2>{d.services.heading}</h2>
+              {d.services.intro && <p class="lede">{d.services.intro}</p>}
+              <ul class="cards">
+                {d.services.items?.map((item: any) => (
+                  <li class="card">
+                    <h3 class="card__title">
+                      <a href={item.href}>{item.title}</a>
+                    </h3>
+                    <p class="card__body">{item.body}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
+
+        {d.industries && (
+          <section class="section">
+            <div class="wrap">
+              <h2>{d.industries.heading}</h2>
+              <ul class="pill-list">
+                {d.industries.items?.map((item: any) => (
+                  <li class="pill">{item.name}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
+
+        {d.caseStudies && (
+          <section class="section">
+            <div class="wrap">
+              <h2>Case Studies</h2>
+              {d.caseStudies.map((cs: any) => (
+                <article class="case-study">
+                  {/* TODO: logos are referenced but not downloaded yet —
+                      public/images/clients/ is empty. MIGRATION-NOTES.md § 2. */}
+                  <p class="case-study__client">{cs.client}</p>
+                  <h3>{cs.heading}</h3>
+                  <p>{cs.body}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {d.testimonials && (
+          <section class="section">
+            <div class="wrap">
+              <h2>What Our Clients Say</h2>
+              <ul class="quotes">
+                {d.testimonials.map((t: any) => (
+                  <li class="quote">
+                    <blockquote class="quote__text">
+                      <p>{t.quote}</p>
+                    </blockquote>
+                    <p class="quote__attr">
+                      <span class="quote__author">{t.author}</span>
+                      {t.role && <span class="quote__role">{t.role}</span>}
+                      <span class="quote__client">{t.client}</span>
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
+
+        {/* FAQ. Answers left empty are awaiting copy — skip them rather than
+            render an empty <dd>. See faq.yaml. */}
+        {d.groups && (
+          <section class="section">
+            <div class="wrap">
+              {d.groups.map((group: any) => (
+                <div class="faq-group">
+                  <h2>{group.heading}</h2>
+                  <dl class="faq">
+                    {group.items
+                      ?.filter((item: any) => item.a?.trim())
+                      .map((item: any) => (
+                        <div class="faq__item">
+                          <dt class="faq__q">{item.q}</dt>
+                          <dd class="faq__a">{item.a}</dd>
+                        </div>
+                      ))}
+                  </dl>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {d.whyDka && (
+          <section class="section">
+            <div class="wrap">
+              <h2>{d.whyDka.heading}</h2>
+              <ul class="checklist">
+                {d.whyDka.items?.map((item: string) => <li>{item}</li>)}
+              </ul>
+            </div>
+          </section>
+        )}
+
+        {d.cta && (
+          <section class="section cta-band">
+            <div class="wrap">
+              <h2>{d.cta.heading}</h2>
+              {d.cta.body && <p>{d.cta.body}</p>}
+              <a class="button" href={d.cta.href}>
+                {d.cta.label}
+              </a>
+            </div>
+          </section>
+        )}
+      </>
+    )
+  }
+</BaseLayout>
+
+<style>
+  .section {
+    padding-block: var(--section-pad);
+  }
+
+  .section + .section {
+    padding-block-start: 0;
+  }
+
+  .section--tight {
+    padding-block: var(--space-16);
+  }
+
+  h1 {
+    font-size: var(--size-h1);
+    max-width: 18ch;
+  }
+
+  h2 {
+    font-size: var(--size-h2);
+    margin-block-end: var(--space-8);
+  }
+
+  h3 {
+    font-size: var(--size-h3);
+  }
+
+  .lede {
+    font-size: calc(var(--size-body) * 1.15);
+    color: var(--color-text-muted);
+  }
+
+  .hero__subhead {
+    font-size: calc(var(--size-body) * 1.25);
+    color: var(--color-text-muted);
+    margin-block: var(--space-6) var(--space-8);
+  }
+
+  .button {
+    display: inline-block;
+    background: var(--color-accent);
+    color: var(--color-accent-contrast);
+    text-decoration: none;
+    font-size: var(--size-small);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius);
+  }
+
+  .button:hover {
+    background: var(--color-accent-hover);
+    color: var(--color-accent-contrast);
+  }
+
+  /* ---- Stats ---- */
+  .stats-band {
+    border-block: var(--border);
+    background: var(--color-surface);
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-12);
+    margin: 0;
+  }
+
+  .stat__value {
+    font-family: var(--font-display);
+    font-size: var(--size-stat);
+    line-height: 1;
+    letter-spacing: var(--tracking-tight);
+  }
+
+  .stat__label {
+    margin: var(--space-3) 0 0;
+    font-size: var(--size-small);
+    color: var(--color-text-muted);
+    max-width: 28ch;
+  }
+
+  /* ---- Cards ---- */
+  .cards,
+  .quotes,
+  .pill-list,
+  .checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-8);
+  }
+
+  .card {
+    border-top: 2px solid var(--color-accent);
+    padding-block-start: var(--space-6);
+  }
+
+  .card__title a {
+    text-decoration: none;
+  }
+
+  .card__title a:hover {
+    text-decoration: underline;
+  }
+
+  .card__body {
+    color: var(--color-text-muted);
+    font-size: var(--size-small);
+  }
+
+  /* ---- Case studies ---- */
+  .case-study {
+    border-top: var(--border);
+    padding-block: var(--space-8);
+    max-width: var(--measure-prose);
+  }
+
+  .case-study__client {
+    font-size: var(--size-small);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-2);
+  }
+
+  /* ---- Quotes ---- */
+  .quotes {
+    display: grid;
+    gap: var(--space-12);
+  }
+
+  .quote {
+    max-width: var(--measure-prose);
+  }
+
+  .quote__text {
+    margin: 0;
+    padding-inline-start: var(--space-6);
+    border-inline-start: 2px solid var(--color-accent);
+  }
+
+  .quote__attr {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-block-start: var(--space-4);
+    padding-inline-start: var(--space-6);
+    font-size: var(--size-small);
+    color: var(--color-text-muted);
+  }
+
+  .quote__author {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .quote__role::before,
+  .quote__client::before {
+    content: '·';
+    margin-inline-end: var(--space-2);
+  }
+
+  /* ---- Pills / checklist ---- */
+  .pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .pill {
+    border: var(--border);
+    background: var(--color-surface);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius);
+    font-size: var(--size-small);
+  }
+
+  .checklist {
+    display: grid;
+    gap: var(--space-4);
+    max-width: var(--measure-prose);
+  }
+
+  .checklist li {
+    border-inline-start: 2px solid var(--color-accent);
+    padding-inline-start: var(--space-4);
+  }
+
+  /* ---- FAQ ---- */
+  .faq-group + .faq-group {
+    margin-block-start: var(--space-16);
+  }
+
+  .faq {
+    margin: 0;
+    max-width: var(--measure-prose);
+  }
+
+  .faq__item + .faq__item {
+    margin-block-start: var(--space-8);
+  }
+
+  .faq__q {
+    font-family: var(--font-display);
+    font-size: var(--size-h3);
+  }
+
+  .faq__a {
+    margin: var(--space-3) 0 0;
+    color: var(--color-text-muted);
+  }
+
+  /* ---- CTA ---- */
+  .cta-band {
+    border-top: var(--border);
+    margin-block-start: var(--space-16);
+  }
+
+  .cta-band .button {
+    margin-block-start: var(--space-6);
+  }
+
+  /* ---- Prose fallback ---- */
+  .prose-page :global(h1) {
+    font-size: var(--size-h2);
+  }
+
+  .prose-page :global(h2),
+  .prose-page :global(h3),
+  .prose-page :global(h4),
+  .prose-page :global(h5) {
+    font-size: var(--size-h3);
+    margin-block: var(--space-8) var(--space-3);
+  }
+
+  .prose-page :global(p) {
+    max-width: var(--measure-prose);
+  }
+</style>
