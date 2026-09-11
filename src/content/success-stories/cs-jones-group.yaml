@@ -1,7 +1,7 @@
 client: "C&S Jones Group"
 kind: caseStudy
 order: 1
-logo: /images/clients/cs-jones-group.png
+logo: cs-jones-group.png
 heading: Four HUBZone contracts across four states
 body: |-
   In 2015 DKA reached out to C&S Jones Group to discuss the possibility of working together in pursuit of 2 specific contracts which were set-aside for HUBZone-certified contractors. At the time DKA did not have a relationship with a HUBZone-certified company with the experience and capabilities to win the contracts or successfully perform them. After several discussions about the opportunities it was mutually agreed that C&S Jones had everything it took to win and perform profitably.
@@ -9,3 +9,4 @@ body: |-
   And that we did. Together we won both contracts ($1.7M over 5 years in Nevada and $3M over 5 years in Montana).
 
   And then we did it again, winning 2 more contracts ($7.5M over 5 years in Hawaii and $1.5M over 5 years in Oklahoma). C&S Jones Group is still operating all 4 contracts and looking for the next opportunities to pursue together.
+featured: true

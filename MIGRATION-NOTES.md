@@ -744,3 +744,74 @@ completely between sectors, the discipline that wins does not.
   ("clients work directly with experienced consultants", "several clients have
   worked with the same people here for over a decade"). The tenure claim is
   supported by the testimonials; the staffing one is inference. Confirm or cut.
+
+---
+
+## 13. Homepage proof block, client logos, and the colour pass (2026-09-11)
+
+### 13.1 Client logos are downloaded
+
+All eight are in `src/assets/clients/`, pulled from the live WordPress install
+and renamed. § 2.4's open item on meaningless filenames is resolved:
+`547114_539122169459467_11946938_n.png` is Argent World Services and `Thumb.png`
+is Greene Respiratory Services, as the surrounding copy indicated.
+
+They live in `src/assets` rather than `public/images` so `astro:assets`
+optimises them **and can read their dimensions at build time**, which the sizing
+below depends on. Collection entries now store a bare filename.
+
+**Optical normalisation.** The eight logos range from 1.29:1 to 7:1. Setting one
+common height makes the wide wordmarks look enormous beside the square marks;
+setting one common width does the reverse. The template computes each logo's
+height from its own aspect ratio to hit a constant **area** of ~5,000px², which
+is what CLAUDE.md's "consistent optical size" actually requires. Nothing is
+stretched. Rendered sizes range from 80x62 to 189x27, all within 4% of the
+target area.
+
+### 13.2 Homepage proof block
+
+CLAUDE.md § Homepage structure item 4 — "real client logos at consistent optical
+height, with the named testimonials and contract figures" — **was missing from
+the homepage entirely.** Added, populated from the `successStories` collection
+filtered to entries flagged `featured`: C&S Jones, E&S Diversified, Argent World
+and Greene Respiratory, the same four the live homepage carries.
+
+Testimonial text is truncated to its first two sentences on the homepage and
+links through to the full versions, so the Argent quote does not run 250 words
+above the fold.
+
+**Bug found and fixed during this work:** the featured stories were initially
+passed to every page, so all eleven non-homepage routes silently grew a
+case-study and testimonial section. Site word count jumped from 7,309 to 12,607
+before it was caught. Stories are now scoped to `/` and `/success-stories/` only.
+
+### 13.3 Colour — contrast from value, not more hues
+
+Still **one accent hue**, per CLAUDE.md. The site now alternates between four
+surface levels instead of sitting on one ground:
+
+| Token | Use |
+|---|---|
+| `--color-bg` #fbfaf8 | default ground, hero and prose |
+| `--color-surface` #ffffff | raised bands: services, FAQ, testimonials |
+| `--color-surface-tint` #eef2f6 | accent-family wash: client proof, reasons, case studies |
+| `--color-ink` #12293e | deep navy: stat row and closing CTA |
+
+`.band--ink` **redefines the colour tokens locally** rather than overriding each
+element, so links, muted text and rules invert automatically inside it. Buttons
+get an explicit inversion, since a mid-blue fill on navy is unreadable.
+
+The stat row is the strongest band on the page. CLAUDE.md calls these figures
+DKA's best assets and notes they were buried on the old site; on ink they are
+the first thing the eye reaches after the headline.
+
+**Every pairing was measured before use.** Fourteen combinations, all passing
+WCAG AA, the tightest at 6.6:1 (accent link on ink, against a 4.5 requirement).
+The accent lightens to `--color-accent-on-ink` #7fb2dd on the dark band because
+#1c4f7c on navy fails.
+
+**No hard-coded hex remains in any component** — verified, every colour comes
+from a token.
+
+Band sequences were checked for adjacent repeats: none on any of the 12 routes.
+The FAQ page gained a closing CTA in the process, which it lacked.

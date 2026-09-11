@@ -5,18 +5,34 @@
 
 :root {
   /* ---- Color -------------------------------------------------------- */
-  /* Near-black on off-white, not #000 on #fff. */
-  --color-bg: #fbfaf8;
-  --color-surface: #ffffff;
-  --color-text: #1a1a18;
-  --color-text-muted: #55524c;
+  /* Still one accent hue. Contrast comes from VALUE — four surface levels the
+     page alternates between — rather than from adding more colours, which is
+     what keeps it reading as a professional services firm and not a startup.
+     Every pairing below is measured; the ratio is noted where it matters. */
+
+  /* Surfaces, lightest to darkest. */
+  --color-bg: #fbfaf8; /* off-white, the default ground */
+  --color-surface: #ffffff; /* raised bands: services, FAQ */
+  --color-surface-tint: #eef2f6; /* accent-family wash: stories, reasons */
+  --color-ink: #12293e; /* deep navy: stat row and closing CTA */
+
+  /* Text on the three light surfaces. */
+  --color-text: #1a1a18; /* 16.7:1 on --color-bg */
+  --color-text-muted: #55524c; /* 7.5:1 on --color-bg */
   --color-rule: #e2ded7;
 
+  /* Text on --color-ink. Lighter tokens, same roles. */
+  --color-ink-text: #f4f7fa; /* 13.8:1 on --color-ink */
+  --color-ink-muted: #b3c6d6; /* 8.5:1 on --color-ink */
+  --color-ink-rule: #2c4763;
+
   /* One accent, used sparingly for links and CTAs.
-     #1c4f7c on --color-bg is 7.6:1 — passes AA for normal text. */
+     8.2:1 on --color-bg, 8.5:1 on white, 7.6:1 on the tint — all pass AA. */
   --color-accent: #1c4f7c;
   --color-accent-hover: #143a5c;
-  --color-accent-contrast: #ffffff;
+  --color-accent-contrast: #ffffff; /* 8.5:1 on --color-accent */
+  /* The accent has to lighten to stay legible on ink: 6.6:1 there. */
+  --color-accent-on-ink: #7fb2dd;
 
   --color-focus: #b4541a;
 

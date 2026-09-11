@@ -141,6 +141,20 @@ services:
 #       preparation of contract modifications.
 #     href: /government-proposal-writing-services/
 
+# CLAUDE.md § Homepage structure item 4: "Success stories: real client logos at
+# consistent optical height, with the named testimonials and contract figures."
+# This was missing from the homepage entirely. Entries come from the
+# successStories collection, filtered to those flagged `featured` — the same
+# four the live homepage shows.
+clientStories:
+  heading: Clients Who Have Won With DKA
+  intro: >-
+    Real companies, real awards. Two of these engagements are detailed on our
+    success stories page, including the contract values and the states they were
+    won in.
+  linkLabel: Read the full success stories
+  linkHref: /success-stories/
+
 whyDka:
   # Not a section on the live site — this is a new editorial block. Each item is
   # a restatement of an attested fact rather than a new claim.

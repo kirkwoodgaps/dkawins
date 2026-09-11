@@ -1,7 +1,8 @@
 client: E&S Diversified Services
 kind: caseStudy
 order: 2
-logo: /images/clients/es-diversified.jpg
+logo: es-diversified.jpg
 heading: DKA’s first client, still working together today
 body: |-
   E&S Diversified Services was DKA’s first ever client in 1995 and we’re still working together today. To date we’ve assisted E&S in winning 26 federal government contracts in 9 states with a combined award amount in excess of $92M. Nearly all of these contracts were for 5 years, and they’ve allowed E&S to expand into new industries and new geographic regions.
+featured: true

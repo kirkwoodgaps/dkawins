@@ -175,14 +175,20 @@ export default config({
           description: 'Lower numbers appear first.',
           defaultValue: 99,
         }),
-        // Deliberately a text path, not fields.image(). The client logos have
-        // not been downloaded off the old WordPress install yet, and an image
-        // field pointing at a missing file fails the build. Switch this to
-        // fields.image({ directory: 'public/images/clients', publicPath:
-        // '/images/clients/' }) once the files are in place.
+        featured: fields.checkbox({
+          label: 'Show on the homepage',
+          description:
+            'Featured entries also appear in the proof block on the homepage.',
+          defaultValue: false,
+        }),
+        // A bare filename, resolved against src/assets/clients at build time so
+        // astro:assets optimises it and can read its dimensions. The template
+        // sizes every logo to equal optical AREA from those dimensions, which is
+        // why this field is not a width or a height.
         logo: fields.text({
-          label: 'Logo path',
-          description: 'e.g. /images/clients/acme.png',
+          label: 'Logo file',
+          description:
+            'Filename inside src/assets/clients, e.g. acme.png. No path.',
         }),
         heading: fields.text({
           label: 'Headline',
@@ -254,6 +260,15 @@ export default config({
           },
           { label: 'Why companies choose DKA' }
         ),
+        clientStories: fields.object(
+          {
+            heading: fields.text({ label: 'Heading' }),
+            intro: fields.text({ label: 'Intro', multiline: true }),
+            linkLabel: fields.text({ label: 'Link label' }),
+            linkHref: fields.text({ label: 'Link target' }),
+          },
+          { label: 'Client proof block' }
+        ),
         groups: faqGroups,
         cta: ctaBlock,
       },
@@ -314,6 +329,7 @@ export default config({
         ...pageMeta,
         intro: fields.text({ label: 'Intro', multiline: true }),
         groups: faqGroups,
+        cta: ctaBlock,
       },
     }),
 

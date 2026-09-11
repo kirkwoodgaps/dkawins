@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { navHrefs, NAV_EXEMPT } from '../nav';
@@ -25,7 +27,16 @@ export async function getStaticPaths() {
         kind: 'data' as const,
         entry,
         // Success stories are their own collection, not fields on the page.
-        stories: entry.data.path === '/success-stories/' ? stories : [],
+        // Only two routes want them: the stories page gets all of them, the
+        // homepage gets the featured few for its proof block. Everywhere else
+        // gets none — passing them to every page made each one sprout a
+        // case-study section it never asked for.
+        stories:
+          entry.data.path === '/success-stories/'
+            ? stories
+            : entry.data.path === '/'
+              ? stories.filter((st) => st.data.featured)
+              : [],
       },
     });
   }
@@ -59,6 +70,30 @@ export async function getStaticPaths() {
 
 const { kind, entry, stories = [] } = Astro.props;
 const d: Record<string, any> = entry.data;
+
+// Client logos live in src/assets so astro:assets optimises them. Entries store
+// a bare filename; this maps it to the imported asset.
+const logoModules = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/clients/*.{png,jpg,jpeg,svg,webp}',
+  { eager: true }
+);
+const logos: Record<string, ImageMetadata> = Object.fromEntries(
+  Object.entries(logoModules).map(([path, mod]) => [
+    path.split('/').pop() as string,
+    mod.default,
+  ])
+);
+
+// The eight logos range from 1.29:1 to 7:1. Setting them all to one HEIGHT makes
+// the wide wordmarks look enormous next to the square marks; setting one WIDTH
+// does the reverse. Normalising to equal AREA is what "consistent optical size"
+// actually means, and it never stretches anything.
+const OPTICAL_AREA = 5000;
+const optical = (img: ImageMetadata) => {
+  const ratio = img.width / img.height;
+  const height = Math.round(Math.sqrt(OPTICAL_AREA / ratio));
+  return { height, width: Math.round(height * ratio) };
+};
 
 const caseStudies = stories.filter((s: any) => s.data.kind === 'caseStudy');
 const testimonials = stories.filter((s: any) => s.data.kind === 'testimonial');
@@ -140,7 +175,7 @@ const faqSchema =
         {/* Stat row sits immediately below the hero — these figures are DKA's
             strongest assets and were buried on the old site. */}
         {d.stats && (
-          <section class="section section--tight stats-band">
+          <section class="section band band--ink section--tight stats-band">
             <div class="wrap">
               <dl class="stats">
                 {d.stats.map((s: any) => (
@@ -179,7 +214,7 @@ const faqSchema =
         )}
 
         {d.services && (
-          <section class="section">
+          <section class="section band band--surface">
             <div class="wrap">
               <h2>{d.services.heading}</h2>
               {d.services.intro && <p class="lede">{d.services.intro}</p>}
@@ -197,6 +232,56 @@ const faqSchema =
           </section>
         )}
 
+        {/* Homepage client proof: real logos, real quotes, real figures.
+            CLAUDE.md § Homepage structure item 4 — this was missing entirely. */}
+        {d.clientStories && stories.length > 0 && (
+          <section class="section band band--tint">
+            <div class="wrap">
+              <h2>{d.clientStories.heading}</h2>
+              {d.clientStories.intro && <p class="lede">{d.clientStories.intro}</p>}
+
+              <ul class="logo-row">
+                {stories.map((st: any) =>
+                  st.data.logo && logos[st.data.logo] ? (
+                    <li>
+                      <Image
+                        class="client-logo"
+                        src={logos[st.data.logo]}
+                        {...optical(logos[st.data.logo])}
+                        densities={[1, 2]}
+                        alt={`${st.data.client} logo`}
+                      />
+                    </li>
+                  ) : null
+                )}
+              </ul>
+
+              <ul class="quotes quotes--compact">
+                {stories
+                  .filter((st: any) => st.data.kind === 'testimonial')
+                  .map((t: any) => (
+                    <li class="quote">
+                      <blockquote class="quote__text">
+                        <p>{t.data.body.split(/(?<=\.)\s+/).slice(0, 2).join(' ')}</p>
+                      </blockquote>
+                      <p class="quote__attr">
+                        <span class="quote__author">{t.data.author}</span>
+                        {t.data.role && <span class="quote__role">{t.data.role}</span>}
+                        <span class="quote__client">{t.data.client}</span>
+                      </p>
+                    </li>
+                  ))}
+              </ul>
+
+              {d.clientStories.linkHref && (
+                <p class="more-link">
+                  <a href={d.clientStories.linkHref}>{d.clientStories.linkLabel}</a>
+                </p>
+              )}
+            </div>
+          </section>
+        )}
+
         {d.industries && (
           <section class="section">
             <div class="wrap">
@@ -210,14 +295,21 @@ const faqSchema =
           </section>
         )}
 
-        {caseStudies.length > 0 && (
-          <section class="section">
+        {!d.clientStories && caseStudies.length > 0 && (
+          <section class="section band band--tint">
             <div class="wrap">
               <h2>Case Studies</h2>
               {caseStudies.map((cs: any) => (
                 <article class="case-study">
-                  {/* TODO: logos are referenced but not downloaded yet —
-                      public/images/clients/ is empty. MIGRATION-NOTES.md § 2. */}
+                  {cs.data.logo && logos[cs.data.logo] && (
+                    <Image
+                      class="client-logo"
+                      src={logos[cs.data.logo]}
+                      {...optical(logos[cs.data.logo])}
+                      densities={[1, 2]}
+                      alt={`${cs.data.client} logo`}
+                    />
+                  )}
                   <p class="case-study__client">{cs.data.client}</p>
                   <h3>{cs.data.heading}</h3>
                   {paragraphs(cs.data.body).map((para: string) => <p>{para}</p>)}
@@ -227,14 +319,23 @@ const faqSchema =
           </section>
         )}
 
-        {testimonials.length > 0 && (
-          <section class="section">
+        {!d.clientStories && testimonials.length > 0 && (
+          <section class="section band band--surface">
             <div class="wrap">
               <h2>What Our Clients Say</h2>
               {d.testimonialsIntro && <p class="lede">{d.testimonialsIntro}</p>}
               <ul class="quotes">
                 {testimonials.map((t: any) => (
                   <li class="quote">
+                    {t.data.logo && logos[t.data.logo] && (
+                      <Image
+                        class="client-logo"
+                        src={logos[t.data.logo]}
+                        {...optical(logos[t.data.logo])}
+                        densities={[1, 2]}
+                        alt={`${t.data.client} logo`}
+                      />
+                    )}
                     <blockquote class="quote__text">
                       <p>{t.data.body}</p>
                     </blockquote>
@@ -253,7 +354,7 @@ const faqSchema =
         {/* FAQ. Answers left empty are awaiting copy — skip them rather than
             render an empty <dd>. See faq.yaml. */}
         {d.groups && (
-          <section class="section">
+          <section class="section band band--surface">
             <div class="wrap">
               {d.groups.map((group: any) => (
                 <div class="faq-group">
@@ -275,7 +376,7 @@ const faqSchema =
         )}
 
         {d.whyDka && (
-          <section class="section">
+          <section class="section band band--tint">
             <div class="wrap">
               <h2>{d.whyDka.heading}</h2>
               <ul class="checklist">
@@ -286,7 +387,7 @@ const faqSchema =
         )}
 
         {d.cta && (
-          <section class="section cta-band">
+          <section class="section band band--ink cta-band">
             <div class="wrap">
               <h2>{d.cta.heading}</h2>
               {d.cta.body && <p>{d.cta.body}</p>}
@@ -308,6 +409,44 @@ const faqSchema =
 
   .section + .section {
     padding-block-start: 0;
+  }
+
+  /* ---- Bands ----
+     Contrast comes from alternating surface VALUE, not from more hues. A band
+     paints a background, so it keeps its padding on both sides regardless of
+     what precedes it — same specificity as the rule above, declared later. */
+  .section.band {
+    padding-block: var(--section-pad);
+  }
+
+  .band--surface {
+    background: var(--color-surface);
+  }
+
+  .band--tint {
+    background: var(--color-surface-tint);
+  }
+
+  /* Redefines the colour tokens locally, so every descendant — links, muted
+     text, rules — inverts without needing its own override. */
+  .band--ink {
+    background: var(--color-ink);
+    color: var(--color-ink-text);
+    --color-text: var(--color-ink-text);
+    --color-text-muted: var(--color-ink-muted);
+    --color-accent: var(--color-accent-on-ink);
+    --color-rule: var(--color-ink-rule);
+  }
+
+  /* A mid-blue fill on navy is unreadable, so the button inverts too. */
+  .band--ink .button {
+    background: var(--color-ink-text);
+    color: var(--color-ink);
+  }
+
+  .band--ink .button:hover {
+    background: var(--color-surface);
+    color: var(--color-ink);
   }
 
   .section--tight {
@@ -356,10 +495,12 @@ const faqSchema =
     color: var(--color-accent-contrast);
   }
 
-  /* ---- Stats ---- */
+  /* ---- Stats ----
+     The strongest band on the page. CLAUDE.md calls these DKA's best assets and
+     notes they were buried on the old site; on ink they are the first thing the
+     eye lands on after the headline. */
   .stats-band {
-    border-block: var(--border);
-    background: var(--color-surface);
+    border-block: none;
   }
 
   .stats {
@@ -381,6 +522,45 @@ const faqSchema =
     font-size: var(--size-small);
     color: var(--color-text-muted);
     max-width: 28ch;
+  }
+
+  /* ---- Client logos ----
+     Height and width are set per-logo at build time from the source aspect
+     ratio (see `optical` above), so nothing is stretched and nothing dominates.
+     The cap here is a safety net for a very wide mark on a narrow screen. */
+  .client-logo {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-block-end: var(--space-4);
+  }
+
+  .logo-row {
+    list-style: none;
+    margin: 0 0 var(--space-16);
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-8) var(--space-12);
+  }
+
+  .logo-row .client-logo {
+    margin-block-end: 0;
+  }
+
+  .quotes--compact {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: grid;
+    gap: var(--space-8);
+  }
+
+  .quotes--compact .quote {
+    max-width: none;
+  }
+
+  .more-link {
+    margin-block-start: var(--space-12);
   }
 
   /* ---- Prose sections ---- */

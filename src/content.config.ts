@@ -47,6 +47,8 @@ const successStories = defineCollection({
     client: z.string(),
     kind: z.enum(['caseStudy', 'testimonial']),
     order: z.number().default(99),
+    // Shown on the homepage proof block as well as the stories page.
+    featured: z.boolean().default(false),
     // Path string rather than image() — the logos are not downloaded yet and
     // image() fails the build on a missing file. Swap once they land.
     logo: z.string().optional(),
