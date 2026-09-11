@@ -101,18 +101,16 @@ industries:
     # Named on the homepage: "real estate appraisals"
     - name: Real Estate Appraisal Services
 
-# RESOLVED 2026-09-11. The original draft claimed DKA tailors its compliance
-# approach per industry, which is not attested anywhere. Rewritten from the four
-# service tiers on /government-proposal-writing-services/, which ARE attested,
-# and which make the honest point: the work is the same shape in every sector.
-body: >-
-  Across every one of these sectors the work takes the same shape. Read the
-  solicitation properly. Understand what makes this particular company uniquely
-  qualified. Answer what the evaluator was actually asked to score. The technical
-  content changes completely between a custodial contract and an IT services
-  award; the discipline that wins them does not.
-
 sections:
+  # Merged 2026-09-11. This section absorbed the old "Don't See Your Industry
+  # Here?" section, which no longer earned its own heading once the list above
+  # grew to 21 evidenced entries — a standalone "the list is not exhaustive"
+  # hedge reads as defensive next to a list that long. It also absorbed the
+  # page's orphaned `body` field, which the template never rendered.
+  #
+  # Dropped in the merge: "ambulance transport to real estate appraisal services
+  # to mobile asphalt plants". All three are now entries in the list above, so
+  # naming them here repeated the page back at itself.
   - heading: How DKA Works, Whatever Your Industry
     body: >-
       Our services break into four areas that apply regardless of sector.
@@ -128,9 +126,17 @@ sections:
       contract.
 
 
-      What changes between industries is the subject matter expertise we draw out
-      of you. What does not change is knowing how a government evaluator reads a
-      proposal.
+      Across every one of these sectors the work takes the same shape. Read the
+      solicitation properly. Understand what makes this particular company
+      uniquely qualified. Answer what the evaluator was actually asked to score.
+      The technical content changes completely between a custodial contract and
+      an IT services award; the discipline that wins them does not.
+
+
+      The list above is not meant to be a filter either. If your company sells
+      something a government agency buys, the question is not whether your
+      industry appears on it. It is whether there is a live requirement and
+      whether you are positioned to answer it.
 
   - heading: Certifications and Set-Asides
     body: >-
@@ -157,15 +163,6 @@ sections:
 
       Many of our clients hold more than one, because each opens a different set
       of buyers off work that has already been done once.
-
-  - heading: Don't See Your Industry Here?
-    body: >-
-      The list above is not exhaustive, and it is not meant to be a filter. DKA's
-      clients have sold everything from ambulance transport to real estate
-      appraisal services to mobile asphalt plants to the federal government. If
-      your company sells something a government agency buys, the question is not
-      whether your industry is on a list. It is whether there is a live
-      requirement and whether you are positioned to answer it.
 
 groups:
   - heading: Frequently Asked Questions

@@ -314,7 +314,6 @@ export default config({
           },
           { label: 'Industries' }
         ),
-        body: fields.text({ label: 'Closing paragraph', multiline: true }),
         sections: sectionsBlock,
         groups: faqGroups,
         cta: ctaBlock,
